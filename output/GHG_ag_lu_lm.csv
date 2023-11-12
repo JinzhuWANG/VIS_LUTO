@@ -1,0 +1,38 @@
+Land use,Landuse type,Irrigation,GHG emissions (Mt CO2e)
+Beef - modified land,Livestock,dry,3.2515269732141316
+Beef - natural land,Livestock,dry,2.5091953383604886
+Cotton,Crop,dry,0.445985548632022
+Dairy - modified land,Livestock,dry,0.5568754607600248
+Dairy - natural land,Livestock,dry,0.27420837441361234
+Grapes,Crop,dry,0.2811619045002634
+Hay,Crop,dry,0.8206013733169353
+Nuts,Crop,dry,0.1515018070363672
+Rice,Crop,dry,0.0014155250379630812
+Sheep - modified land,Livestock,dry,12.758178827094577
+Sheep - natural land,Livestock,dry,4.947962333664965
+Sugar,Crop,dry,1.2462258670404156
+Summer cereals,Crop,dry,0.25959930239171686
+Summer legumes,Crop,dry,0.056202176159472025
+Summer oilseeds,Crop,dry,0.02000265513251554
+Vegetables,Crop,dry,0.00010404495193628165
+Winter cereals,Crop,dry,5.866644563916563
+Winter legumes,Crop,dry,0.4883727105538939
+Winter oilseeds,Crop,dry,0.7009650048459003
+Beef - modified land,Livestock,irr,0.7737685844338978
+Citrus,Crop,irr,0.48107054052734377
+Cotton,Crop,irr,0.05471560877331842
+Dairy - modified land,Livestock,irr,0.9046822662866885
+Grapes,Crop,irr,0.026268918227777247
+Hay,Crop,irr,0.009319215235301716
+Other non-cereal crops,Crop,irr,0.2537025824771708
+Plantation fruit,Crop,irr,0.9864215600585937
+Rice,Crop,irr,0.12311045561909967
+Sheep - modified land,Livestock,irr,0.03141172196802463
+Stone fruit,Crop,irr,0.18167365922415563
+Sugar,Crop,irr,0.01519689611727589
+Summer cereals,Crop,irr,0.004981561688679021
+Summer oilseeds,Crop,irr,0.049593361145019534
+Vegetables,Crop,irr,0.4144421430643364
+Winter cereals,Crop,irr,0.09523524318889569
+Winter legumes,Crop,irr,1.5099117903874956e-05
+Winter oilseeds,Crop,irr,0.00027928187598409113
