@@ -1,38 +1,1263 @@
-Land use,Landuse type,Irrigation,GHG emissions (Mt CO2e)
-Beef - modified land,Livestock,dry,3.2515269732141316
-Beef - natural land,Livestock,dry,2.5091953383604886
-Cotton,Crop,dry,0.445985548632022
-Dairy - modified land,Livestock,dry,0.5568754607600248
-Dairy - natural land,Livestock,dry,0.27420837441361234
-Grapes,Crop,dry,0.2811619045002634
-Hay,Crop,dry,0.8206013733169353
-Nuts,Crop,dry,0.1515018070363672
-Rice,Crop,dry,0.0014155250379630812
-Sheep - modified land,Livestock,dry,12.758178827094577
-Sheep - natural land,Livestock,dry,4.947962333664965
-Sugar,Crop,dry,1.2462258670404156
-Summer cereals,Crop,dry,0.25959930239171686
-Summer legumes,Crop,dry,0.056202176159472025
-Summer oilseeds,Crop,dry,0.02000265513251554
-Vegetables,Crop,dry,0.00010404495193628165
-Winter cereals,Crop,dry,5.866644563916563
-Winter legumes,Crop,dry,0.4883727105538939
-Winter oilseeds,Crop,dry,0.7009650048459003
-Beef - modified land,Livestock,irr,0.7737685844338978
-Citrus,Crop,irr,0.48107054052734377
-Cotton,Crop,irr,0.05471560877331842
-Dairy - modified land,Livestock,irr,0.9046822662866885
-Grapes,Crop,irr,0.026268918227777247
-Hay,Crop,irr,0.009319215235301716
-Other non-cereal crops,Crop,irr,0.2537025824771708
-Plantation fruit,Crop,irr,0.9864215600585937
-Rice,Crop,irr,0.12311045561909967
-Sheep - modified land,Livestock,irr,0.03141172196802463
-Stone fruit,Crop,irr,0.18167365922415563
-Sugar,Crop,irr,0.01519689611727589
-Summer cereals,Crop,irr,0.004981561688679021
-Summer oilseeds,Crop,irr,0.049593361145019534
-Vegetables,Crop,irr,0.4144421430643364
-Winter cereals,Crop,irr,0.09523524318889569
-Winter legumes,Crop,irr,1.5099117903874956e-05
-Winter oilseeds,Crop,irr,0.00027928187598409113
+Year,Land use category,Land use,Irrigation,GHG emissions (Mt CO2e)
+2010,Crop,Citrus,dry,0.0
+2010,Crop,Citrus,irr,0.48107054052734377
+2010,Crop,Cotton,dry,0.13443055603027346
+2010,Crop,Cotton,irr,1.1480703447265626
+2010,Crop,Grapes,dry,0.0
+2010,Crop,Grapes,irr,0.09791142248535156
+2010,Crop,Hay,dry,1.3212416080322265
+2010,Crop,Hay,irr,0.07386774328613281
+2010,Crop,Nuts,dry,0.21191743054199216
+2010,Crop,Nuts,irr,0.0
+2010,Crop,Plantation fruit,dry,0.0
+2010,Crop,Plantation fruit,irr,0.9864215600585937
+2010,Crop,Stone fruit,dry,0.0
+2010,Crop,Stone fruit,irr,0.21736953442382814
+2010,Crop,Sugar,dry,2.3422367713012697
+2010,Crop,Sugar,irr,0.3349206691894531
+2010,Crop,Summer cereals,dry,0.4085865958251953
+2010,Crop,Summer cereals,irr,0.20424402923583984
+2010,Crop,Summer legumes,dry,0.2109891077041626
+2010,Crop,Summer legumes,irr,0.0
+2010,Crop,Summer oilseeds,dry,0.0
+2010,Crop,Summer oilseeds,irr,0.09918672229003907
+2010,Crop,Vegetables,dry,0.0
+2010,Crop,Vegetables,irr,1.4634676040039063
+2010,Crop,Winter cereals,dry,6.234667540870667
+2010,Crop,Winter cereals,irr,0.268278503112793
+2010,Crop,Winter legumes,dry,0.6433155115929842
+2010,Crop,Winter legumes,irr,0.0
+2010,Crop,Winter oilseeds,dry,0.8536937321777343
+2010,Crop,Winter oilseeds,irr,0.0
+2010,Livestock,Beef,dry,5.653180011444382
+2010,Livestock,Beef,irr,0.6013616375222206
+2010,Livestock,Dairy,dry,0.6342740908181668
+2010,Livestock,Dairy,irr,0.7178184752426148
+2010,Livestock,Sheep,dry,11.478163091233917
+2010,Livestock,Sheep,irr,0.0
+2011,Crop,Cotton,dry,0.7374197811992965
+2011,Crop,Cotton,irr,0.0
+2011,Crop,Grapes,dry,0.1679191707763672
+2011,Crop,Grapes,irr,0.09791142248535156
+2011,Crop,Hay,dry,0.890786697678771
+2011,Crop,Hay,irr,0.20507011267387765
+2011,Crop,Nuts,dry,0.1407516433518405
+2011,Crop,Nuts,irr,0.0
+2011,Crop,Other non-cereal crops,dry,0.0
+2011,Crop,Other non-cereal crops,irr,0.11726518994140625
+2011,Crop,Rice,dry,0.0030051219410780487
+2011,Crop,Rice,irr,0.1278958037469199
+2011,Crop,Sugar,dry,1.6624322188720704
+2011,Crop,Sugar,irr,0.0
+2011,Crop,Summer cereals,dry,0.39845272436586093
+2011,Crop,Summer cereals,irr,0.0
+2011,Crop,Summer legumes,dry,0.04300379228124478
+2011,Crop,Summer legumes,irr,0.0
+2011,Crop,Vegetables,dry,0.0
+2011,Crop,Vegetables,irr,0.3675089342041016
+2011,Crop,Winter cereals,dry,6.556420340163334
+2011,Crop,Winter cereals,irr,0.0
+2011,Crop,Winter legumes,dry,0.6850249481340186
+2011,Crop,Winter legumes,irr,0.0
+2011,Crop,Winter oilseeds,dry,0.834901215732631
+2011,Crop,Winter oilseeds,irr,0.0
+2011,Livestock,Beef,dry,6.195650190727005
+2011,Livestock,Beef,irr,1.1408116139554414
+2011,Livestock,Dairy,dry,0.7990571066910811
+2011,Livestock,Dairy,irr,1.0376933069492167
+2011,Livestock,Sheep,dry,16.586633431330018
+2011,Livestock,Sheep,irr,0.05691826423150368
+2012,Crop,Cotton,dry,0.6430004018961972
+2012,Crop,Cotton,irr,0.37073712670898434
+2012,Crop,Grapes,dry,0.1679191707763672
+2012,Crop,Grapes,irr,0.09791142248535156
+2012,Crop,Hay,dry,1.089916414915109
+2012,Crop,Hay,irr,0.0
+2012,Crop,Nuts,dry,0.14900478439394382
+2012,Crop,Nuts,irr,0.0
+2012,Crop,Other non-cereal crops,dry,0.0
+2012,Crop,Other non-cereal crops,irr,0.3394342087823082
+2012,Crop,Rice,dry,0.00014614453448846907
+2012,Crop,Rice,irr,0.1368371144292288
+2012,Crop,Sugar,dry,1.6624322188720704
+2012,Crop,Sugar,irr,0.0
+2012,Crop,Summer cereals,dry,0.34001653887662603
+2012,Crop,Summer cereals,irr,0.0
+2012,Crop,Summer legumes,dry,0.028637701238986846
+2012,Crop,Summer legumes,irr,0.0
+2012,Crop,Vegetables,dry,0.0
+2012,Crop,Vegetables,irr,0.6571310512859968
+2012,Crop,Winter cereals,dry,7.020006912765397
+2012,Crop,Winter cereals,irr,0.06741996494306088
+2012,Crop,Winter legumes,dry,0.6813516519747973
+2012,Crop,Winter legumes,irr,0.0
+2012,Crop,Winter oilseeds,dry,0.8224221840209961
+2012,Crop,Winter oilseeds,irr,0.0
+2012,Livestock,Beef,dry,6.179181789847073
+2012,Livestock,Beef,irr,0.41015974799460186
+2012,Livestock,Dairy,dry,0.8604983279714244
+2012,Livestock,Dairy,irr,0.7894297814388481
+2012,Livestock,Sheep,dry,15.695500509991255
+2012,Livestock,Sheep,irr,0.0
+2013,Crop,Cotton,dry,0.7824758987278725
+2013,Crop,Cotton,irr,0.05461442338954378
+2013,Crop,Grapes,dry,0.1679191707763672
+2013,Crop,Grapes,irr,0.09791142248535156
+2013,Crop,Hay,dry,1.1172052280986666
+2013,Crop,Hay,irr,0.0
+2013,Crop,Nuts,dry,0.1537627292399966
+2013,Crop,Nuts,irr,0.0
+2013,Crop,Other non-cereal crops,dry,0.0
+2013,Crop,Other non-cereal crops,irr,0.34411704162597656
+2013,Crop,Rice,dry,0.0006538304298486968
+2013,Crop,Rice,irr,0.13543318291098744
+2013,Crop,Sugar,dry,1.6624322188720704
+2013,Crop,Sugar,irr,0.0
+2013,Crop,Summer cereals,dry,0.38035720630116027
+2013,Crop,Summer cereals,irr,0.0
+2013,Crop,Summer legumes,dry,0.0547163263196317
+2013,Crop,Summer legumes,irr,0.0
+2013,Crop,Vegetables,dry,0.0
+2013,Crop,Vegetables,irr,0.3675089342041016
+2013,Crop,Winter cereals,dry,8.740056604143978
+2013,Crop,Winter cereals,irr,0.0
+2013,Crop,Winter legumes,dry,0.6898062160216569
+2013,Crop,Winter legumes,irr,0.0
+2013,Crop,Winter oilseeds,dry,0.9992121730346679
+2013,Crop,Winter oilseeds,irr,0.0
+2013,Livestock,Beef,dry,5.940272771335622
+2013,Livestock,Beef,irr,0.9604106046059311
+2013,Livestock,Dairy,dry,0.9744730619850158
+2013,Livestock,Dairy,irr,0.9195740187430398
+2013,Livestock,Sheep,dry,17.324060747173235
+2013,Livestock,Sheep,irr,0.0941944208035292
+2014,Crop,Cotton,dry,0.7131625118417191
+2014,Crop,Cotton,irr,0.0
+2014,Crop,Grapes,dry,0.1679191707763672
+2014,Crop,Grapes,irr,0.09791142248535156
+2014,Crop,Hay,dry,0.8482225197753906
+2014,Crop,Hay,irr,0.0
+2014,Crop,Nuts,dry,0.2166000606510845
+2014,Crop,Nuts,irr,0.0
+2014,Crop,Other non-cereal crops,dry,0.0
+2014,Crop,Other non-cereal crops,irr,0.456224740033833
+2014,Crop,Rice,dry,0.0
+2014,Crop,Rice,irr,0.13752912037849427
+2014,Crop,Sugar,dry,1.6624322188720704
+2014,Crop,Sugar,irr,0.0
+2014,Crop,Summer cereals,dry,0.33272157373046873
+2014,Crop,Summer cereals,irr,0.0
+2014,Crop,Summer legumes,dry,0.03643205740299682
+2014,Crop,Summer legumes,irr,0.0
+2014,Crop,Vegetables,dry,0.0
+2014,Crop,Vegetables,irr,0.3675089342041016
+2014,Crop,Winter cereals,dry,6.335858985965295
+2014,Crop,Winter cereals,irr,0.032304004316731784
+2014,Crop,Winter legumes,dry,0.5069629816344252
+2014,Crop,Winter legumes,irr,0.0
+2014,Crop,Winter oilseeds,dry,0.9992121730346679
+2014,Crop,Winter oilseeds,irr,0.0
+2014,Livestock,Beef,dry,7.056043895976827
+2014,Livestock,Beef,irr,0.9583957937071045
+2014,Livestock,Dairy,dry,1.2667934646481085
+2014,Livestock,Dairy,irr,0.9333554679770947
+2014,Livestock,Sheep,dry,15.039569373634427
+2014,Livestock,Sheep,irr,0.06038736059611622
+2015,Crop,Cotton,dry,0.6944200392530049
+2015,Crop,Cotton,irr,0.20395527412682216
+2015,Crop,Grapes,dry,0.1679191707763672
+2015,Crop,Grapes,irr,0.09791142248535156
+2015,Crop,Hay,dry,1.014720940351225
+2015,Crop,Hay,irr,0.0005459357105487996
+2015,Crop,Nuts,dry,0.12788964489836033
+2015,Crop,Nuts,irr,0.0
+2015,Crop,Other non-cereal crops,dry,0.0
+2015,Crop,Other non-cereal crops,irr,0.34411704162597656
+2015,Crop,Rice,dry,0.0
+2015,Crop,Rice,irr,0.13752912037849427
+2015,Crop,Sugar,dry,1.5751206423724706
+2015,Crop,Sugar,irr,0.0
+2015,Crop,Summer cereals,dry,0.3144183945024531
+2015,Crop,Summer cereals,irr,0.0
+2015,Crop,Summer legumes,dry,0.030294797204548377
+2015,Crop,Summer legumes,irr,0.0
+2015,Crop,Vegetables,dry,0.0
+2015,Crop,Vegetables,irr,0.6508352140886976
+2015,Crop,Winter cereals,dry,7.819292285702451
+2015,Crop,Winter cereals,irr,0.2550411944297961
+2015,Crop,Winter legumes,dry,0.6255516326204539
+2015,Crop,Winter legumes,irr,0.0
+2015,Crop,Winter oilseeds,dry,0.731136322637871
+2015,Crop,Winter oilseeds,irr,0.0
+2015,Livestock,Beef,dry,5.913780474015544
+2015,Livestock,Beef,irr,0.4620233405790329
+2015,Livestock,Dairy,dry,1.0717539148499473
+2015,Livestock,Dairy,irr,0.7683396407618204
+2015,Livestock,Sheep,dry,14.356530426093602
+2015,Livestock,Sheep,irr,0.0
+2016,Crop,Cotton,dry,0.7212689059448242
+2016,Crop,Cotton,irr,0.1839849351196289
+2016,Crop,Grapes,dry,0.1679191707763672
+2016,Crop,Grapes,irr,0.09791142248535156
+2016,Crop,Hay,dry,1.0729044311422489
+2016,Crop,Hay,irr,0.0005899224514356211
+2016,Crop,Nuts,dry,0.13028808178018533
+2016,Crop,Nuts,irr,0.0
+2016,Crop,Other non-cereal crops,dry,0.0
+2016,Crop,Other non-cereal crops,irr,0.34411704162597656
+2016,Crop,Rice,dry,0.0
+2016,Crop,Rice,irr,0.13752912037849427
+2016,Crop,Sugar,dry,1.410188208238224
+2016,Crop,Sugar,irr,0.0
+2016,Crop,Summer cereals,dry,0.3671908820413296
+2016,Crop,Summer cereals,irr,0.0
+2016,Crop,Summer legumes,dry,0.031243022258739147
+2016,Crop,Summer legumes,irr,0.0
+2016,Crop,Vegetables,dry,0.0
+2016,Crop,Vegetables,irr,0.6628343543061953
+2016,Crop,Winter cereals,dry,6.284989800853995
+2016,Crop,Winter cereals,irr,0.041050265817374025
+2016,Crop,Winter legumes,dry,0.6512250598959612
+2016,Crop,Winter legumes,irr,0.0
+2016,Crop,Winter oilseeds,dry,0.7745600358147133
+2016,Crop,Winter oilseeds,irr,0.0
+2016,Livestock,Beef,dry,6.438578503045123
+2016,Livestock,Beef,irr,0.4637216415081024
+2016,Livestock,Dairy,dry,0.9583614007980713
+2016,Livestock,Dairy,irr,0.7846897250769338
+2016,Livestock,Sheep,dry,17.86550813783863
+2016,Livestock,Sheep,irr,0.159012897247123
+2017,Crop,Cotton,dry,0.7212689059448242
+2017,Crop,Cotton,irr,0.12167667343366276
+2017,Crop,Grapes,dry,0.1679191707763672
+2017,Crop,Grapes,irr,0.09791142248535156
+2017,Crop,Hay,dry,0.9698377672369606
+2017,Crop,Hay,irr,0.0
+2017,Crop,Nuts,dry,0.21577357046126308
+2017,Crop,Nuts,irr,0.0
+2017,Crop,Other non-cereal crops,dry,0.0
+2017,Crop,Other non-cereal crops,irr,0.34264395828975036
+2017,Crop,Rice,dry,0.0
+2017,Crop,Rice,irr,0.13752912037849427
+2017,Crop,Stone fruit,dry,0.0
+2017,Crop,Stone fruit,irr,0.14597778402448308
+2017,Crop,Sugar,dry,1.5865224303975904
+2017,Crop,Sugar,irr,0.0
+2017,Crop,Summer cereals,dry,0.31154370881519067
+2017,Crop,Summer cereals,irr,0.0
+2017,Crop,Vegetables,dry,0.0
+2017,Crop,Vegetables,irr,0.3895406395263672
+2017,Crop,Winter cereals,dry,7.157854441011466
+2017,Crop,Winter cereals,irr,0.12895837186221928
+2017,Crop,Winter legumes,dry,0.5579843214937448
+2017,Crop,Winter legumes,irr,0.0
+2017,Crop,Winter oilseeds,dry,0.7061265149653677
+2017,Crop,Winter oilseeds,irr,0.011450556915347734
+2017,Livestock,Beef,dry,6.53438357039238
+2017,Livestock,Beef,irr,0.46541995413923265
+2017,Livestock,Dairy,dry,0.8536483803337358
+2017,Livestock,Dairy,irr,0.7799196108673722
+2017,Livestock,Sheep,dry,14.579312315223143
+2017,Livestock,Sheep,irr,0.0
+2018,Crop,Cotton,dry,0.6472981062011719
+2018,Crop,Cotton,irr,0.0
+2018,Crop,Grapes,dry,0.44724788381566033
+2018,Crop,Grapes,irr,0.09791142248535156
+2018,Crop,Hay,dry,0.9626840034622066
+2018,Crop,Hay,irr,0.0
+2018,Crop,Nuts,dry,0.15429252167561083
+2018,Crop,Nuts,irr,0.0
+2018,Crop,Other non-cereal crops,dry,0.0
+2018,Crop,Other non-cereal crops,irr,0.43025687915792443
+2018,Crop,Rice,dry,0.0
+2018,Crop,Rice,irr,0.13752912037849427
+2018,Crop,Sugar,dry,1.2967570239007653
+2018,Crop,Sugar,irr,0.021391154371486875
+2018,Crop,Summer cereals,dry,0.3233920246826648
+2018,Crop,Summer cereals,irr,0.0
+2018,Crop,Vegetables,dry,0.0
+2018,Crop,Vegetables,irr,0.3895406395263672
+2018,Crop,Winter cereals,dry,7.119761248689595
+2018,Crop,Winter cereals,irr,0.001627651972783481
+2018,Crop,Winter legumes,dry,0.6285653907409439
+2018,Crop,Winter legumes,irr,0.0
+2018,Crop,Winter oilseeds,dry,0.7406257889731842
+2018,Crop,Winter oilseeds,irr,0.0
+2018,Livestock,Beef,dry,5.821595445568593
+2018,Livestock,Beef,irr,0.43586063263693176
+2018,Livestock,Dairy,dry,0.9644011642542818
+2018,Livestock,Dairy,irr,0.9965330925563537
+2018,Livestock,Sheep,dry,14.245284480968305
+2018,Livestock,Sheep,irr,0.0
+2019,Crop,Cotton,dry,0.5130407170410156
+2019,Crop,Cotton,irr,0.0
+2019,Crop,Grapes,dry,0.27066343186181446
+2019,Crop,Grapes,irr,0.09791142248535156
+2019,Crop,Hay,dry,0.7768783693850376
+2019,Crop,Hay,irr,0.0
+2019,Crop,Nuts,dry,0.1540018257850356
+2019,Crop,Nuts,irr,0.0
+2019,Crop,Other non-cereal crops,dry,0.0
+2019,Crop,Other non-cereal crops,irr,0.22976132043457032
+2019,Crop,Rice,dry,0.0
+2019,Crop,Rice,irr,0.13568761301657276
+2019,Crop,Sugar,dry,1.3192713124180193
+2019,Crop,Sugar,irr,0.0193806033477122
+2019,Crop,Summer cereals,dry,0.28508623632812496
+2019,Crop,Summer cereals,irr,0.0
+2019,Crop,Vegetables,dry,0.0
+2019,Crop,Vegetables,irr,0.3895406395263672
+2019,Crop,Winter cereals,dry,6.500440819895036
+2019,Crop,Winter cereals,irr,0.0
+2019,Crop,Winter legumes,dry,0.42412618082168707
+2019,Crop,Winter legumes,irr,0.0
+2019,Crop,Winter oilseeds,dry,0.7198510348510742
+2019,Crop,Winter oilseeds,irr,0.0
+2019,Livestock,Beef,dry,5.895470276201743
+2019,Livestock,Beef,irr,0.6003615490635431
+2019,Livestock,Dairy,dry,0.9601252849810302
+2019,Livestock,Dairy,irr,0.9447367514383773
+2019,Livestock,Sheep,dry,14.88398342654696
+2019,Livestock,Sheep,irr,0.05299216309317958
+2020,Crop,Cotton,dry,0.49337304248089625
+2020,Crop,Cotton,irr,0.0
+2020,Crop,Grapes,dry,0.2832744125908697
+2020,Crop,Grapes,irr,0.09791142248535156
+2020,Crop,Hay,dry,0.9037715347582248
+2020,Crop,Hay,irr,0.0
+2020,Crop,Nuts,dry,0.16643628124276574
+2020,Crop,Nuts,irr,0.0
+2020,Crop,Other non-cereal crops,dry,0.0
+2020,Crop,Other non-cereal crops,irr,0.22976132043457032
+2020,Crop,Rice,dry,0.001896071347164688
+2020,Crop,Rice,irr,0.12743548838674726
+2020,Crop,Sugar,dry,1.3953944121438042
+2020,Crop,Sugar,irr,0.007021221466237708
+2020,Crop,Summer cereals,dry,0.28480705044972915
+2020,Crop,Summer cereals,irr,0.0
+2020,Crop,Summer legumes,dry,0.03826310136894984
+2020,Crop,Summer legumes,irr,0.0
+2020,Crop,Vegetables,dry,0.0
+2020,Crop,Vegetables,irr,0.3895406395263672
+2020,Crop,Winter cereals,dry,5.695085214628202
+2020,Crop,Winter cereals,irr,0.0
+2020,Crop,Winter legumes,dry,0.6220900967854232
+2020,Crop,Winter legumes,irr,0.0
+2020,Crop,Winter oilseeds,dry,0.8072332374918625
+2020,Crop,Winter oilseeds,irr,0.0
+2020,Livestock,Beef,dry,6.8185874051160305
+2020,Livestock,Beef,irr,0.9536518474653916
+2020,Livestock,Dairy,dry,1.1491852648966667
+2020,Livestock,Dairy,irr,0.8150697720947266
+2020,Livestock,Sheep,dry,14.828586988210315
+2020,Livestock,Sheep,irr,0.13687630575864007
+2021,Crop,Cotton,dry,0.6313059161376954
+2021,Crop,Cotton,irr,0.0
+2021,Crop,Grapes,dry,0.3370075051269531
+2021,Crop,Grapes,irr,0.0
+2021,Crop,Hay,dry,0.9175589344482422
+2021,Crop,Hay,irr,0.0
+2021,Crop,Nuts,dry,0.2150660924810522
+2021,Crop,Nuts,irr,0.0
+2021,Crop,Other non-cereal crops,dry,0.0
+2021,Crop,Other non-cereal crops,irr,0.22976132043457032
+2021,Crop,Rice,dry,0.0
+2021,Crop,Rice,irr,0.13752912037849427
+2021,Crop,Sugar,dry,1.4167402362670898
+2021,Crop,Sugar,irr,0.0
+2021,Crop,Summer cereals,dry,0.3499645417233313
+2021,Crop,Summer cereals,irr,0.0
+2021,Crop,Summer oilseeds,dry,0.04000531026503108
+2021,Crop,Summer oilseeds,irr,0.0
+2021,Crop,Vegetables,dry,0.0
+2021,Crop,Vegetables,irr,0.38375004277506475
+2021,Crop,Winter cereals,dry,5.764997620787233
+2021,Crop,Winter cereals,irr,0.00995731728267486
+2021,Crop,Winter legumes,dry,0.5028322856189612
+2021,Crop,Winter legumes,irr,0.0
+2021,Crop,Winter oilseeds,dry,0.8146505346069336
+2021,Crop,Winter oilseeds,irr,0.0
+2021,Livestock,Beef,dry,6.383573730709964
+2021,Livestock,Beef,irr,0.9408810881255195
+2021,Livestock,Dairy,dry,1.0930618768679803
+2021,Livestock,Dairy,irr,0.8319270941752273
+2021,Livestock,Sheep,dry,17.64447371017294
+2021,Livestock,Sheep,irr,0.09257888991387414
+2022,Crop,Cotton,dry,0.6313059161376954
+2022,Crop,Cotton,irr,0.0
+2022,Crop,Grapes,dry,0.30392803453459716
+2022,Crop,Grapes,irr,0.0
+2022,Crop,Hay,dry,0.7666927241638849
+2022,Crop,Hay,irr,0.0
+2022,Crop,Nuts,dry,0.18614722804877867
+2022,Crop,Nuts,irr,0.0
+2022,Crop,Other non-cereal crops,dry,0.0
+2022,Crop,Other non-cereal crops,irr,0.22976132043457032
+2022,Crop,Rice,dry,0.0
+2022,Crop,Rice,irr,0.12649626602133895
+2022,Crop,Sugar,dry,1.4167402362670898
+2022,Crop,Sugar,irr,0.0
+2022,Crop,Summer cereals,dry,0.20664468518066403
+2022,Crop,Summer cereals,irr,0.0
+2022,Crop,Vegetables,dry,0.0
+2022,Crop,Vegetables,irr,0.3895406395263672
+2022,Crop,Winter cereals,dry,5.390844830830673
+2022,Crop,Winter cereals,irr,0.0
+2022,Crop,Winter legumes,dry,0.5804027436550856
+2022,Crop,Winter legumes,irr,0.0
+2022,Crop,Winter oilseeds,dry,0.6074059670541899
+2022,Crop,Winter oilseeds,irr,0.0
+2022,Livestock,Beef,dry,6.414091898529884
+2022,Livestock,Beef,irr,0.99292030416181
+2022,Livestock,Dairy,dry,1.1120622715198114
+2022,Livestock,Dairy,irr,0.8292207459156475
+2022,Livestock,Sheep,dry,17.06356138058906
+2022,Livestock,Sheep,irr,0.07969652068567448
+2023,Crop,Cotton,dry,0.6197615395417501
+2023,Crop,Cotton,irr,0.0
+2023,Crop,Grapes,dry,0.26294852757602677
+2023,Crop,Grapes,irr,0.0
+2023,Crop,Hay,dry,0.7737018321031572
+2023,Crop,Hay,irr,0.0
+2023,Crop,Nuts,dry,0.17555238352768435
+2023,Crop,Nuts,irr,0.0
+2023,Crop,Other non-cereal crops,dry,0.0
+2023,Crop,Other non-cereal crops,irr,0.22976132043457032
+2023,Crop,Rice,dry,0.0
+2023,Crop,Rice,irr,0.13671438334021457
+2023,Crop,Sugar,dry,1.4167402362670898
+2023,Crop,Sugar,irr,0.0
+2023,Crop,Summer cereals,dry,0.20664468518066403
+2023,Crop,Summer cereals,irr,0.0
+2023,Crop,Summer legumes,dry,0.048580127932642346
+2023,Crop,Summer legumes,irr,0.0
+2023,Crop,Vegetables,dry,0.0
+2023,Crop,Vegetables,irr,0.3895406395263672
+2023,Crop,Winter cereals,dry,5.705102284164759
+2023,Crop,Winter cereals,irr,0.4779270864155857
+2023,Crop,Winter legumes,dry,0.5534023809536696
+2023,Crop,Winter legumes,irr,0.0
+2023,Crop,Winter oilseeds,dry,0.5909641609202686
+2023,Crop,Winter oilseeds,irr,0.0
+2023,Livestock,Beef,dry,5.801712423068852
+2023,Livestock,Beef,irr,0.4715606464209557
+2023,Livestock,Dairy,dry,1.0004772727270383
+2023,Livestock,Dairy,irr,0.7853424626810526
+2023,Livestock,Sheep,dry,16.702707116345962
+2023,Livestock,Sheep,irr,0.0
+2024,Crop,Cotton,dry,0.4377438542666042
+2024,Crop,Cotton,irr,0.0
+2024,Crop,Grapes,dry,0.3370075051269531
+2024,Crop,Grapes,irr,0.0
+2024,Crop,Hay,dry,0.9920054604492188
+2024,Crop,Hay,irr,0.0
+2024,Crop,Nuts,dry,0.14779362934802523
+2024,Crop,Nuts,irr,0.0
+2024,Crop,Other non-cereal crops,dry,0.0
+2024,Crop,Other non-cereal crops,irr,0.24540176611348347
+2024,Crop,Rice,dry,0.0017293982144415039
+2024,Crop,Rice,irr,0.129340287676152
+2024,Crop,Sugar,dry,1.4167402362670898
+2024,Crop,Sugar,irr,0.0
+2024,Crop,Summer cereals,dry,0.284338640430716
+2024,Crop,Summer cereals,irr,0.0
+2024,Crop,Summer legumes,dry,0.04616646482833853
+2024,Crop,Summer legumes,irr,0.0
+2024,Crop,Vegetables,dry,0.0
+2024,Crop,Vegetables,irr,0.3895406395263672
+2024,Crop,Winter cereals,dry,6.556568897345744
+2024,Crop,Winter cereals,irr,0.0
+2024,Crop,Winter legumes,dry,0.4635261036390899
+2024,Crop,Winter legumes,irr,0.0
+2024,Crop,Winter oilseeds,dry,0.7917727459727325
+2024,Crop,Winter oilseeds,irr,0.0
+2024,Livestock,Beef,dry,6.29268156340016
+2024,Livestock,Beef,irr,1.1237469564193001
+2024,Livestock,Dairy,dry,1.0042525041856765
+2024,Livestock,Dairy,irr,1.0953428087768555
+2024,Livestock,Sheep,dry,18.571960608360424
+2024,Livestock,Sheep,irr,0.024122543244484058
+2025,Crop,Cotton,dry,0.5120366463512844
+2025,Crop,Cotton,irr,0.0
+2025,Crop,Grapes,dry,0.2586254828136089
+2025,Crop,Grapes,irr,0.0
+2025,Crop,Hay,dry,0.7653683509859827
+2025,Crop,Hay,irr,0.0
+2025,Crop,Nuts,dry,0.16300573121612477
+2025,Crop,Nuts,irr,0.0
+2025,Crop,Other non-cereal crops,dry,0.0
+2025,Crop,Other non-cereal crops,irr,0.22976132043457032
+2025,Crop,Rice,dry,0.0
+2025,Crop,Rice,irr,0.13752912037849427
+2025,Crop,Sugar,dry,1.3709102832731446
+2025,Crop,Sugar,irr,0.015074716450506401
+2025,Crop,Summer cereals,dry,0.25469747371778484
+2025,Crop,Summer cereals,irr,0.0
+2025,Crop,Vegetables,dry,0.0
+2025,Crop,Vegetables,irr,0.3895406395263672
+2025,Crop,Winter cereals,dry,6.482259572472903
+2025,Crop,Winter cereals,irr,0.15957814161531683
+2025,Crop,Winter legumes,dry,0.42630681550097466
+2025,Crop,Winter legumes,irr,0.0
+2025,Crop,Winter oilseeds,dry,0.7471806784057617
+2025,Crop,Winter oilseeds,irr,0.0
+2025,Livestock,Beef,dry,5.441944519284295
+2025,Livestock,Beef,irr,0.49027254519465957
+2025,Livestock,Dairy,dry,0.9967804710450153
+2025,Livestock,Dairy,irr,1.06148368533911
+2025,Livestock,Sheep,dry,15.859503459138494
+2025,Livestock,Sheep,irr,0.02522593724404847
+2026,Crop,Cotton,dry,0.4533512630615234
+2026,Crop,Cotton,irr,0.0
+2026,Crop,Grapes,dry,0.33379606355686087
+2026,Crop,Grapes,irr,0.0
+2026,Crop,Hay,dry,0.7845970922851563
+2026,Crop,Hay,irr,0.0
+2026,Crop,Nuts,dry,0.139137911063137
+2026,Crop,Nuts,irr,0.0
+2026,Crop,Other non-cereal crops,dry,0.0
+2026,Crop,Other non-cereal crops,irr,0.22976132043457032
+2026,Crop,Rice,dry,0.0007622052300910092
+2026,Crop,Rice,irr,0.1339200213793134
+2026,Crop,Sugar,dry,1.0173940285208225
+2026,Crop,Sugar,irr,0.019329213015846815
+2026,Crop,Summer cereals,dry,0.26962351190185546
+2026,Crop,Summer cereals,irr,0.0
+2026,Crop,Vegetables,dry,0.0
+2026,Crop,Vegetables,irr,0.3895406395263672
+2026,Crop,Winter cereals,dry,6.664888498670985
+2026,Crop,Winter cereals,irr,0.14849724216843116
+2026,Crop,Winter legumes,dry,0.4595698360289191
+2026,Crop,Winter legumes,irr,0.0
+2026,Crop,Winter oilseeds,dry,0.8418015364379883
+2026,Crop,Winter oilseeds,irr,0.0
+2026,Livestock,Beef,dry,6.364333820248705
+2026,Livestock,Beef,irr,0.8925619975430493
+2026,Livestock,Dairy,dry,0.9710800590437494
+2026,Livestock,Dairy,irr,1.0254353128278952
+2026,Livestock,Sheep,dry,16.0521524366187
+2026,Livestock,Sheep,irr,0.0
+2027,Crop,Cotton,dry,0.5054417496110425
+2027,Crop,Cotton,irr,0.0
+2027,Crop,Grapes,dry,0.2711543316373832
+2027,Crop,Grapes,irr,0.0
+2027,Crop,Hay,dry,0.7845970922851563
+2027,Crop,Hay,irr,0.0
+2027,Crop,Nuts,dry,0.11802983244366509
+2027,Crop,Nuts,irr,0.0
+2027,Crop,Other non-cereal crops,dry,0.0
+2027,Crop,Other non-cereal crops,irr,0.23496884858625133
+2027,Crop,Rice,dry,0.0
+2027,Crop,Rice,irr,0.13752912037849427
+2027,Crop,Sugar,dry,1.1786762116699219
+2027,Crop,Sugar,irr,0.0
+2027,Crop,Summer cereals,dry,0.3016556664428711
+2027,Crop,Summer cereals,irr,0.0
+2027,Crop,Vegetables,dry,0.0
+2027,Crop,Vegetables,irr,0.3895406395263672
+2027,Crop,Winter cereals,dry,5.227025421577817
+2027,Crop,Winter cereals,irr,0.0
+2027,Crop,Winter legumes,dry,0.43963841385484137
+2027,Crop,Winter legumes,irr,0.0006190638340588732
+2027,Crop,Winter oilseeds,dry,0.6588717290343418
+2027,Crop,Winter oilseeds,irr,0.0
+2027,Livestock,Beef,dry,6.316762177554701
+2027,Livestock,Beef,irr,1.0741926111410545
+2027,Livestock,Dairy,dry,1.0323596099556436
+2027,Livestock,Dairy,irr,1.0078990003842598
+2027,Livestock,Sheep,dry,18.511768213612108
+2027,Livestock,Sheep,irr,0.0
+2028,Crop,Cotton,dry,0.44176989575195313
+2028,Crop,Cotton,irr,0.0
+2028,Crop,Grapes,dry,0.2682490581129338
+2028,Crop,Grapes,irr,0.0
+2028,Crop,Hay,dry,0.7845970922851563
+2028,Crop,Hay,irr,0.0
+2028,Crop,Nuts,dry,0.12901862720042068
+2028,Crop,Nuts,irr,0.0
+2028,Crop,Other non-cereal crops,dry,0.0
+2028,Crop,Other non-cereal crops,irr,0.22976132043457032
+2028,Crop,Rice,dry,0.0
+2028,Crop,Rice,irr,0.12908742773467047
+2028,Crop,Sugar,dry,1.1786762116699219
+2028,Crop,Sugar,irr,0.0
+2028,Crop,Summer cereals,dry,0.20674399627685547
+2028,Crop,Summer cereals,irr,0.0
+2028,Crop,Vegetables,dry,0.00423315652313217
+2028,Crop,Vegetables,irr,0.3323192563814771
+2028,Crop,Winter cereals,dry,6.000118348094955
+2028,Crop,Winter cereals,irr,0.46654709284342394
+2028,Crop,Winter legumes,dry,0.5785871692288418
+2028,Crop,Winter legumes,irr,0.0
+2028,Crop,Winter oilseeds,dry,0.7069420775756836
+2028,Crop,Winter oilseeds,irr,0.0
+2028,Livestock,Beef,dry,5.368181344162864
+2028,Livestock,Beef,irr,0.47330360980129244
+2028,Livestock,Dairy,dry,1.0825756593871951
+2028,Livestock,Dairy,irr,1.0688760225286127
+2028,Livestock,Sheep,dry,18.619632195277784
+2028,Livestock,Sheep,irr,0.0
+2029,Crop,Cotton,dry,0.29814206689453127
+2029,Crop,Cotton,irr,0.0
+2029,Crop,Grapes,dry,0.3323260165522237
+2029,Crop,Grapes,irr,0.0
+2029,Crop,Hay,dry,0.7845970922851563
+2029,Crop,Hay,irr,0.0
+2029,Crop,Nuts,dry,0.15314247042658435
+2029,Crop,Nuts,irr,0.0
+2029,Crop,Other non-cereal crops,dry,0.0
+2029,Crop,Other non-cereal crops,irr,0.22976132043457032
+2029,Crop,Rice,dry,0.0
+2029,Crop,Rice,irr,0.09976792355689923
+2029,Crop,Sugar,dry,1.089730421831943
+2029,Crop,Sugar,irr,0.018843899147391756
+2029,Crop,Summer cereals,dry,0.2399725934794026
+2029,Crop,Summer cereals,irr,0.0
+2029,Crop,Vegetables,dry,0.0
+2029,Crop,Vegetables,irr,0.3505455096132487
+2029,Crop,Winter cereals,dry,5.435896847355788
+2029,Crop,Winter cereals,irr,0.0
+2029,Crop,Winter legumes,dry,0.5290415548607234
+2029,Crop,Winter legumes,irr,0.0
+2029,Crop,Winter oilseeds,dry,0.7548463296508789
+2029,Crop,Winter oilseeds,irr,0.0
+2029,Livestock,Beef,dry,6.145184212717236
+2029,Livestock,Beef,irr,1.0994869481061307
+2029,Livestock,Dairy,dry,0.8809899140025923
+2029,Livestock,Dairy,irr,1.0636924824013074
+2029,Livestock,Sheep,dry,16.908027938845922
+2029,Livestock,Sheep,irr,0.044466042245223956
+2030,Crop,Cotton,dry,0.41724419897460935
+2030,Crop,Cotton,irr,0.0
+2030,Crop,Grapes,dry,0.302591314255557
+2030,Crop,Grapes,irr,0.0
+2030,Crop,Hay,dry,0.8344423074019028
+2030,Crop,Hay,irr,0.0
+2030,Crop,Nuts,dry,0.1288324929063598
+2030,Crop,Nuts,irr,0.0
+2030,Crop,Other non-cereal crops,dry,0.0
+2030,Crop,Other non-cereal crops,irr,0.22976132043457032
+2030,Crop,Rice,dry,0.0
+2030,Crop,Rice,irr,0.13752912037849427
+2030,Crop,Sugar,dry,0.9109416052969704
+2030,Crop,Sugar,irr,0.014486422840566823
+2030,Crop,Summer cereals,dry,0.2387761508178711
+2030,Crop,Summer cereals,irr,0.0
+2030,Crop,Summer legumes,dry,0.04770999569626169
+2030,Crop,Summer legumes,irr,0.0
+2030,Crop,Vegetables,dry,0.0
+2030,Crop,Vegetables,irr,0.3895406395263672
+2030,Crop,Winter cereals,dry,5.451798043159484
+2030,Crop,Winter cereals,irr,0.5174674188690501
+2030,Crop,Winter legumes,dry,0.5297325176341534
+2030,Crop,Winter legumes,irr,0.0
+2030,Crop,Winter oilseeds,dry,0.7156271368874144
+2030,Crop,Winter oilseeds,irr,0.0
+2030,Livestock,Beef,dry,5.983633766822867
+2030,Livestock,Beef,irr,0.4740007996244431
+2030,Livestock,Dairy,dry,0.8152292844190598
+2030,Livestock,Dairy,irr,0.9603238311767578
+2030,Livestock,Sheep,dry,17.05708654779308
+2030,Livestock,Sheep,irr,0.0
+2031,Crop,Cotton,dry,0.2984665202636719
+2031,Crop,Cotton,irr,0.0
+2031,Crop,Grapes,dry,0.29387405242040526
+2031,Crop,Grapes,irr,0.0
+2031,Crop,Hay,dry,0.8212846079282469
+2031,Crop,Hay,irr,0.0
+2031,Crop,Nuts,dry,0.2164554189805372
+2031,Crop,Nuts,irr,0.0
+2031,Crop,Other non-cereal crops,dry,0.0
+2031,Crop,Other non-cereal crops,irr,0.22976132043457032
+2031,Crop,Rice,dry,0.0
+2031,Crop,Rice,irr,0.1092062410470449
+2031,Crop,Sugar,dry,1.1550257482647202
+2031,Crop,Sugar,irr,0.0
+2031,Crop,Summer cereals,dry,0.2387761508178711
+2031,Crop,Summer cereals,irr,0.0
+2031,Crop,Vegetables,dry,0.0
+2031,Crop,Vegetables,irr,0.3800398408573107
+2031,Crop,Winter cereals,dry,5.481708284187317
+2031,Crop,Winter cereals,irr,0.23127161688232423
+2031,Crop,Winter legumes,dry,0.4058137257027438
+2031,Crop,Winter legumes,irr,0.0
+2031,Crop,Winter oilseeds,dry,0.7202404356079102
+2031,Crop,Winter oilseeds,irr,0.0
+2031,Livestock,Beef,dry,5.445151292990814
+2031,Livestock,Beef,irr,0.4774317706465909
+2031,Livestock,Dairy,dry,0.8183169041132927
+2031,Livestock,Dairy,irr,1.1414303044945433
+2031,Livestock,Sheep,dry,19.23397850516002
+2031,Livestock,Sheep,irr,0.024191513965079597
+2032,Crop,Cotton,dry,0.35731545556640626
+2032,Crop,Cotton,irr,0.0
+2032,Crop,Grapes,dry,0.2811970338762093
+2032,Crop,Grapes,irr,0.0
+2032,Crop,Hay,dry,0.7607168560635954
+2032,Crop,Hay,irr,0.0
+2032,Crop,Nuts,dry,0.118701600912791
+2032,Crop,Nuts,irr,0.0
+2032,Crop,Other non-cereal crops,dry,0.0
+2032,Crop,Other non-cereal crops,irr,0.24043487055402382
+2032,Crop,Rice,dry,0.007797828197899298
+2032,Crop,Rice,irr,0.10060578538826662
+2032,Crop,Sugar,dry,1.0670983593424805
+2032,Crop,Sugar,irr,0.014558033111149242
+2032,Crop,Summer cereals,dry,0.2387761508178711
+2032,Crop,Summer cereals,irr,0.0
+2032,Crop,Vegetables,dry,0.0
+2032,Crop,Vegetables,irr,0.3377178250643759
+2032,Crop,Winter cereals,dry,5.648073091115593
+2032,Crop,Winter cereals,irr,0.10116685345458984
+2032,Crop,Winter legumes,dry,0.43708639062555615
+2032,Crop,Winter legumes,irr,0.0
+2032,Crop,Winter oilseeds,dry,0.5144905052775158
+2032,Crop,Winter oilseeds,irr,0.0
+2032,Livestock,Beef,dry,5.716521979689925
+2032,Livestock,Beef,irr,0.9552506921855302
+2032,Livestock,Dairy,dry,0.9045709020905495
+2032,Livestock,Dairy,irr,0.9607167286376953
+2032,Livestock,Sheep,dry,18.81632896669539
+2032,Livestock,Sheep,irr,0.0
+2033,Crop,Cotton,dry,0.41686652160644533
+2033,Crop,Cotton,irr,0.0
+2033,Crop,Grapes,dry,0.26872834772397347
+2033,Crop,Grapes,irr,0.0
+2033,Crop,Hay,dry,0.7845970922851563
+2033,Crop,Hay,irr,0.10201411052537544
+2033,Crop,Nuts,dry,0.14363979430673418
+2033,Crop,Nuts,irr,0.0
+2033,Crop,Other non-cereal crops,dry,0.0
+2033,Crop,Other non-cereal crops,irr,0.22976132043457032
+2033,Crop,Rice,dry,0.0
+2033,Crop,Rice,irr,0.13752912037849427
+2033,Crop,Sugar,dry,1.159819136928045
+2033,Crop,Sugar,irr,0.0062026025520420126
+2033,Crop,Summer cereals,dry,0.2387761508178711
+2033,Crop,Summer cereals,irr,0.0
+2033,Crop,Vegetables,dry,0.0
+2033,Crop,Vegetables,irr,0.3895406395263672
+2033,Crop,Winter cereals,dry,5.95290964129503
+2033,Crop,Winter cereals,irr,0.13595895082654413
+2033,Crop,Winter legumes,dry,0.3716716237130165
+2033,Crop,Winter legumes,irr,0.0
+2033,Crop,Winter oilseeds,dry,0.6781001865042976
+2033,Crop,Winter oilseeds,irr,0.0
+2033,Livestock,Beef,dry,5.876026314266344
+2033,Livestock,Beef,irr,0.9521186190701723
+2033,Livestock,Dairy,dry,0.7699436991705548
+2033,Livestock,Dairy,irr,0.6602689430847457
+2033,Livestock,Sheep,dry,18.27823693334945
+2033,Livestock,Sheep,irr,0.0
+2034,Crop,Cotton,dry,0.39613569477479815
+2034,Crop,Cotton,irr,0.0
+2034,Crop,Grapes,dry,0.26324123383607345
+2034,Crop,Grapes,irr,0.0
+2034,Crop,Hay,dry,0.6531291572265625
+2034,Crop,Hay,irr,0.0
+2034,Crop,Nuts,dry,0.15540537385460415
+2034,Crop,Nuts,irr,0.0
+2034,Crop,Other non-cereal crops,dry,0.0
+2034,Crop,Other non-cereal crops,irr,0.22976132043457032
+2034,Crop,Rice,dry,0.0
+2034,Crop,Rice,irr,0.09913992270668687
+2034,Crop,Sugar,dry,1.0386238865926734
+2034,Crop,Sugar,irr,0.016609323217976056
+2034,Crop,Summer cereals,dry,0.2387761508178711
+2034,Crop,Summer cereals,irr,0.0
+2034,Crop,Vegetables,dry,0.0
+2034,Crop,Vegetables,irr,0.3895406395263672
+2034,Crop,Winter cereals,dry,5.231294844407287
+2034,Crop,Winter cereals,irr,0.0
+2034,Crop,Winter legumes,dry,0.46503795467583053
+2034,Crop,Winter legumes,irr,0.0
+2034,Crop,Winter oilseeds,dry,0.4621697063408814
+2034,Crop,Winter oilseeds,irr,0.0
+2034,Livestock,Beef,dry,5.219024487323678
+2034,Livestock,Beef,irr,0.6424590246447156
+2034,Livestock,Dairy,dry,0.7809900482988893
+2034,Livestock,Dairy,irr,0.9801989194612172
+2034,Livestock,Sheep,dry,19.32370736940171
+2034,Livestock,Sheep,irr,0.025582833541474365
+2035,Crop,Cotton,dry,0.29758794018554685
+2035,Crop,Cotton,irr,0.0
+2035,Crop,Grapes,dry,0.16908833435058593
+2035,Crop,Grapes,irr,0.0
+2035,Crop,Hay,dry,0.6496834504256551
+2035,Crop,Hay,irr,0.0
+2035,Crop,Nuts,dry,0.18991155405583024
+2035,Crop,Nuts,irr,0.0
+2035,Crop,Other non-cereal crops,dry,0.0
+2035,Crop,Other non-cereal crops,irr,0.22976132043457032
+2035,Crop,Rice,dry,0.003687314995276185
+2035,Crop,Rice,irr,0.12006939336006632
+2035,Crop,Sugar,dry,1.1786762116699219
+2035,Crop,Sugar,irr,0.0
+2035,Crop,Summer cereals,dry,0.20674399627685547
+2035,Crop,Summer cereals,irr,0.0
+2035,Crop,Vegetables,dry,0.0
+2035,Crop,Vegetables,irr,0.3895406395263672
+2035,Crop,Winter cereals,dry,5.692586298563673
+2035,Crop,Winter cereals,irr,0.0
+2035,Crop,Winter legumes,dry,0.40052653634119034
+2035,Crop,Winter legumes,irr,0.0
+2035,Crop,Winter oilseeds,dry,0.7643528132562122
+2035,Crop,Winter oilseeds,irr,0.0
+2035,Livestock,Beef,dry,5.546672962899616
+2035,Livestock,Beef,irr,1.1085024183457517
+2035,Livestock,Dairy,dry,0.6601485959451325
+2035,Livestock,Dairy,irr,0.6817039499511719
+2035,Livestock,Sheep,dry,20.16706188244301
+2035,Livestock,Sheep,irr,0.05902460433385397
+2036,Crop,Cotton,dry,0.29758794018554685
+2036,Crop,Cotton,irr,0.0
+2036,Crop,Grapes,dry,0.16908833435058593
+2036,Crop,Grapes,irr,0.0
+2036,Crop,Hay,dry,0.7677052056884766
+2036,Crop,Hay,irr,0.0
+2036,Crop,Nuts,dry,0.16018873216666304
+2036,Crop,Nuts,irr,0.0
+2036,Crop,Other non-cereal crops,dry,0.0
+2036,Crop,Other non-cereal crops,irr,0.22976132043457032
+2036,Crop,Rice,dry,0.008542150389468978
+2036,Crop,Rice,irr,0.09708136526629098
+2036,Crop,Sugar,dry,1.0190719825974597
+2036,Crop,Sugar,irr,0.01298410907630071
+2036,Crop,Summer cereals,dry,0.2259077670685681
+2036,Crop,Summer cereals,irr,0.0
+2036,Crop,Vegetables,dry,0.0
+2036,Crop,Vegetables,irr,0.36427550611009024
+2036,Crop,Winter cereals,dry,5.967078813168033
+2036,Crop,Winter cereals,irr,0.15817301928710936
+2036,Crop,Winter legumes,dry,0.5725647924236399
+2036,Crop,Winter legumes,irr,0.0
+2036,Crop,Winter oilseeds,dry,0.7228269836889647
+2036,Crop,Winter oilseeds,irr,0.0
+2036,Livestock,Beef,dry,5.537760703309332
+2036,Livestock,Beef,irr,0.7971343503605867
+2036,Livestock,Dairy,dry,0.7643544031914062
+2036,Livestock,Dairy,irr,0.8291723580971346
+2036,Livestock,Sheep,dry,19.111518382605016
+2036,Livestock,Sheep,irr,0.05612848609576898
+2037,Crop,Cotton,dry,0.3571390062255859
+2037,Crop,Cotton,irr,0.0
+2037,Crop,Grapes,dry,0.4249130181508852
+2037,Crop,Grapes,irr,0.0
+2037,Crop,Hay,dry,0.7107599714355468
+2037,Crop,Hay,irr,0.0
+2037,Crop,Nuts,dry,0.12394396669715436
+2037,Crop,Nuts,irr,0.0
+2037,Crop,Other non-cereal crops,dry,0.0
+2037,Crop,Other non-cereal crops,irr,0.24007430811907723
+2037,Crop,Rice,dry,0.0
+2037,Crop,Rice,irr,0.12825364373013776
+2037,Crop,Sugar,dry,1.0056866705541356
+2037,Crop,Sugar,irr,0.016489703403417436
+2037,Crop,Summer cereals,dry,0.23816590556424466
+2037,Crop,Summer cereals,irr,0.0
+2037,Crop,Summer legumes,dry,0.05838961967716163
+2037,Crop,Summer legumes,irr,0.0
+2037,Crop,Vegetables,dry,0.0
+2037,Crop,Vegetables,irr,0.32496629150763445
+2037,Crop,Winter cereals,dry,5.356089261672923
+2037,Crop,Winter cereals,irr,0.06690660708572534
+2037,Crop,Winter legumes,dry,0.45713880089063574
+2037,Crop,Winter legumes,irr,0.0
+2037,Crop,Winter oilseeds,dry,0.5707000577392578
+2037,Crop,Winter oilseeds,irr,0.0
+2037,Livestock,Beef,dry,5.590955472090396
+2037,Livestock,Beef,irr,0.9586134590393468
+2037,Livestock,Dairy,dry,0.7670707958426476
+2037,Livestock,Dairy,irr,0.8262930196838378
+2037,Livestock,Sheep,dry,16.392736005464158
+2037,Livestock,Sheep,irr,0.046662636024658685
+2038,Crop,Cotton,dry,0.2902336822282304
+2038,Crop,Cotton,irr,0.0
+2038,Crop,Grapes,dry,0.3774296173898145
+2038,Crop,Grapes,irr,0.0
+2038,Crop,Hay,dry,0.7107599714355468
+2038,Crop,Hay,irr,0.0
+2038,Crop,Nuts,dry,0.12199543014688886
+2038,Crop,Nuts,irr,0.0
+2038,Crop,Other non-cereal crops,dry,0.0
+2038,Crop,Other non-cereal crops,irr,0.22976132043457032
+2038,Crop,Rice,dry,0.0
+2038,Crop,Rice,irr,0.13645293628217162
+2038,Crop,Sugar,dry,0.996458361339836
+2038,Crop,Sugar,irr,0.012859696081978641
+2038,Crop,Summer cereals,dry,0.20674399627685547
+2038,Crop,Summer cereals,irr,0.0
+2038,Crop,Vegetables,dry,0.0
+2038,Crop,Vegetables,irr,0.3895406395263672
+2038,Crop,Winter cereals,dry,5.372848687934491
+2038,Crop,Winter cereals,irr,0.0
+2038,Crop,Winter legumes,dry,0.4271360989699615
+2038,Crop,Winter legumes,irr,0.0
+2038,Crop,Winter oilseeds,dry,0.5592852408214705
+2038,Crop,Winter oilseeds,irr,0.0
+2038,Livestock,Beef,dry,5.5560313309035845
+2038,Livestock,Beef,irr,0.9517232320091527
+2038,Livestock,Dairy,dry,0.737027854513065
+2038,Livestock,Dairy,irr,0.8014003268389605
+2038,Livestock,Sheep,dry,17.245538182321468
+2038,Livestock,Sheep,irr,0.0
+2039,Crop,Cotton,dry,0.408559913390153
+2039,Crop,Cotton,irr,0.0
+2039,Crop,Grapes,dry,0.3903314191130108
+2039,Crop,Grapes,irr,0.0
+2039,Crop,Hay,dry,0.6531291572265625
+2039,Crop,Hay,irr,0.0
+2039,Crop,Nuts,dry,0.11719284705228644
+2039,Crop,Nuts,irr,0.0
+2039,Crop,Other non-cereal crops,dry,0.0
+2039,Crop,Other non-cereal crops,irr,0.22976132043457032
+2039,Crop,Rice,dry,0.0008718542484560368
+2039,Crop,Rice,irr,0.13523338010818003
+2039,Crop,Sugar,dry,1.0671057357916456
+2039,Crop,Sugar,irr,0.01359360152207785
+2039,Crop,Summer cereals,dry,0.17481115283203125
+2039,Crop,Summer cereals,irr,0.0
+2039,Crop,Vegetables,dry,0.0
+2039,Crop,Vegetables,irr,0.3444768240317847
+2039,Crop,Winter cereals,dry,5.707248217582956
+2039,Crop,Winter cereals,irr,0.3164077539850075
+2039,Crop,Winter legumes,dry,0.46545735015494144
+2039,Crop,Winter legumes,irr,0.0
+2039,Crop,Winter oilseeds,dry,0.6908579475038501
+2039,Crop,Winter oilseeds,irr,0.0
+2039,Livestock,Beef,dry,5.0733180786050855
+2039,Livestock,Beef,irr,0.47713811707019804
+2039,Livestock,Dairy,dry,0.7408496054073906
+2039,Livestock,Dairy,irr,0.8267148315887451
+2039,Livestock,Sheep,dry,19.93921366351155
+2039,Livestock,Sheep,irr,0.0262940710044415
+2040,Crop,Cotton,dry,0.27702213997007286
+2040,Crop,Cotton,irr,0.0
+2040,Crop,Grapes,dry,0.36985786929902087
+2040,Crop,Grapes,irr,0.0
+2040,Crop,Hay,dry,0.9243053369061418
+2040,Crop,Hay,irr,0.0
+2040,Crop,Nuts,dry,0.12408351689264734
+2040,Crop,Nuts,irr,0.0
+2040,Crop,Other non-cereal crops,dry,0.0
+2040,Crop,Other non-cereal crops,irr,0.2169543233043325
+2040,Crop,Rice,dry,0.0
+2040,Crop,Rice,irr,0.11001883857061495
+2040,Crop,Sugar,dry,0.9113349713509007
+2040,Crop,Sugar,irr,0.014357036436325538
+2040,Crop,Summer cereals,dry,0.21689100352369256
+2040,Crop,Summer cereals,irr,0.0
+2040,Crop,Vegetables,dry,0.0
+2040,Crop,Vegetables,irr,0.32038712976715944
+2040,Crop,Winter cereals,dry,5.0749031314032
+2040,Crop,Winter cereals,irr,0.10116685345458984
+2040,Crop,Winter legumes,dry,0.40013573626854554
+2040,Crop,Winter legumes,irr,0.0
+2040,Crop,Winter oilseeds,dry,0.6911405531160837
+2040,Crop,Winter oilseeds,irr,0.0
+2040,Livestock,Beef,dry,4.884474928975701
+2040,Livestock,Beef,irr,0.6297972989849631
+2040,Livestock,Dairy,dry,0.61327212957192
+2040,Livestock,Dairy,irr,0.7912096729299007
+2040,Livestock,Sheep,dry,20.05602635621712
+2040,Livestock,Sheep,irr,0.014519457097001158
+2041,Crop,Cotton,dry,0.2967122627969224
+2041,Crop,Cotton,irr,0.0
+2041,Crop,Grapes,dry,0.4179922237201128
+2041,Crop,Grapes,irr,0.0
+2041,Crop,Hay,dry,0.7552022138145384
+2041,Crop,Hay,irr,0.0
+2041,Crop,Nuts,dry,0.13087565024902553
+2041,Crop,Nuts,irr,0.0
+2041,Crop,Other non-cereal crops,dry,0.0
+2041,Crop,Other non-cereal crops,irr,0.23262267247579688
+2041,Crop,Rice,dry,0.016634539016946316
+2041,Crop,Rice,irr,0.09372756529437824
+2041,Crop,Sugar,dry,1.134413129235018
+2041,Crop,Sugar,irr,0.0
+2041,Crop,Summer cereals,dry,0.21443731171126373
+2041,Crop,Summer cereals,irr,0.0
+2041,Crop,Vegetables,dry,0.0
+2041,Crop,Vegetables,irr,0.34126554639329004
+2041,Crop,Winter cereals,dry,5.250333353535737
+2041,Crop,Winter cereals,irr,0.0
+2041,Crop,Winter legumes,dry,0.41796581863532856
+2041,Crop,Winter legumes,irr,0.0
+2041,Crop,Winter oilseeds,dry,0.7011402897642224
+2041,Crop,Winter oilseeds,irr,0.0
+2041,Livestock,Beef,dry,5.470858666248511
+2041,Livestock,Beef,irr,1.1311209671915774
+2041,Livestock,Dairy,dry,0.7433975932964851
+2041,Livestock,Dairy,irr,0.827404260925293
+2041,Livestock,Sheep,dry,19.847712309833625
+2041,Livestock,Sheep,irr,0.05014221187347893
+2042,Crop,Cotton,dry,0.3229726890850021
+2042,Crop,Cotton,irr,0.0765092626191586
+2042,Crop,Grapes,dry,0.3700191552309723
+2042,Crop,Grapes,irr,0.0
+2042,Crop,Hay,dry,0.6532400691467861
+2042,Crop,Hay,irr,0.0
+2042,Crop,Nuts,dry,0.15898532646201
+2042,Crop,Nuts,irr,0.0
+2042,Crop,Other non-cereal crops,dry,0.0
+2042,Crop,Other non-cereal crops,irr,0.22976132043457032
+2042,Crop,Rice,dry,0.0
+2042,Crop,Rice,irr,0.12250648095658095
+2042,Crop,Sugar,dry,0.9143397665708666
+2042,Crop,Sugar,irr,0.013368674287683128
+2042,Crop,Summer cereals,dry,0.21074170032492986
+2042,Crop,Summer cereals,irr,0.0
+2042,Crop,Vegetables,dry,0.0
+2042,Crop,Vegetables,irr,0.34973535276707823
+2042,Crop,Winter cereals,dry,5.201158529884339
+2042,Crop,Winter cereals,irr,0.0
+2042,Crop,Winter legumes,dry,0.40013573626854554
+2042,Crop,Winter legumes,irr,0.0
+2042,Crop,Winter oilseeds,dry,0.5017628497059171
+2042,Crop,Winter oilseeds,irr,0.0
+2042,Livestock,Beef,dry,4.938031503276965
+2042,Livestock,Beef,irr,0.62615424269104
+2042,Livestock,Dairy,dry,0.7480944576158524
+2042,Livestock,Dairy,irr,1.0087430756354885
+2042,Livestock,Sheep,dry,17.261921422142464
+2042,Livestock,Sheep,irr,0.0
+2043,Crop,Cotton,dry,0.3451135835990042
+2043,Crop,Cotton,irr,0.03011321136374986
+2043,Crop,Grapes,dry,0.34596718847393815
+2043,Crop,Grapes,irr,0.0
+2043,Crop,Hay,dry,0.6945011123621208
+2043,Crop,Hay,irr,0.0
+2043,Crop,Nuts,dry,0.14478379518070264
+2043,Crop,Nuts,irr,0.0
+2043,Crop,Other non-cereal crops,dry,0.0
+2043,Crop,Other non-cereal crops,irr,0.22976132043457032
+2043,Crop,Rice,dry,0.00471386627234774
+2043,Crop,Rice,irr,0.1152085962820031
+2043,Crop,Sugar,dry,0.9354067964428198
+2043,Crop,Sugar,irr,0.0064391587543956375
+2043,Crop,Summer cereals,dry,0.21741516290580234
+2043,Crop,Summer cereals,irr,0.0
+2043,Crop,Vegetables,dry,3.2686506255378674e-05
+2043,Crop,Vegetables,irr,0.3890987927759774
+2043,Crop,Winter cereals,dry,5.292250193905498
+2043,Crop,Winter cereals,irr,0.10116685345458984
+2043,Crop,Winter legumes,dry,0.40052653634119034
+2043,Crop,Winter legumes,irr,0.0
+2043,Crop,Winter oilseeds,dry,0.519107984008789
+2043,Crop,Winter oilseeds,irr,0.0
+2043,Livestock,Beef,dry,5.16794437971393
+2043,Livestock,Beef,irr,0.6665822518351384
+2043,Livestock,Dairy,dry,0.5331072229303402
+2043,Livestock,Dairy,irr,0.8276934044799804
+2043,Livestock,Sheep,dry,20.053595307990392
+2043,Livestock,Sheep,irr,0.04303601573894439
+2044,Crop,Cotton,dry,0.35692129455566407
+2044,Crop,Cotton,irr,0.0
+2044,Crop,Grapes,dry,0.31193370743961923
+2044,Crop,Grapes,irr,0.0
+2044,Crop,Hay,dry,0.7054332976412846
+2044,Crop,Hay,irr,0.0
+2044,Crop,Nuts,dry,0.16813707884512907
+2044,Crop,Nuts,irr,0.0
+2044,Crop,Other non-cereal crops,dry,0.0
+2044,Crop,Other non-cereal crops,irr,0.22976132043457032
+2044,Crop,Rice,dry,0.0039486839270162916
+2044,Crop,Rice,irr,0.0918632856264668
+2044,Crop,Sugar,dry,0.9549830463256836
+2044,Crop,Sugar,irr,0.0
+2044,Crop,Summer cereals,dry,0.2066438114013672
+2044,Crop,Summer cereals,irr,0.0
+2044,Crop,Vegetables,dry,0.0
+2044,Crop,Vegetables,irr,0.3398551266621673
+2044,Crop,Winter cereals,dry,5.257290441001701
+2044,Crop,Winter cereals,irr,0.0
+2044,Crop,Winter legumes,dry,0.39102071182109915
+2044,Crop,Winter legumes,irr,0.0
+2044,Crop,Winter oilseeds,dry,0.6737325897216797
+2044,Crop,Winter oilseeds,irr,0.0
+2044,Livestock,Beef,dry,5.681041798820372
+2044,Livestock,Beef,irr,1.1201074984141348
+2044,Livestock,Dairy,dry,0.6222800146196017
+2044,Livestock,Dairy,irr,0.8278379713745116
+2044,Livestock,Sheep,dry,21.654683968735952
+2044,Livestock,Sheep,irr,0.05187145190405654
+2045,Crop,Cotton,dry,0.33587330280878824
+2045,Crop,Cotton,irr,0.05367870821794251
+2045,Crop,Grapes,dry,0.3335623178110292
+2045,Crop,Grapes,irr,0.0
+2045,Crop,Hay,dry,0.7521083994479335
+2045,Crop,Hay,irr,0.0
+2045,Crop,Nuts,dry,0.1519393805035105
+2045,Crop,Nuts,irr,0.0
+2045,Crop,Other non-cereal crops,dry,0.0
+2045,Crop,Other non-cereal crops,irr,0.24588417435331875
+2045,Crop,Rice,dry,0.0
+2045,Crop,Rice,irr,0.08732927687752137
+2045,Crop,Sugar,dry,0.9549830463256836
+2045,Crop,Sugar,irr,0.0
+2045,Crop,Summer cereals,dry,0.2066438114013672
+2045,Crop,Summer cereals,irr,0.0
+2045,Crop,Vegetables,dry,0.0
+2045,Crop,Vegetables,irr,0.3408421593630954
+2045,Crop,Winter cereals,dry,4.317893742457263
+2045,Crop,Winter cereals,irr,0.0
+2045,Crop,Winter legumes,dry,0.4264053246102333
+2045,Crop,Winter legumes,irr,0.0
+2045,Crop,Winter oilseeds,dry,0.6737325897216797
+2045,Crop,Winter oilseeds,irr,0.0
+2045,Livestock,Beef,dry,5.216130026891238
+2045,Livestock,Beef,irr,0.6275624146342278
+2045,Livestock,Dairy,dry,0.6197200405768793
+2045,Livestock,Dairy,irr,1.1168429125132322
+2045,Livestock,Sheep,dry,18.750106194163735
+2045,Livestock,Sheep,irr,0.0
+2046,Crop,Cotton,dry,0.35692129455566407
+2046,Crop,Cotton,irr,0.0
+2046,Crop,Grapes,dry,0.38068750051477873
+2046,Crop,Grapes,irr,0.0
+2046,Crop,Hay,dry,0.5873074678955078
+2046,Crop,Hay,irr,0.0
+2046,Crop,Nuts,dry,0.1147404873079923
+2046,Crop,Nuts,irr,0.0
+2046,Crop,Other non-cereal crops,dry,0.0
+2046,Crop,Other non-cereal crops,irr,0.23796248854006352
+2046,Crop,Rice,dry,0.0
+2046,Crop,Rice,irr,0.12726405669662208
+2046,Crop,Sugar,dry,1.1261400741813214
+2046,Crop,Sugar,irr,0.0
+2046,Crop,Summer cereals,dry,0.2066438114013672
+2046,Crop,Summer cereals,irr,0.0
+2046,Crop,Vegetables,dry,0.0
+2046,Crop,Vegetables,irr,0.3247648753797415
+2046,Crop,Winter cereals,dry,3.9379275630897546
+2046,Crop,Winter cereals,irr,0.0
+2046,Crop,Winter legumes,dry,0.3385213414516449
+2046,Crop,Winter legumes,irr,0.0
+2046,Crop,Winter oilseeds,dry,0.5965030160726611
+2046,Crop,Winter oilseeds,irr,0.0
+2046,Livestock,Beef,dry,5.487127858999351
+2046,Livestock,Beef,irr,0.6280317971506119
+2046,Livestock,Dairy,dry,0.627099084200076
+2046,Livestock,Dairy,irr,1.0874602936237228
+2046,Livestock,Sheep,dry,20.499349816234005
+2046,Livestock,Sheep,irr,0.018108076768163013
+2047,Crop,Cotton,dry,0.298276869140625
+2047,Crop,Cotton,irr,0.0
+2047,Crop,Grapes,dry,0.4063385377184003
+2047,Crop,Grapes,irr,0.0
+2047,Crop,Hay,dry,0.7862359011230469
+2047,Crop,Hay,irr,0.0
+2047,Crop,Nuts,dry,0.11583089373233396
+2047,Crop,Nuts,irr,0.0
+2047,Crop,Other non-cereal crops,dry,0.0
+2047,Crop,Other non-cereal crops,irr,0.23217622937581736
+2047,Crop,Rice,dry,0.0022319927739999764
+2047,Crop,Rice,irr,0.1269604587395869
+2047,Crop,Sugar,dry,1.098795223674455
+2047,Crop,Sugar,irr,0.015543531602872276
+2047,Crop,Summer cereals,dry,0.2311110488256395
+2047,Crop,Summer cereals,irr,0.0
+2047,Crop,Vegetables,dry,0.0
+2047,Crop,Vegetables,irr,0.38374767205648314
+2047,Crop,Winter cereals,dry,5.4479974313097275
+2047,Crop,Winter cereals,irr,0.11201853289794922
+2047,Crop,Winter legumes,dry,0.3086458780117035
+2047,Crop,Winter legumes,irr,0.0
+2047,Crop,Winter oilseeds,dry,0.741321483859431
+2047,Crop,Winter oilseeds,irr,0.0
+2047,Livestock,Beef,dry,5.450913287870304
+2047,Livestock,Beef,irr,0.7874654526412567
+2047,Livestock,Dairy,dry,0.6232122701100606
+2047,Livestock,Dairy,irr,1.0402531844695773
+2047,Livestock,Sheep,dry,21.073416893146433
+2047,Livestock,Sheep,irr,0.0019440321473519861
+2048,Crop,Cotton,dry,0.23942793383789063
+2048,Crop,Cotton,irr,0.0
+2048,Crop,Grapes,dry,0.330077650405557
+2048,Crop,Grapes,irr,0.0
+2048,Crop,Hay,dry,0.7068806428945746
+2048,Crop,Hay,irr,0.0
+2048,Crop,Nuts,dry,0.11490749786961506
+2048,Crop,Nuts,irr,0.0
+2048,Crop,Other non-cereal crops,dry,0.0
+2048,Crop,Other non-cereal crops,irr,0.22976132043457032
+2048,Crop,Rice,dry,0.0
+2048,Crop,Rice,irr,0.11276435237766658
+2048,Crop,Sugar,dry,1.1766630398422067
+2048,Crop,Sugar,irr,0.0006621887836609568
+2048,Crop,Summer cereals,dry,0.2066438114013672
+2048,Crop,Summer cereals,irr,0.0
+2048,Crop,Vegetables,dry,0.0
+2048,Crop,Vegetables,irr,0.34443231206609753
+2048,Crop,Winter cereals,dry,5.409853994413775
+2048,Crop,Winter cereals,irr,0.0
+2048,Crop,Winter legumes,dry,0.33555811159324644
+2048,Crop,Winter legumes,irr,0.0
+2048,Crop,Winter oilseeds,dry,0.5666772198486328
+2048,Crop,Winter oilseeds,irr,0.0
+2048,Livestock,Beef,dry,5.109681274879737
+2048,Livestock,Beef,irr,0.6289705764927864
+2048,Livestock,Dairy,dry,0.4774048103563817
+2048,Livestock,Dairy,irr,1.0045309340728923
+2048,Livestock,Sheep,dry,19.05381698556387
+2048,Livestock,Sheep,irr,0.043903865131339814
+2049,Crop,Cotton,dry,0.34758360200920835
+2049,Crop,Cotton,irr,0.0
+2049,Crop,Grapes,dry,0.2699684453392295
+2049,Crop,Grapes,irr,0.0
+2049,Crop,Hay,dry,0.691226282987707
+2049,Crop,Hay,irr,0.0
+2049,Crop,Nuts,dry,0.12005670808810578
+2049,Crop,Nuts,irr,0.0
+2049,Crop,Other non-cereal crops,dry,0.0
+2049,Crop,Other non-cereal crops,irr,0.2444439096452728
+2049,Crop,Rice,dry,0.0
+2049,Crop,Rice,irr,0.09259783594869404
+2049,Crop,Sugar,dry,1.0938824276387378
+2049,Crop,Sugar,irr,0.016416524070302474
+2049,Crop,Summer cereals,dry,0.2066438114013672
+2049,Crop,Summer cereals,irr,0.0
+2049,Crop,Vegetables,dry,0.0
+2049,Crop,Vegetables,irr,0.34239242179142376
+2049,Crop,Winter cereals,dry,5.45251934098238
+2049,Crop,Winter cereals,irr,0.005753673767052959
+2049,Crop,Winter legumes,dry,0.33555811159324644
+2049,Crop,Winter legumes,irr,0.0
+2049,Crop,Winter oilseeds,dry,0.5642050722376152
+2049,Crop,Winter oilseeds,irr,0.0
+2049,Livestock,Beef,dry,5.06084370893116
+2049,Livestock,Beef,irr,0.9582532598302065
+2049,Livestock,Dairy,dry,0.47788489050115196
+2049,Livestock,Dairy,irr,0.8066893321805472
+2049,Livestock,Sheep,dry,19.086269648062068
+2049,Livestock,Sheep,irr,0.0
+2050,Crop,Cotton,dry,0.23942793383789063
+2050,Crop,Cotton,irr,0.0
+2050,Crop,Grapes,dry,0.16908833435058593
+2050,Crop,Grapes,irr,0.0
+2050,Crop,Hay,dry,0.7201226185302734
+2050,Crop,Hay,irr,0.0
+2050,Crop,Nuts,dry,0.1433540625025844
+2050,Crop,Nuts,irr,0.0
+2050,Crop,Other non-cereal crops,dry,0.0
+2050,Crop,Other non-cereal crops,irr,0.2340158778102663
+2050,Crop,Rice,dry,0.0
+2050,Crop,Rice,irr,0.12422809352101903
+2050,Crop,Sugar,dry,1.1182435503969148
+2050,Crop,Sugar,irr,0.012540658078927854
+2050,Crop,Summer cereals,dry,0.2066438114013672
+2050,Crop,Summer cereals,irr,0.0
+2050,Crop,Vegetables,dry,0.0
+2050,Crop,Vegetables,irr,0.31761076108168357
+2050,Crop,Winter cereals,dry,5.336527699518653
+2050,Crop,Winter cereals,irr,0.0
+2050,Crop,Winter legumes,dry,0.4873307399259959
+2050,Crop,Winter legumes,irr,0.0
+2050,Crop,Winter oilseeds,dry,0.6081803646038763
+2050,Crop,Winter oilseeds,irr,0.0
+2050,Livestock,Beef,dry,5.202280927703521
+2050,Livestock,Beef,irr,1.1149886488360747
+2050,Livestock,Dairy,dry,0.564251534386158
+2050,Livestock,Dairy,irr,0.8287054043579101
+2050,Livestock,Sheep,dry,20.2325622631016
+2050,Livestock,Sheep,irr,0.0
