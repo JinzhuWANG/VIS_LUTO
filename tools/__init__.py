@@ -3,6 +3,12 @@ import os
 
 import pandas as pd
 
+# set up working directory
+if __name__ == '__main__':
+    os.chdir('..')
+
+from PARAMETERS import GHG_fname2type
+
 def extract_dtype_from_path(path):
     # Define the output categories and its corresponding file patterns
     f_cat = {'dvar':['ag','non_ag'],
@@ -43,4 +49,15 @@ def get_all_files(data_root):
     file_paths[['base_name','base_ext']] = [os.path.splitext(os.path.basename(i)) for i in file_paths['path']]
     file_paths = file_paths.reindex(columns=['year','catetory','base_name','base_ext','path'])
 
+    file_paths['year'] = file_paths['year'].astype(int)
+
     return file_paths
+
+
+def get_GHG_file_df(all_files_df):
+    # Get only GHG_seperate files
+    GHG_files = all_files_df.query('catetory == "GHG" and base_name != "GHG_emissions" ').reset_index(drop=True)
+    GHG_files['GHG_sum_t'] = GHG_files['path'].apply(lambda x: pd.read_csv(x,index_col=0).loc['SUM','SUM'])
+    GHG_files = GHG_files.replace({'base_name': GHG_fname2type})
+
+    return GHG_files
