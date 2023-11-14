@@ -133,7 +133,7 @@ class get_GHG_plots():
                                                                     titleAnchor='middle')),  
             y=alt.Y('Quantity (Mt CO2e):Q',
                     title=f'{self.GHG_value_name} (Mt CO2e)',
-                    scale=alt.Scale(reverse=self.reverse_scale)),  
+                    scale=alt.Scale(reverse=self.reverse_scale,zero=False)),  
         )
 
         final_chart = alt.layer(
