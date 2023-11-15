@@ -24,3 +24,10 @@ AG_LANDUSE = ['Apples', 'Beef - modified land', 'Beef - natural land', 'Citrus',
               'Unallocated - natural land', 'Vegetables', 'Winter cereals', 'Winter legumes', 'Winter oilseeds']
 
 NON_AG_LANDUSE = ['Environmental Plantings']
+
+
+# Define the GHG categories
+GHG_CATEGORY = {'TCO2E_DUNG_URINE': {"CH4":0.5,
+                                     "CO2":0.5},
+                'TCO2E_ENTERIC':{'CH4':1},
+                'TCO2E_SOIL':{"N2O":1}}
