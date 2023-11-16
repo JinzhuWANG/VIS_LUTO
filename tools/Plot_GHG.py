@@ -11,36 +11,73 @@ from PARAMETERS import GHG_CATEGORY, LU_CROPS, LU_LVSTKS, NON_AG_LANDUSE
 
 
 
-
 class get_GHG_plots():
     """
-    A class for generating greenhouse gas (GHG) emission plots.
+The `get_GHG_plots` class is responsible for generating plots related to greenhouse gas (GHG) emissions. It takes in GHG data in the form of a pandas DataFrame, the type of GHG, and an optional GHG value name. The class provides methods to plot GHG emissions by land use category, by irrigation type, by GHG category, and by land use and GHG source.
 
-    Parameters:
-    -----------
-    GHG_files : pd.DataFrame
-        A pandas DataFrame containing the GHG files to be plotted.
-    GHG_type : str
-        The type of GHG to be plotted. Can only be one of the following: 
-        ['Agricultural Landuse','Agricultural Management', 'Non-Agricultural Landuse', 'Transition Penalty'].
-    GHG_value_name : str, optional
-        The name of the GHG value to be plotted. Default is 'GHG emissions (Mt CO2e)'.
+Example Usage:
+    # Create an instance of the get_GHG_plots class
+    ghg_plots = get_GHG_plots(GHG_files, 'Agricultural Landuse')
 
-    Methods:
-    --------
-    read_GHG_to_long()
-        Reads the GHG files to long format.
-    plot_GHG_crop_lvstk()
-        Plots the GHG emissions for crops and livestock.
-    plot_GHG_dry_irr()
-        Plots the GHG emissions for dry and irrigated land.
-    plot_GHG_lu_lm(year)
-        Plots the GHG emissions for land use and land management for a given year.
-    plot_GHG_lu_source(year)
-        Plots the GHG emissions for land use and GHG source for a given year.
-    """
-class get_GHG_plots():
+    # Plot GHG emissions by land use category
+    ghg_crop_lvstk_total, crop_lvstk_chart = ghg_plots.plot_GHG_crop_lvstk()
+    crop_lvstk_chart.show()
 
+    # Plot GHG emissions by irrigation type
+    ghg_lm_total, lm_chart = ghg_plots.plot_GHG_dry_irr()
+    lm_chart.show()
+
+    # Plot GHG emissions by GHG category
+    ghg_category_total, category_chart = ghg_plots.plot_GHG_category()
+    category_chart.show()
+
+    # Plot GHG emissions by land use and irrigation type for a specific year
+    year = 2022
+    lu_lm_df, lu_lm_plot = ghg_plots.plot_GHG_lu_lm(year)
+    lu_lm_plot.show()
+
+    # Plot GHG emissions by land use and GHG source for a specific year
+    lu_source_df, lu_source_plot = ghg_plots.plot_GHG_lu_source(year)
+    lu_source_plot.show()
+
+Methods:
+    - __init__(self, GHG_files:pd.DataFrame, GHG_type:str, GHG_value_name:str = 'GHG emissions (Mt CO2e)'): Initializes the get_GHG_plots class by setting the GHG files, GHG type, and GHG value name. It also checks if the GHG type is valid.
+    - read_GHG_to_long(self): Reads the GHG emissions data and converts it to a long format, where each variable is in one column.
+    - get_GHG_category(self): Categorizes the GHG emissions into CO2 and non-CO2 GHGs.
+    - plot_GHG_crop_lvstk(self): Plots GHG emissions by land use category. The plot can be either a bar chart or a line chart depending on the GHG type.
+    - plot_GHG_dry_irr(self): Plots GHG emissions by irrigation type using a bar chart.
+    - plot_GHG_category(self): Plots GHG emissions by GHG category using a bar chart.
+    - plot_GHG_lu_lm(self, year): Plots GHG emissions by land use and irrigation type for a specific year using a bar chart.
+    - plot_GHG_lu_source(self, year): Plots GHG emissions by land use and GHG source for a specific year using a scatter plot.
+
+Fields:
+    - GHG_files: A pandas DataFrame containing the GHG emissions data.
+    - GHG_type: A string representing the type of GHG.
+    - GHG_value_name: A string representing the name of the GHG value. Default is 'GHG emissions (Mt CO2e)'.
+    - GHG_df_long: A pandas DataFrame containing the GHG emissions data in long format.
+    - reverse_scale: A boolean indicating whether the scale of the GHG emissions should be reversed.
+"""
+
+    def __init__(self, GHG_files: pd.DataFrame, GHG_type: str, GHG_value_name: str = 'GHG emissions (Mt CO2e)'):
+        """
+        Initializes a Plot_GHG object.
+
+        Parameters:
+        -----------
+        GHG_files : pd.DataFrame
+            A pandas DataFrame containing information about GHG files.
+        GHG_type : str
+            The type of GHG to plot. Must be one of the following: 
+            ["Agricultural Landuse","Agricultural Management","Non-Agricultural Landuse","Transition Penalty"].
+        GHG_value_name : str, optional
+            The name of the GHG emissions column in the GHG files. Default is 'GHG emissions (Mt CO2e)'.
+
+        Raises:
+        -------
+        ValueError
+            If GHG_type is not one of the valid options.
+
+        """
     def __init__(self, 
                  GHG_files:pd.DataFrame,
                  GHG_type:str,
@@ -66,6 +103,11 @@ class get_GHG_plots():
                              "Non-Agricultural Landuse", "Transition Penalty"].')
 
     
+
+
+
+
+
     def read_GHG_to_long(self):
 
         # Read GHG emissions of ag lucc
@@ -111,9 +153,14 @@ class get_GHG_plots():
         GHG_df_long.drop(['val_t','variable'],axis=1,inplace=True)
         GHG_df_long = GHG_df_long.reindex(columns=['Year','Land use category','Land use',
                                                         'Irrigation','Sources', 'Quantity (Mt CO2e)'])
-
+        
         return GHG_df_long
     
+
+
+
+
+
     def get_GHG_category(self):
 
         # 1) get CO2 GHG
@@ -131,11 +178,15 @@ class get_GHG_plots():
         return pd.concat([GHG_CO2,GHG_nonCO2],axis=0).reset_index(drop=True)
     
 
+
+
+
+
+
     def plot_GHG_crop_lvstk(self):
 
-        
         # get the df
-        GHG_crop_lvstk_total = self.GHG_df_long.groupby(['Year','Land use category']).sum(numeric_only=True).reset_index()
+        GHG_crop_lvstk_total = self.GHG_df_long.groupby(['Year','Land use category']).sum()['Quantity (Mt CO2e)'].reset_index()
 
         # Create a base chart with the necessary transformations and encodings
         base_chart = alt.Chart(GHG_crop_lvstk_total).encode(
@@ -173,9 +224,6 @@ class get_GHG_plots():
         )
             
 
-        
-
-
         final_chart = alt.layer(
             chart,
         ).properties(
@@ -185,9 +233,13 @@ class get_GHG_plots():
 
         return GHG_crop_lvstk_total, final_chart
     
+
+
+
+    
     def plot_GHG_dry_irr(self):
         # make the long format table
-        GHG_lm_total = self.GHG_df_long.groupby(['Year','Irrigation']).sum(numeric_only=True).reset_index()
+        GHG_lm_total = self.GHG_df_long.groupby(['Year','Irrigation']).sum()['Quantity (Mt CO2e)'].reset_index()
 
         base_chart = alt.Chart(GHG_lm_total).encode(
         x=alt.X('Year:O',axis=alt.Axis(title="Year", labelAngle=-90)),  # Treat year as an ordinal data type
@@ -221,6 +273,13 @@ class get_GHG_plots():
         )
 
         return GHG_lm_total, final_chart
+    
+
+
+
+
+
+
     
 
     def plot_GHG_category(self):
@@ -260,11 +319,18 @@ class get_GHG_plots():
 
         return GHG_category_total, final_chart
     
+
+
+
+
+
+    
+    
     def plot_GHG_lu_lm(self,year):
         '''Input: year: int'''
         GHG_lu_lm = self.GHG_df_long\
                            .groupby(['Year','Land use category','Land use','Irrigation'])\
-                           .sum(numeric_only=True)\
+                           .sum()['Quantity (Mt CO2e)']\
                            .reset_index()
 
         df_this_yr = GHG_lu_lm.query('Year == @year').reset_index(drop=True)
@@ -282,7 +348,7 @@ class get_GHG_plots():
         '''Input: year: int'''
         GHG_lu_source = self.GHG_df_long\
                                 .groupby(['Year','Land use','Irrigation','Sources'])\
-                                .sum(numeric_only=True)\
+                                .sum()['Quantity (Mt CO2e)']\
                                 .reset_index()
         
         df_this_yr = GHG_lu_source.query(f'Year == {year}')
