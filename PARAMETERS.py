@@ -39,3 +39,7 @@ NOTEBOOK_META_DICT = {
     "# NO CODE": "remove-input",  # Remove only the input
     "# HIDE CODE": "hide-input"  # Hide the input w/ a button to show
 }
+
+
+# Get the root directory of the data
+DATA_ROOT = '../2023_11_15__10_08_15_hard_mincost_RF30_P1e4_Won_Gon'

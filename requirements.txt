@@ -5,3 +5,7 @@ jupyterlab
 jupyter-book
 matplotlib
 tqdm
+folium
+uvicorn 
+titiler.application
+rangehttpserver
