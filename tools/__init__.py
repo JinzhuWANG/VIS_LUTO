@@ -1,13 +1,16 @@
 import re
 import os
 
+import nbformat as nbf
+from glob import glob
+
 import pandas as pd
 
 # set up working directory
 if __name__ == '__main__':
     os.chdir('..')
 
-from PARAMETERS import GHG_FNAME2TYPE
+from PARAMETERS import GHG_FNAME2TYPE, NOTEBOOK_META_DICT
 
 def extract_dtype_from_path(path):
     # Define the output categories and its corresponding file patterns
@@ -61,3 +64,20 @@ def get_GHG_file_df(all_files_df):
     GHG_files = GHG_files.replace({'base_name': GHG_FNAME2TYPE})
 
     return GHG_files
+
+
+def add_meta_to_nb(ipath):
+
+    # Search through each notebook and look for the text, add a tag if necessary
+    ntbk = nbf.read(ipath, nbf.NO_CONVERT)
+
+    for cell in ntbk.cells:
+        cell_tags = cell.get('metadata', {}).get('tags', [])
+        for key, val in NOTEBOOK_META_DICT.items():
+            if key in cell['source']:
+                if val not in cell_tags:
+                    cell_tags.append(val)
+        if len(cell_tags) > 0:
+            cell['metadata']['tags'] = cell_tags
+
+    nbf.write(ntbk, ipath)

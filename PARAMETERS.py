@@ -31,3 +31,11 @@ GHG_CATEGORY = {'TCO2E_DUNG_URINE': {"CH4":0.5,
                                      "CO2":0.5},
                 'TCO2E_ENTERIC':{'CH4':1},
                 'TCO2E_SOIL':{"N2O":1}}
+
+
+# Text to look for in adding tags
+NOTEBOOK_META_DICT = {
+    "# HIDDEN": "remove-cell",  # Remove the whole cell
+    "# NO CODE": "remove-input",  # Remove only the input
+    "# HIDE CODE": "hide-input"  # Hide the input w/ a button to show
+}

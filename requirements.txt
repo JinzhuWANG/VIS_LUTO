@@ -1,5 +1,7 @@
-numpy
-pandas
-glob
-tqdm
 altair
+pandas
+numpy
+jupyterlab
+jupyter-book
+matplotlib
+tqdm

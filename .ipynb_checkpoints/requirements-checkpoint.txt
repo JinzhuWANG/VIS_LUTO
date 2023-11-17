@@ -1,5 +1,0 @@
-numpy
-pandas
-glob
-tqdm
-altair

@@ -279,9 +279,6 @@ Fields:
 
 
 
-
-    
-
     def plot_GHG_category(self):
         # make the long format table
         GHG_category_total = self.GHG_df_long.groupby(['Year','GHG Category']).sum()['Quantity (Mt CO2e)'].reset_index()
@@ -321,6 +318,43 @@ Fields:
     
 
 
+    def plot_GHG_sources(self):
+
+        # plot the GHG emissions of different Sources across years
+        GHG_sources_total = self.GHG_df_long.groupby(['Year','Sources']).sum()['Quantity (Mt CO2e)'].reset_index()
+
+        base_chart = alt.Chart(GHG_sources_total).encode(
+                x=alt.X('Year:O',axis=alt.Axis(title="Year", labelAngle=-90)),  # Treat year as an ordinal data type
+                tooltip=[alt.Tooltip('Sources', title='GHG Sources'),
+                        alt.Tooltip('Quantity (Mt CO2e):Q', title=f'{self.GHG_value_name}')]
+        ).properties(
+            width=600,
+            height=400
+        )
+
+
+        column_chart = base_chart.mark_bar().encode(
+            color=alt.Color('Sources:N',legend=alt.Legend(
+                                                        title="GHG Sources",
+                                                        orient='none',
+                                                        legendX=320, legendY=-30,
+                                                        direction='horizontal',
+                                                        titleAnchor='middle')),  
+            y=alt.Y('Quantity (Mt CO2e):Q',
+                    title=f'{self.GHG_value_name} (Mt CO2e)',
+                    scale=alt.Scale(reverse=self.reverse_scale))
+        )
+
+
+
+        final_chart = alt.layer(
+            column_chart,
+        ).properties(
+            width=800,
+            height=450
+        )
+
+        return GHG_sources_total, final_chart
 
 
 
