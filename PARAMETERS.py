@@ -42,4 +42,4 @@ NOTEBOOK_META_DICT = {
 
 
 # Get the root directory of the data
-DATA_ROOT = '../2023_11_15__10_08_15_hard_mincost_RF30_P1e4_Won_Gon'
+DATA_ROOT = '../2023_11_20__01_27_24_hard_mincost_RF5_P1e8_Won_Gon'
