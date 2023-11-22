@@ -5,6 +5,7 @@ import nbformat as nbf
 from glob import glob
 
 import pandas as pd
+import requests
 
 # set up working directory
 if __name__ == '__main__':
@@ -85,3 +86,12 @@ def add_meta_to_nb(ipath):
             cell['metadata']['tags'] = cell_tags
 
     nbf.write(ntbk, ipath)
+
+def get_range_tif_request(BASE_URL, endpoint, url):
+    r = requests.get(
+        f"{BASE_URL}/{endpoint}",
+        params = {
+            "url": url,
+        }
+    ).json()
+    return r

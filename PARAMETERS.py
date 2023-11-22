@@ -2,7 +2,7 @@
 
 
 # Get the root directory of the data
-DATA_ROOT = '../LUTO_DATA/2023_11_21__05_26_04__hard_mincost_RF5_P1e5_2010-2050_timeseries_-337Mt'
+DATA_ROOT = '../CWC15_2023_11_23__07_48_38_hard_mincost_RF5_P1e5_2010-2050_timeseries_-265Mt'
 
 # Define the plot settings
 PLOT_WIDTH = 600
