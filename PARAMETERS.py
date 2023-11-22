@@ -1,3 +1,16 @@
+
+
+
+# Get the root directory of the data
+DATA_ROOT = '/home/docker_data/LUTO_DATA/2023_11_21__05_26_04__hard_mincost_RF5_P1e5_2010-2050_timeseries_-337Mt'
+
+# Define the plot settings
+PLOT_WIDTH = 600
+PLOT_HEIGHT = 450
+
+
+
+
 # Define crop-lvstk land uses
 LU_CROPS = ['Apples','Citrus','Cotton','Grapes','Hay','Nuts','Other non-cereal crops',
             'Pears','Plantation fruit','Rice','Stone fruit','Sugar','Summer cereals',
@@ -8,6 +21,7 @@ LU_LVSTKS = ['Beef - modified land','Beef - natural land','Dairy - modified land
              'Dairy - natural land','Sheep - modified land','Sheep - natural land']
 
 LU_UNALLOW = ['Unallocated - modified land','Unallocated - natural land']
+
 
 
 # Define the file name patterns for each category
@@ -27,10 +41,31 @@ NON_AG_LANDUSE = ['Environmental Plantings']
 
 
 # Define the GHG categories
-GHG_CATEGORY = {'TCO2E_DUNG_URINE': {"CH4":0.5,
+
+GHG_NAMES = {
+    'TCO2E_CHEM_APPL': 'Chemical Application',
+    'TCO2E_CROP_MGT': 'Crop Management',
+    'TCO2E_CULTIV': 'Cultivation',
+    'TCO2E_FERT_PROD': 'Fertiliser production',
+    'TCO2E_HARVEST': 'Harvesting',
+    'TCO2E_IRRIG': 'Irrigation',
+    'TCO2E_PEST_PROD': 'Pesticide production',
+    'TCO2E_SOWING': 'Sowing',
+    'TCO2E_ELEC': 'Electricity Use livestock',
+    'TCO2E_FODDER': 'Fodder production',
+    'TCO2E_FUEL': 'Fuel Use livestock',
+    'TCO2E_IND_LEACH_RUNOFF': 'Agricultural soils: Indirect leaching and runoff',
+    'TCO2E_MANURE_MGT': 'Livestock Manure Management (biogenic)',
+    'TCO2E_SEED': 'Pasture Seed production',
+    'TCO2E_SOIL': 'Agricultural soils: Direct Soil Emissions (biogenic)',
+    'TCO2E_DUNG_URINE': 'Agricultural soils: Animal production, dung and urine',
+    'TCO2E_ENTERIC': 'Livestock Enteric Fermentation (biogenic)'
+}
+
+GHG_CATEGORY = {'Agricultural soils: Animal production, dung and urine': {"CH4":0.5,
                                      "CO2":0.5},
-                'TCO2E_ENTERIC':{'CH4':1},
-                'TCO2E_SOIL':{"N2O":1}}
+                'Livestock Enteric Fermentation (biogenic)':{'CH4':1},
+                'Agricultural soils: Direct Soil Emissions (biogenic)':{"N2O":1}}
 
 
 # Text to look for in adding tags
@@ -41,5 +76,3 @@ NOTEBOOK_META_DICT = {
 }
 
 
-# Get the root directory of the data
-DATA_ROOT = '/home/docker_data/LUTO_DATA/2023_11_21__05_26_04__hard_mincost_RF5_P1e5_2010-2050_timeseries_-337Mt'

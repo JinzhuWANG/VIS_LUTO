@@ -7,93 +7,100 @@ from tqdm.auto import tqdm
 if __name__ == '__main__': 
     os.chdir('..')
 
-from PARAMETERS import GHG_CATEGORY, LU_CROPS, LU_LVSTKS, NON_AG_LANDUSE
+from PARAMETERS import GHG_CATEGORY, GHG_NAMES, LU_CROPS, LU_LVSTKS, NON_AG_LANDUSE, PLOT_HEIGHT, PLOT_WIDTH
+
+
+
+
+def plot_GHG_total(GHG_files, Net_emission):
+
+    # Create a base chart with the necessary transformations and encodings
+    column_chart_individual = alt.Chart(
+        GHG_files
+    ).mark_bar().encode(
+        tooltip=[alt.Tooltip('base_name', title='GHG Category'),
+                alt.Tooltip('GHG_sum_Mt:Q', title='Emissions (Mt CO2e)')],
+        x=alt.X('year:O',axis=alt.Axis(title="Year", labelAngle=-90)), 
+        y=alt.Y('GHG_sum_Mt:Q',title='Emissions (Mt CO2e)'),  
+        color=alt.Color('base_name:N',legend=alt.Legend(
+                                                title=None,
+                                                orient='none',
+                                                legendX=PLOT_WIDTH+10, legendY=PLOT_HEIGHT*0.3,
+                                                direction='vertical',
+                                                titleAnchor='middle')), 
+        
+    )
+
+
+
+    # Create a column chart to show the cumsum emissions
+    column_chart_cumsum = alt.Chart(
+        Net_emission
+    ).mark_bar(
+        color='grey',opacity=0.2
+    ).transform_calculate(
+        Cumulative_emissions =  'datum.year > 0 ? "Cumulative emissions" : "Cumulative emissions"'
+    ).encode(  
+        tooltip=[alt.Tooltip('Net_emission_cum:Q',title='Cumulative Quantity (Mt CO2e)')],
+        color=alt.Color('Cumulative_emissions:N',
+                        scale=alt.Scale(range=['#181818'])  ,
+                        legend=alt.Legend(title=None,
+                                        orient='none',
+                                        legendX=PLOT_WIDTH+10, legendY=PLOT_HEIGHT*0.45,
+                                        direction='vertical',
+                                        titleAnchor='middle')),
+        x=alt.X('year:O'),
+        y=alt.Y('Net_emission_cum:Q',title='Emissions (Mt CO2e)'), 
+    )
+
+
+    # Create a line chart for net emissions
+    line_chart_net = alt.Chart(
+        Net_emission
+    ).transform_calculate(
+        Net_emission_color =  'datum.year > 0 ? "Net emissions" : "Net emissions"'
+    ).mark_line(
+        opacity=0.6
+    ).encode(
+        tooltip=[alt.Tooltip('Net_emission:Q',title='Net Quantity (Mt CO2e)')],
+        color=alt.Color('Net_emission_color:N',
+                        scale=alt.Scale(range=['black']),
+                        legend=alt.Legend(
+                                        title=None,
+                                        orient='none',
+                                        legendX=PLOT_WIDTH+10, legendY=PLOT_HEIGHT*0.48,
+                                        direction='vertical',
+                                        titleAnchor='middle')),
+        x=alt.X('year:O'),
+        y=alt.Y('Net_emission:Q',title='Emissions (Mt CO2e)'))
+
+
+    # Combine the layers into a final chart
+    final_chart = alt.layer(
+        column_chart_cumsum,
+        column_chart_individual,
+        line_chart_net,
+    ).properties(
+        width=PLOT_WIDTH,
+        height=PLOT_HEIGHT
+    ).resolve_scale(
+        color='independent'
+    )
+
+
+    return final_chart
+
 
 
 
 class get_GHG_plots():
-    """
-The `get_GHG_plots` class is responsible for generating plots related to greenhouse gas (GHG) emissions. It takes in GHG data in the form of a pandas DataFrame, the type of GHG, and an optional GHG value name. The class provides methods to plot GHG emissions by land use category, by irrigation type, by GHG category, and by land use and GHG source.
 
-Example Usage:
-    # Create an instance of the get_GHG_plots class
-    ghg_plots = get_GHG_plots(GHG_files, 'Agricultural Landuse')
 
-    # Plot GHG emissions by land use category
-    ghg_crop_lvstk_total, crop_lvstk_chart = ghg_plots.plot_GHG_crop_lvstk()
-    crop_lvstk_chart.show()
-
-    # Plot GHG emissions by irrigation type
-    ghg_lm_total, lm_chart = ghg_plots.plot_GHG_dry_irr()
-    lm_chart.show()
-
-    # Plot GHG emissions by GHG category
-    ghg_category_total, category_chart = ghg_plots.plot_GHG_category()
-    category_chart.show()
-
-    # Plot GHG emissions by land use and irrigation type for a specific year
-    year = 2022
-    lu_lm_df, lu_lm_plot = ghg_plots.plot_GHG_lu_lm(year)
-    lu_lm_plot.show()
-
-    # Plot GHG emissions by land use and GHG source for a specific year
-    lu_source_df, lu_source_plot = ghg_plots.plot_GHG_lu_source(year)
-    lu_source_plot.show()
-
-Methods:
-    - __init__(self, GHG_files:pd.DataFrame, GHG_type:str, GHG_value_name:str = 'GHG emissions (Mt CO2e)'): Initializes the get_GHG_plots class by setting the GHG files, GHG type, and GHG value name. It also checks if the GHG type is valid.
-    - read_GHG_to_long(self): Reads the GHG emissions data and converts it to a long format, where each variable is in one column.
-    - get_GHG_category(self): Categorizes the GHG emissions into CO2 and non-CO2 GHGs.
-    - plot_GHG_crop_lvstk(self): Plots GHG emissions by land use category. The plot can be either a bar chart or a line chart depending on the GHG type.
-    - plot_GHG_dry_irr(self): Plots GHG emissions by irrigation type using a bar chart.
-    - plot_GHG_category(self): Plots GHG emissions by GHG category using a bar chart.
-    - plot_GHG_lu_lm(self, year): Plots GHG emissions by land use and irrigation type for a specific year using a bar chart.
-    - plot_GHG_lu_source(self, year): Plots GHG emissions by land use and GHG source for a specific year using a scatter plot.
-
-Fields:
-    - GHG_files: A pandas DataFrame containing the GHG emissions data.
-    - GHG_type: A string representing the type of GHG.
-    - GHG_value_name: A string representing the name of the GHG value. Default is 'GHG emissions (Mt CO2e)'.
-    - GHG_df_long: A pandas DataFrame containing the GHG emissions data in long format.
-    - reverse_scale: A boolean indicating whether the scale of the GHG emissions should be reversed.
-"""
-
-    def __init__(self, GHG_files: pd.DataFrame, GHG_type: str, GHG_value_name: str = 'GHG emissions (Mt CO2e)'):
-        """
-        Initializes a Plot_GHG object.
-
-        Parameters:
-        -----------
-        GHG_files : pd.DataFrame
-            A pandas DataFrame containing information about GHG files.
-        GHG_type : str
-            The type of GHG to plot. Must be one of the following: 
-            ["Agricultural Landuse","Agricultural Management","Non-Agricultural Landuse","Transition Penalty"].
-        GHG_value_name : str, optional
-            The name of the GHG emissions column in the GHG files. Default is 'GHG emissions (Mt CO2e)'.
-
-        Raises:
-        -------
-        ValueError
-            If GHG_type is not one of the valid options.
-
-        """
     def __init__(self, 
                  GHG_files:pd.DataFrame,
                  GHG_type:str,
                  GHG_value_name:str = 'GHG emissions (Mt CO2e)'):
-
-        # Get GHG file paths under the given GHG type
-        self.GHG_files = GHG_files.query(f'base_name == "{GHG_type}"').reset_index(drop=True)
-        self.GHG_type = GHG_type
-        self.GHG_value_name = GHG_value_name
-        self.GHG_df_long = self.read_GHG_to_long()
-        self.GHG_df_long = self.get_GHG_category()
-
-        # Check if the total GHG is negative
-        self.reverse_scale = True if self.GHG_df_long['Quantity (Mt CO2e)'].to_numpy(na_value=0).sum() < 0 else False
         
-
         # Check if the GHG type is valid
         if GHG_type not in ['Agricultural Landuse','Agricultural Management', 
                             'Non-Agricultural Landuse', 'Transition Penalty']:
@@ -102,13 +109,24 @@ Fields:
                              ["Agricultural Landuse","Agricultural Management", \
                              "Non-Agricultural Landuse", "Transition Penalty"].')
 
-    
+        # Get GHG file paths under the given GHG type
+        self.GHG_files = GHG_files.query(f'base_name == "{GHG_type}"').reset_index(drop=True)
+        self.GHG_type = GHG_type
+        self.GHG_value_name = GHG_value_name
 
+        self.GHG_df = self.add_crop_lvstk_to_df()
+        self.GHG_df_long = self.read_GHG_to_long()
+        self.GHG_df_long = self.get_GHG_category()
 
+        # Check if the total GHG is negative
+        self.reverse_scale = True if self.GHG_df_long['Quantity (Mt CO2e)'].to_numpy(na_value=0).sum() < 0 else False
+        
 
+    ################################################################
+    # Functions to get the GHG emissions of different categories   #
+    ################################################################
 
-
-    def read_GHG_to_long(self):
+    def add_crop_lvstk_to_df(self):
 
         # Read GHG emissions of ag lucc
         CSVs = []
@@ -117,48 +135,75 @@ Fields:
 
             # Get the land use and land use category
             if self.GHG_type != 'Non-Agricultural Landuse':
+
+                # Subset the crop landuse
                 csv_crop = csv[[True if i in LU_CROPS else False for i in  csv.index]]
-                csv_crop.index = pd.MultiIndex.from_product(([row['year']], csv_crop.index, ['Crop']))
+                csv_crop.index = pd.MultiIndex.from_product(([row['year']], csv_crop.index, ['Crop'],['Crop']))
 
+                # Subset the livestock landuse
                 csv_lvstk = csv[[True if i in LU_LVSTKS else False for i in  csv.index]]
-                csv_lvstk.index = pd.MultiIndex.from_tuples(tuple(csv_lvstk.index.str.split(' - ')))
-                csv_lvstk = csv_lvstk.groupby(level=0).sum(numeric_only=True)
-                csv_lvstk.index = pd.MultiIndex.from_product(([row['year']], csv_lvstk.index, ['Livestock']))
+                lvstk_old_index = csv_lvstk.index.str.split(' - ').tolist()
 
+                # Add the year and land use category
+                csv_lvstk.index = pd.MultiIndex.from_tuples(zip([row['year']] * len(lvstk_old_index), 
+                                                                [i[0] for i in lvstk_old_index], 
+                                                                [i[1] for i in lvstk_old_index],
+                                                                ['Livestock']* len(lvstk_old_index)))
+
+                # The csv.index has 4 levels -> [year, land use, land use category, land category]
+                # where         year: int,                  [2010, 2011, ...,]
+                #               land use: str,              [Apples, Beef, ...]
+                #               land category: str          [modified land, natural land]
+                #               land use category: str,     [Crop, Livestock]
                 csv = pd.concat([csv_crop,csv_lvstk],axis=0)
             else:
-                csv = csv[[True if i in NON_AG_LANDUSE else False for i in  csv.index]]
-                csv.index = pd.MultiIndex.from_product(([row['year']], csv.index, ['Non-Agricultural Landuse']))
+                csv = csv[[True if i in NON_AG_LANDUSE else False for i in csv.index]]
+                
 
             CSVs.append(csv)
 
+        # remove unnecessary columns
+        GHG_df = pd.concat(CSVs,axis=0)
+
+        return GHG_df
+
         
 
-        # Convert the GHG to long format, so that each variable is in one column
-        GHG_df = pd.concat(CSVs,axis=0)
-        GHG_df = GHG_df.droplevel(0,axis=1)
+
+    def read_GHG_to_long(self):
         
-        GHG_df_long = GHG_df.copy()
+        # Define the index levels
+        idx_level_name = ['Year','Land use','Land category','Land use category']
+
+        # remove the first level in the multiindex columns
+        GHG_df_long = self.GHG_df.copy()
+        GHG_df_long = GHG_df_long.droplevel(0,axis=1)
+
+        # Squeeze the multiindex columns into a single concatenated by "+"
         GHG_df_long.columns = ["+".join(i) for i in GHG_df_long.columns.tolist()]
         GHG_df_long = GHG_df_long.reset_index()
-        GHG_df_long.columns = ['Year','Land use','Land use category'] + GHG_df_long.columns.tolist()[3:]
+        GHG_df_long.columns = idx_level_name + GHG_df_long.columns.tolist()[4:]
 
-        GHG_df_long = GHG_df_long.melt(id_vars=['Year','Land use','Land use category'],
+        # Melt the table to long format
+        GHG_df_long = GHG_df_long.melt(id_vars=idx_level_name,
                                             value_vars=GHG_df_long.columns.tolist()[3:],
                                             value_name='val_t')
 
-
+        # Get the GHG emissions in Mt CO2e
         GHG_df_long['Quantity (Mt CO2e)'] = GHG_df_long['val_t'] / 1e6
+
+        # Split the variable column into Irrigation and Sources
         GHG_df_long[['Irrigation','Sources']] = GHG_df_long['variable'].str.split('+',expand=True)
+
+        # Replace the Sources with the GHG names
+        GHG_df_long['Sources'] = GHG_df_long['Sources'].apply(lambda x: GHG_NAMES[x] if GHG_NAMES.get(x,None) else x)
+
+        # Drop unnecessary columns and reorder the columns
         GHG_df_long.drop(['val_t','variable'],axis=1,inplace=True)
-        GHG_df_long = GHG_df_long.reindex(columns=['Year','Land use category','Land use',
-                                                        'Irrigation','Sources', 'Quantity (Mt CO2e)'])
+        GHG_df_long = GHG_df_long.reindex(columns= idx_level_name + ['Irrigation','Sources', 'Quantity (Mt CO2e)'])
         
         return GHG_df_long
     
-
-
-
 
 
     def get_GHG_category(self):
@@ -177,16 +222,20 @@ Fields:
 
         return pd.concat([GHG_CO2,GHG_nonCO2],axis=0).reset_index(drop=True)
     
+        
+    
 
-
-
-
+################################################################
+# Functions to plot the GHG emissions of different categories  #
+################################################################
 
 
     def plot_GHG_crop_lvstk(self):
 
         # get the df
-        GHG_crop_lvstk_total = self.GHG_df_long.groupby(['Year','Land use category']).sum()['Quantity (Mt CO2e)'].reset_index()
+        GHG_crop_lvstk_total = self.GHG_df_long.groupby(['Year','Land use category','Land category']).sum()['Quantity (Mt CO2e)'].reset_index()
+        GHG_crop_lvstk_total['Landuse_land_cat'] = GHG_crop_lvstk_total.apply(lambda x: (x['Land use category'] + ' - ' + x['Land category']) 
+                                        if (x['Land use category'] != x['Land category']) else x['Land use category'], axis=1)
 
         # Create a base chart with the necessary transformations and encodings
         base_chart = alt.Chart(GHG_crop_lvstk_total).encode(
@@ -198,14 +247,15 @@ Fields:
 
         if self.GHG_type != 'Non-Agricultural Landuse':
             chart = base_chart.mark_bar().encode(
-            color=alt.Color('Land use category:N', legend=alt.Legend(
-                                                                    title="Landuse type",
-                                                                    orient='none',
-                                                                    legendX=350, legendY=-40,
-                                                                    direction='horizontal',
-                                                                    titleAnchor='middle')),  
+            color=alt.Color('Landuse_land_cat:N', 
+                            legend=alt.Legend(
+                                            title="Landuse type",
+                                            orient='none',
+                                            legendX=PLOT_WIDTH*0.23, legendY=-30,
+                                            direction='horizontal',
+                                            titleAnchor='middle')),
             y=alt.Y('Quantity (Mt CO2e):Q',
-                    title=f'{self.GHG_value_name} (Mt CO2e)',
+                    title=f'{self.GHG_value_name}',
                     scale=alt.Scale(reverse=self.reverse_scale,zero=False)),  
         )
             
@@ -219,7 +269,7 @@ Fields:
                                                 direction='horizontal',
                                                 titleAnchor='middle')),
             y=alt.Y('Quantity (Mt CO2e):Q',
-                    title=f'{self.GHG_value_name} (Mt CO2e)',
+                    title=f'{self.GHG_value_name}',
                     scale=alt.Scale(reverse=self.reverse_scale)),
         )
             
@@ -227,8 +277,8 @@ Fields:
         final_chart = alt.layer(
             chart,
         ).properties(
-            width=800,
-            height=450
+            width=PLOT_WIDTH,
+            height=PLOT_HEIGHT
         )
 
         return GHG_crop_lvstk_total, final_chart
@@ -246,8 +296,8 @@ Fields:
         tooltip=[alt.Tooltip('Irrigation', title='Irrigation'),
                 alt.Tooltip('Quantity (Mt CO2e):Q', title=f'{self.GHG_value_name}')]
         ).properties(
-            width=600,
-            height=400
+            width=PLOT_WIDTH,
+            height=PLOT_HEIGHT
         )
 
 
@@ -255,11 +305,11 @@ Fields:
             color=alt.Color('Irrigation:N',legend=alt.Legend(
                                                             title="Irrigation",
                                                             orient='none',
-                                                            legendX=350, legendY=-40,
+                                                            legendX=PLOT_WIDTH*0.4, legendY=-30,
                                                             direction='horizontal',
                                                             titleAnchor='middle')),  
             y=alt.Y('Quantity (Mt CO2e):Q',
-                    title=f'{self.GHG_value_name} (Mt CO2e)',
+                    title=f'{self.GHG_value_name}',
                     scale=alt.Scale(reverse=self.reverse_scale))
         )
 
@@ -268,8 +318,8 @@ Fields:
         final_chart = alt.layer(
             column_chart,
         ).properties(
-            width=800,
-            height=450
+            width=PLOT_WIDTH,
+            height=PLOT_HEIGHT
         )
 
         return GHG_lm_total, final_chart
@@ -288,8 +338,8 @@ Fields:
                 tooltip=[alt.Tooltip('GHG Category', title='GHG Category'),
                          alt.Tooltip('Quantity (Mt CO2e):Q', title=f'{self.GHG_value_name}')]
         ).properties(
-            width=600,
-            height=400
+            width=PLOT_WIDTH,
+            height=PLOT_HEIGHT
         )
 
 
@@ -297,11 +347,11 @@ Fields:
             color=alt.Color('GHG Category:N',legend=alt.Legend(
                                                             title="GHG Category",
                                                             orient='none',
-                                                            legendX=320, legendY=-30,
+                                                            legendX=PLOT_WIDTH*0.38, legendY=-30,
                                                             direction='horizontal',
                                                             titleAnchor='middle')),  
             y=alt.Y('Quantity (Mt CO2e):Q',
-                    title=f'{self.GHG_value_name} (Mt CO2e)',
+                    title=f'{self.GHG_value_name}',
                     scale=alt.Scale(reverse=self.reverse_scale))
         )
 
@@ -310,8 +360,8 @@ Fields:
         final_chart = alt.layer(
             column_chart,
         ).properties(
-            width=800,
-            height=450
+            width=PLOT_WIDTH,
+            height=PLOT_HEIGHT
         )
 
         return GHG_category_total, final_chart
@@ -328,8 +378,8 @@ Fields:
                 tooltip=[alt.Tooltip('Sources', title='GHG Sources'),
                         alt.Tooltip('Quantity (Mt CO2e):Q', title=f'{self.GHG_value_name}')]
         ).properties(
-            width=600,
-            height=400
+            width=PLOT_WIDTH,
+            height=PLOT_HEIGHT
         )
 
 
@@ -337,11 +387,11 @@ Fields:
             color=alt.Color('Sources:N',legend=alt.Legend(
                                                         title="GHG Sources",
                                                         orient='none',
-                                                        legendX=320, legendY=-30,
-                                                        direction='horizontal',
+                                                        legendX=PLOT_WIDTH + 10, legendY=PLOT_HEIGHT*0.25,
+                                                        direction='vertical',
                                                         titleAnchor='middle')),  
             y=alt.Y('Quantity (Mt CO2e):Q',
-                    title=f'{self.GHG_value_name} (Mt CO2e)',
+                    title=f'{self.GHG_value_name}',
                     scale=alt.Scale(reverse=self.reverse_scale))
         )
 
@@ -350,9 +400,11 @@ Fields:
         final_chart = alt.layer(
             column_chart,
         ).properties(
-            width=800,
-            height=450
-        )
+            width=PLOT_WIDTH,
+            height=PLOT_HEIGHT
+        ).configure_legend(
+            labelLimit = 0
+        ) 
 
         return GHG_sources_total, final_chart
 
@@ -373,11 +425,22 @@ Fields:
                      alt.Tooltip('Quantity (Mt CO2e):Q', title=f'{self.GHG_value_name}')],
             x="Quantity (Mt CO2e):Q",
             y="Land use:O",
-            color="Irrigation:N"
-        ).properties(width=500)
+            color=alt.Color("Irrigation:N",legend=alt.Legend(
+                                                        title="Irrigation",
+                                                        orient='none',
+                                                        legendX=PLOT_WIDTH*0.4, legendY=-40,
+                                                        direction='horizontal',
+                                                        titleAnchor='middle'))
+        ).properties(
+            width=PLOT_WIDTH,
+            height=PLOT_HEIGHT)
 
         return df_this_yr,plot
     
+
+
+
+
     def plot_GHG_lu_source(self,year):
         '''Input: year: int'''
         GHG_lu_source = self.GHG_df_long\
@@ -388,13 +451,25 @@ Fields:
         df_this_yr = GHG_lu_source.query(f'Year == {year}')
         plot = alt.Chart(df_this_yr).mark_circle().encode(
             alt.X('Land use:O'),
-            alt.Y('Sources:O'),
-            alt.Color('Irrigation:O'),
-            alt.Size('Quantity (Mt CO2e):Q'),
+            alt.Y('Sources:O',axis=alt.Axis(labelLimit=400)),
+            alt.Color('Irrigation:O',legend=alt.Legend(
+                                                        title="Irrigation",
+                                                        orient='none',
+                                                        legendX=PLOT_WIDTH+10, legendY=PLOT_HEIGHT*0.3,
+                                                        direction='vertical',
+                                                        titleAnchor='start')),
+            alt.Size('Quantity (Mt CO2e):Q',legend=alt.Legend(
+                                                        title='Qantity (Mt CO2e)',
+                                                        orient='none',
+                                                        legendX=PLOT_WIDTH+10, legendY=PLOT_HEIGHT*0.5,
+                                                        direction='vertical',
+                                                        titleAnchor='start')),
             tooltip=[alt.Tooltip('Land use:O', title='Landuse'),
                      alt.Tooltip('Sources:O', title=f'GHG source'),
                      alt.Tooltip('Quantity (Mt CO2e):Q', title=f'{self.GHG_value_name}')],
-        ).properties(width=500)
+        ).properties(
+            width=PLOT_WIDTH,
+            height=PLOT_HEIGHT)
 
         return df_this_yr,plot
 
