@@ -158,11 +158,17 @@ class get_GHG_plots():
                 csv = pd.concat([csv_crop,csv_lvstk],axis=0)
             else:
                 csv = csv[[True if i in NON_AG_LANDUSE else False for i in csv.index]]
+                # Add the year and land use category, land category, so that the csv.index has 4 levels
+                # which are matches the other GHG emissions data
+                csv.index = pd.MultiIndex.from_product(([row['year']], 
+                                                        csv.index, 
+                                                        ['Non-Agricultural Landuse'],
+                                                        ['Non-Agricultural Landuse']))
                 
-
+            # Append the csv to the list
             CSVs.append(csv)
 
-        # remove unnecessary columns
+        # Concatenate the csvs
         GHG_df = pd.concat(CSVs,axis=0)
 
         return GHG_df
@@ -240,39 +246,25 @@ class get_GHG_plots():
         # Create a base chart with the necessary transformations and encodings
         base_chart = alt.Chart(GHG_crop_lvstk_total).encode(
             x=alt.X('Year:O',axis=alt.Axis(title="Year", labelAngle=-90)),  # Treat year as an ordinal data type
-            tooltip=[alt.Tooltip('Land use category:O', title='Landuse type'),
+            tooltip=[alt.Tooltip('Landuse_land_cat:O', title='Landuse type'),
                      alt.Tooltip('Quantity (Mt CO2e):Q', title=f'{self.GHG_value_name}')]
         )
 
 
-        if self.GHG_type != 'Non-Agricultural Landuse':
-            chart = base_chart.mark_bar().encode(
-            color=alt.Color('Landuse_land_cat:N', 
-                            legend=alt.Legend(
-                                            title="Landuse type",
-                                            orient='none',
-                                            legendX=PLOT_WIDTH*0.23, legendY=-30,
-                                            direction='horizontal',
-                                            titleAnchor='middle')),
-            y=alt.Y('Quantity (Mt CO2e):Q',
-                    title=f'{self.GHG_value_name}',
-                    scale=alt.Scale(reverse=self.reverse_scale,zero=False)),  
+
+        chart = base_chart.mark_bar().encode(
+        color=alt.Color('Landuse_land_cat:N', 
+                        legend=alt.Legend(
+                                        title="Landuse type",
+                                        orient='none',
+                                        legendX=PLOT_WIDTH*0.23, legendY=-30,
+                                        direction='horizontal',
+                                        titleAnchor='middle')),
+        y=alt.Y('Quantity (Mt CO2e):Q',
+                title=f'{self.GHG_value_name}',
+                scale=alt.Scale(reverse=self.reverse_scale,zero=False)),  
         )
-            
-        else:
-            # use line chart
-            chart = base_chart.mark_line().encode(
-            color=alt.Color('Land use category:N',
-                            legend=alt.Legend(title="Landuse type",
-                                                orient='none',
-                                                legendX=350, legendY=-40,
-                                                direction='horizontal',
-                                                titleAnchor='middle')),
-            y=alt.Y('Quantity (Mt CO2e):Q',
-                    title=f'{self.GHG_value_name}',
-                    scale=alt.Scale(reverse=self.reverse_scale)),
-        )
-            
+             
 
         final_chart = alt.layer(
             chart,
@@ -347,8 +339,8 @@ class get_GHG_plots():
             color=alt.Color('GHG Category:N',legend=alt.Legend(
                                                             title="GHG Category",
                                                             orient='none',
-                                                            legendX=PLOT_WIDTH*0.38, legendY=-30,
-                                                            direction='horizontal',
+                                                            legendX=PLOT_WIDTH+10, legendY=PLOT_HEIGHT*0.5,
+                                                            direction='vertical',
                                                             titleAnchor='middle')),  
             y=alt.Y('Quantity (Mt CO2e):Q',
                     title=f'{self.GHG_value_name}',

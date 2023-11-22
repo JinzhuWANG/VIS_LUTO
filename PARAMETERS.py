@@ -2,7 +2,7 @@
 
 
 # Get the root directory of the data
-DATA_ROOT = '/home/docker_data/LUTO_DATA/2023_11_21__05_26_04__hard_mincost_RF5_P1e5_2010-2050_timeseries_-337Mt'
+DATA_ROOT = '../LUTO_DATA/2023_11_21__05_26_04__hard_mincost_RF5_P1e5_2010-2050_timeseries_-337Mt'
 
 # Define the plot settings
 PLOT_WIDTH = 600
@@ -59,13 +59,20 @@ GHG_NAMES = {
     'TCO2E_SEED': 'Pasture Seed production',
     'TCO2E_SOIL': 'Agricultural soils: Direct Soil Emissions (biogenic)',
     'TCO2E_DUNG_URINE': 'Agricultural soils: Animal production, dung and urine',
-    'TCO2E_ENTERIC': 'Livestock Enteric Fermentation (biogenic)'
+    'TCO2E_ENTERIC': 'Livestock Enteric Fermentation (biogenic)',
+
+    'TCO2E_Asparagopsis taxiformis': 'Asparagopsis taxiformis', 
+    'TCO2E_Precision Agriculture': 'Precision Agriculture',
+    'TCO2E_Ecological Grazing': 'Ecological Grazing',
 }
 
-GHG_CATEGORY = {'Agricultural soils: Animal production, dung and urine': {"CH4":0.5,
-                                     "CO2":0.5},
+GHG_CATEGORY = {'Agricultural soils: Animal production, dung and urine': {"CH4":0.5,"CO2":0.5},
                 'Livestock Enteric Fermentation (biogenic)':{'CH4':1},
-                'Agricultural soils: Direct Soil Emissions (biogenic)':{"N2O":1}}
+                'Agricultural soils: Direct Soil Emissions (biogenic)':{"N2O":1},
+                
+                'Asparagopsis taxiformis':{'Asparagopsis taxiformis':1},
+                'Precision Agriculture':{'Precision Agriculture':1},
+                'Ecological Grazing':{'Ecological Grazing':1}}
 
 
 # Text to look for in adding tags
