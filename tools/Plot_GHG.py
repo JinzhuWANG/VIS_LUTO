@@ -19,7 +19,7 @@ def plot_GHG_total(GHG_files, Net_emission):
         GHG_files
     ).mark_bar().encode(
         tooltip=[alt.Tooltip('base_name', title='GHG Category'),
-                alt.Tooltip('GHG_sum_Mt:Q', title='Emissions (Mt CO2e)')],
+                alt.Tooltip('GHG_sum_Mt:Q', title='Emissions (Mt CO2e)',format=",.2f")],
         x=alt.X('year:O',axis=alt.Axis(title="Year", labelAngle=-90)), 
         y=alt.Y('GHG_sum_Mt:Q',title='Emissions (Mt CO2e)'),  
         color=alt.Color('base_name:N',legend=alt.Legend(
@@ -41,7 +41,7 @@ def plot_GHG_total(GHG_files, Net_emission):
     ).transform_calculate(
         Cumulative_emissions =  'datum.year > 0 ? "Cumulative emissions" : "Cumulative emissions"'
     ).encode(  
-        tooltip=[alt.Tooltip('Net_emission_cum:Q',title='Cumulative Quantity (Mt CO2e)')],
+        tooltip=[alt.Tooltip('Net_emission_cum:Q',title='Cumulative Quantity (Mt CO2e)',format=",.2f")],
         color=alt.Color('Cumulative_emissions:N',
                         scale=alt.Scale(range=['#181818'])  ,
                         legend=alt.Legend(title=None,
@@ -62,7 +62,7 @@ def plot_GHG_total(GHG_files, Net_emission):
     ).mark_line(
         opacity=0.6
     ).encode(
-        tooltip=[alt.Tooltip('Net_emission:Q',title='Net Quantity (Mt CO2e)')],
+        tooltip=[alt.Tooltip('Net_emission:Q',title='Net Quantity (Mt CO2e)',format=",.2f")],
         color=alt.Color('Net_emission_color:N',
                         scale=alt.Scale(range=['black']),
                         legend=alt.Legend(
@@ -247,7 +247,7 @@ class get_GHG_plots():
         base_chart = alt.Chart(GHG_crop_lvstk_total).encode(
             x=alt.X('Year:O',axis=alt.Axis(title="Year", labelAngle=-90)),  # Treat year as an ordinal data type
             tooltip=[alt.Tooltip('Landuse_land_cat:O', title='Landuse type'),
-                     alt.Tooltip('Quantity (Mt CO2e):Q', title=f'{self.GHG_value_name}')]
+                     alt.Tooltip('Quantity (Mt CO2e):Q', title=f'{self.GHG_value_name}',format=",.2f")]
         )
 
 
@@ -286,7 +286,7 @@ class get_GHG_plots():
         base_chart = alt.Chart(GHG_lm_total).encode(
         x=alt.X('Year:O',axis=alt.Axis(title="Year", labelAngle=-90)),  # Treat year as an ordinal data type
         tooltip=[alt.Tooltip('Irrigation', title='Irrigation'),
-                alt.Tooltip('Quantity (Mt CO2e):Q', title=f'{self.GHG_value_name}')]
+                alt.Tooltip('Quantity (Mt CO2e):Q', title=f'{self.GHG_value_name}',format=",.2f")]
         ).properties(
             width=PLOT_WIDTH,
             height=PLOT_HEIGHT
@@ -328,7 +328,7 @@ class get_GHG_plots():
         base_chart = alt.Chart(GHG_category_total).encode(
                 x=alt.X('Year:O',axis=alt.Axis(title="Year", labelAngle=-90)),  # Treat year as an ordinal data type
                 tooltip=[alt.Tooltip('GHG Category', title='GHG Category'),
-                         alt.Tooltip('Quantity (Mt CO2e):Q', title=f'{self.GHG_value_name}')]
+                         alt.Tooltip('Quantity (Mt CO2e):Q', title=f'{self.GHG_value_name}',format=",.2f")]
         ).properties(
             width=PLOT_WIDTH,
             height=PLOT_HEIGHT
@@ -368,7 +368,7 @@ class get_GHG_plots():
         base_chart = alt.Chart(GHG_sources_total).encode(
                 x=alt.X('Year:O',axis=alt.Axis(title="Year", labelAngle=-90)),  # Treat year as an ordinal data type
                 tooltip=[alt.Tooltip('Sources', title='GHG Sources'),
-                        alt.Tooltip('Quantity (Mt CO2e):Q', title=f'{self.GHG_value_name}')]
+                        alt.Tooltip('Quantity (Mt CO2e):Q', title=f'{self.GHG_value_name}',format=",.2f")]
         ).properties(
             width=PLOT_WIDTH,
             height=PLOT_HEIGHT
@@ -414,7 +414,7 @@ class get_GHG_plots():
         df_this_yr = GHG_lu_lm.query('Year == @year').reset_index(drop=True)
         plot = alt.Chart(df_this_yr).mark_bar().encode(
             tooltip=[alt.Tooltip('Land use:O', title='Landuse'),
-                     alt.Tooltip('Quantity (Mt CO2e):Q', title=f'{self.GHG_value_name}')],
+                     alt.Tooltip('Quantity (Mt CO2e):Q', title=f'{self.GHG_value_name}',format=",.2f")],
             x="Quantity (Mt CO2e):Q",
             y="Land use:O",
             color=alt.Color("Irrigation:N",legend=alt.Legend(
@@ -458,7 +458,7 @@ class get_GHG_plots():
                                                         titleAnchor='start')),
             tooltip=[alt.Tooltip('Land use:O', title='Landuse'),
                      alt.Tooltip('Sources:O', title=f'GHG source'),
-                     alt.Tooltip('Quantity (Mt CO2e):Q', title=f'{self.GHG_value_name}')],
+                     alt.Tooltip('Quantity (Mt CO2e):Q', title=f'{self.GHG_value_name}',format=",.2f")],
         ).properties(
             width=PLOT_WIDTH,
             height=PLOT_HEIGHT)
