@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Welcome to your Jupyter Book &#8212; My sample book</title>
+    <title>A visulization on LUTO products &#8212; My sample book</title>
   
   
   
@@ -162,14 +162,14 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1 current active">
                 <a class="reference internal" href="#">
-                    Welcome to your Jupyter Book
+                    A visulization on LUTO products
                 </a>
             </li>
         </ul>
         <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="VIS_01_GHG.html">The Greenhouse Gas (GHS) emissions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="VIS_02_Area.html">The Area changes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Map_01_Landuse_map.html">Map</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Map_01_Landuse_map.html">The map of LUTO outputs</a></li>
 </ul>
 
     </div>
@@ -340,7 +340,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -351,11 +353,24 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Welcome to your Jupyter Book</h1>
+    <h1>A visulization on LUTO products</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-luto">About LUTO</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-it-works">How it works?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-detailes">Running detailes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-parameters">Input Parameters</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -365,20 +380,68 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="welcome-to-your-jupyter-book">
-<h1>Welcome to your Jupyter Book<a class="headerlink" href="#welcome-to-your-jupyter-book" title="Permalink to this heading">#</a></h1>
-<p>This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out <a class="reference external" href="https://jupyterbook.org">the Jupyter Book documentation</a> for more information.</p>
-<p>Check out the content pages bundled with this sample book to see more.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="a-visulization-on-luto-products">
+<h1>A visulization on LUTO products<a class="headerlink" href="#a-visulization-on-luto-products" title="Permalink to this heading">#</a></h1>
+<section id="about-luto">
+<h2>About LUTO<a class="headerlink" href="#about-luto" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>LUTO  estimates Australian land use futures (2010-2100).</p></li>
+<li><p>Integrating environmental and economic drivers.</p></li>
+<li><p>Considering Global change and policy scenarios.</p></li>
+</ul>
+<section id="how-it-works">
+<h3>How it works?<a class="headerlink" href="#how-it-works" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>The LUTO model takes an agricultural land use map as the baseline.</p></li>
+<li><p>Combining environmental and economic data to identify potential land use change:</p>
+<ul>
+<li><p>agriculture, carbon plantings, environmental plantings</p></li>
+<li><p>biodiversity services , biofuel production <em>(in LUTO v.1)</em></p></li>
+</ul>
+</li>
+<li><p>Corresponding supply of ecosystem services</p>
+<ul>
+<li><p>agriculture, emissions abatement, water resources</p></li>
+<li><p>biodiversity services , biofuel production <em>(in LUTO v.1)</em></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="running-detailes">
+<h3>Running detailes<a class="headerlink" href="#running-detailes" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>The model works at a grid cell resolution of 0.01 degrees (~1.1 km)</p></li>
+<li><p>At a annual time-step from 2010 – 2100.</p></li>
+<li><p>A Bottom-up model that identifies</p>
+<ul>
+<li><p>location, type, and timing of potential land use change</p></li>
+</ul>
+</li>
+<li><p>Given changes in the relative profitability of land use options determined by</p>
+<ul>
+<li><p>productivity, prices, costs, and adoption behaviour.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="input-parameters">
+<h3>Input Parameters<a class="headerlink" href="#input-parameters" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Carbon price, Energy price, Eood demand, Global outlooks,</p></li>
+<li><p>Biofuel and biodiversity (<em>in development</em>)</p></li>
+<li><p>Cost of land use transitions and impacts on ecosystem services.</p></li>
+</ul>
+<p>The 1.0 version of the model is provided here as used to run the 648 scenarios in Bryan et. al. 2015.</p>
+<p>Input data is available in the CSIRO DAP collection Land Use Trade-Offs (LUTO) Model Input Data from <a class="reference external" href="https://doi.org/10.25919/591f-8m60">https://doi.org/10.25919/591f-8m60</a></p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="VIS_01_GHG.html">The Greenhouse Gas (GHS) emissions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="VIS_02_Area.html">The Area changes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Map_01_Landuse_map.html">Map</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Map_01_Landuse_map.html">The map of LUTO outputs</a></li>
 </ul>
 </div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -426,6 +489,25 @@ It does not go in-depth into any particular topic - check out <a class="referenc
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-luto">About LUTO</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-it-works">How it works?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-detailes">Running detailes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-parameters">Input Parameters</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

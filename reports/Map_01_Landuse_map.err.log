@@ -17,20 +17,18 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-# HIDDEN
-import altair as alt
-
-from tools import get_all_files, get_GHG_file_df
-from tools.Plot_GHG import get_GHG_plots,plot_GHG_total
+# HIDE CODE
+from branca.element import Figure
+from folium import Map, TileLayer
+from tools import get_range_tif_request
 ------------------
 
 [1;31m---------------------------------------------------------------------------[0m
 [1;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Cell [1;32mIn[2], line 4[0m
-[0;32m      1[0m [38;5;66;03m# HIDDEN[39;00m
-[0;32m      2[0m [38;5;28;01mimport[39;00m [38;5;21;01maltair[39;00m [38;5;28;01mas[39;00m [38;5;21;01malt[39;00m
-[1;32m----> 4[0m [38;5;28;01mfrom[39;00m [38;5;21;01mtools[39;00m [38;5;28;01mimport[39;00m get_all_files, get_GHG_file_df
-[0;32m      5[0m [38;5;28;01mfrom[39;00m [38;5;21;01mtools[39;00m[38;5;21;01m.[39;00m[38;5;21;01mPlot_GHG[39;00m [38;5;28;01mimport[39;00m get_GHG_plots,plot_GHG_total
+Cell [1;32mIn[1], line 4[0m
+[0;32m      2[0m [38;5;28;01mfrom[39;00m [38;5;21;01mbranca[39;00m[38;5;21;01m.[39;00m[38;5;21;01melement[39;00m [38;5;28;01mimport[39;00m Figure
+[0;32m      3[0m [38;5;28;01mfrom[39;00m [38;5;21;01mfolium[39;00m [38;5;28;01mimport[39;00m Map, TileLayer
+[1;32m----> 4[0m [38;5;28;01mfrom[39;00m [38;5;21;01mtools[39;00m [38;5;28;01mimport[39;00m get_range_tif_request
 
 [1;31mModuleNotFoundError[0m: No module named 'tools'
 ModuleNotFoundError: No module named 'tools'
