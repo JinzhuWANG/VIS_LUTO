@@ -24,9 +24,13 @@ def extract_dtype_from_path(path):
             'cross_table':['crosstab','switches'],
             'quantity':['quantity'],
             }
-    # Get the key if the file path contains the file pattern
-    f_cat = [k for k,v in f_cat.items() if any(re.compile(fr'^{i}').search(os.path.basename(path)) for i in v)][0]
-
+    
+    if not 'lucc_separate' in path:
+        # Get the key if the file path contains the file pattern
+        f_cat = [k for k,v in f_cat.items() if any(re.compile(fr'^{i}').search(os.path.basename(path)) for i in v)][0]
+    else:
+        luseperate_suffix = re.compile(r'lucc_separate/(.*)_\d').findall(path)[0]
+        f_cat = f'lumap_separate_{luseperate_suffix}'
     return f_cat
 
 

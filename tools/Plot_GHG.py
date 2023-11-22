@@ -112,7 +112,7 @@ Fields:
 
         # Read GHG emissions of ag lucc
         CSVs = []
-        for _,row in tqdm(self.GHG_files.iterrows(),total=self.GHG_files.shape[0]):
+        for _,row in self.GHG_files.iterrows():
             csv = pd.read_csv(row['path'],index_col=0,header=[0,1,2]).drop('SUM',axis=1)
 
             # Get the land use and land use category

@@ -42,4 +42,4 @@ NOTEBOOK_META_DICT = {
 
 
 # Get the root directory of the data
-DATA_ROOT = '../2023_11_20__01_27_24_hard_mincost_RF5_P1e8_Won_Gon'
+DATA_ROOT = '/home/docker_data/LUTO_DATA/2023_11_21__05_26_04__hard_mincost_RF5_P1e5_2010-2050_timeseries_-337Mt'
