@@ -1,6 +1,7 @@
 altair
 pandas
 numpy
+rasterio
 jupyterlab
 jupyter-book
 matplotlib
