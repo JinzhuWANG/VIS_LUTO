@@ -1,8 +1,10 @@
 from glob import glob
+import os
+import pandas as pd
 
 from tqdm.auto import tqdm
 from tools import add_meta_to_nb, get_all_files
-from tools.TIF2color import convert_1band_to_4band
+from tools.TIF2color import ParallelConvertDecorator, convert_1band_to_4band, create_qml_from_csv, hex_color_to_numeric
 
 from PARAMETERS import DATA_ROOT
 
@@ -15,15 +17,28 @@ from PARAMETERS import DATA_ROOT
 files = get_all_files(DATA_ROOT)
 tif_files = files.query('base_ext.str.contains("tiff")')['path'].tolist()
 
+# remove previously converted tif files
+for tif_file in tif_files:
+    if 'color' in tif_file:
+        os.remove(tif_file)
+        tif_files.remove(tif_file)
+
 # convert tif to 4-bands-colored tif
-for tif_file in tqdm(tif_files):
-    # skip existing colored tif
-    if 'colored' in tif_file:
-        continue
-    # set binary_color to True if the tif is land use tif
-    binary_color=True if 'lu' in tif_file else False
-    # convert tif to 4-bands-colored tif
-    convert_1band_to_4band(tif_file)
+num_workers = min(8, files['year'].nunique())
+parallel_decorator = ParallelConvertDecorator(max_workers=num_workers, input_files=tif_files)
+convert_tif_to_4band_parallel = parallel_decorator(convert_1band_to_4band)
+convert_tif_to_4band_parallel()
+
+
+# create color style files
+color_csvs = pd.read_csv('tools/color_map.csv')
+color_csvs['color_num'] = color_csvs['color_HEX'].apply(lambda x: hex_color_to_numeric(x))
+create_qml_from_csv(color_csvs['lu_code'], 
+                    color_csvs['color_num'],
+                    color_csvs['lu_desc'])
+
+
+
 
 
 ##########################################################

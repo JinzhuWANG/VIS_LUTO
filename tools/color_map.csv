@@ -1,32 +1,32 @@
-lu_code,lu_desc,color_HEX
-0,Apples,#a63634
-1,Beef - modified land,#b09c83
-2,Beef - natural land,#d4bea6
-3,Citrus,#e79029
-4,Cotton,#c3cada
-5,Dairy - modified land,#9c9d13
-6,Dairy - natural land,#beb678
-7,Grapes,#7298c7
-8,Hay,#c47646
-9,Nuts,#6f4328
-10,Other non-cereal crops,#bf8d7e
-11,Pears,#ad5d44
-12,Plantation fruit,#a76d5f
-13,Rice,#7f7969
-14,Sheep - modified land,#f0c662
-15,Sheep - natural land,#e2bd76
-16,Stone fruit,#704228
-17,Sugar,#bc8463
-18,Summer cereals,#dedfb7
-19,Summer legumes,#757448
-20,Summer oilseeds,#d8b6b4
-21,Tropical stone fruit,#408dd5
-22,Unallocated - modified land,#000000
-23,Unallocated - natural land,#c8d3db
-24,Vegetables,#a88571
-25,Winter cereals,#fcb819
-26,Winter legumes,#49482a
-27,Winter oilseeds,#d6a193
-100,Environmental Planting,#007a53
--1,Non-agricultural land,#666b65
--2,"Water Bodies, cites etc.",#ffffff
+lu_code,lu_desc,color_HEX,color_num
+0,Apples,#a63634,"(166, 54, 52, 255)"
+1,Beef - modified land,#b09c83,"(176, 156, 131, 255)"
+2,Beef - natural land,#d4bea6,"(212, 190, 166, 255)"
+3,Citrus,#e79029,"(231, 144, 41, 255)"
+4,Cotton,#c3cada,"(195, 202, 218, 255)"
+5,Dairy - modified land,#9c9d13,"(156, 157, 19, 255)"
+6,Dairy - natural land,#beb678,"(190, 182, 120, 255)"
+7,Grapes,#7298c7,"(114, 152, 199, 255)"
+8,Hay,#c47646,"(196, 118, 70, 255)"
+9,Nuts,#6f4328,"(111, 67, 40, 255)"
+10,Other non-cereal crops,#bf8d7e,"(191, 141, 126, 255)"
+11,Pears,#ad5d44,"(173, 93, 68, 255)"
+12,Plantation fruit,#a76d5f,"(167, 109, 95, 255)"
+13,Rice,#7f7969,"(127, 121, 105, 255)"
+14,Sheep - modified land,#f0c662,"(240, 198, 98, 255)"
+15,Sheep - natural land,#e2bd76,"(226, 189, 118, 255)"
+16,Stone fruit,#704228,"(112, 66, 40, 255)"
+17,Sugar,#bc8463,"(188, 132, 99, 255)"
+18,Summer cereals,#dedfb7,"(222, 223, 183, 255)"
+19,Summer legumes,#757448,"(117, 116, 72, 255)"
+20,Summer oilseeds,#d8b6b4,"(216, 182, 180, 255)"
+21,Tropical stone fruit,#408dd5,"(64, 141, 213, 255)"
+22,Unallocated - modified land,#000000,"(0, 0, 0, 255)"
+23,Unallocated - natural land,#c8d3db,"(200, 211, 219, 255)"
+24,Vegetables,#a88571,"(168, 133, 113, 255)"
+25,Winter cereals,#fcb819,"(252, 184, 25, 255)"
+26,Winter legumes,#49482a,"(73, 72, 42, 255)"
+27,Winter oilseeds,#d6a193,"(214, 161, 147, 255)"
+100,Environmental Planting,#007a53,"(0, 122, 83, 255)"
+-1,Non-agricultural land,#666b65,"(102, 107, 101, 255)"
+-2,"Water Bodies, cites etc.",#ffffff,"(255, 255, 255, 255)"
