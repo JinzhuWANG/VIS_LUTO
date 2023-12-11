@@ -49,6 +49,7 @@ def plot_quantity(df):
             x=alt.X('year:O', title='Year'),
             y=alt.Y('Prod_targ_year (tonnes, ML):Q', title='Production (tonnes, ML)'),
             color=alt.Color('Commodity:N', title='Commodity',
+                            scale=alt.Scale(scheme='category20'),
                             legend=alt.Legend(title="Commodity",
                                               orient='none',
                                               legendX=PLOT_WIDTH+20, legendY=+80,

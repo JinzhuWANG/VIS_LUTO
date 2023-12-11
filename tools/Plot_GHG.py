@@ -377,7 +377,9 @@ class get_GHG_plots():
 
 
         column_chart = base_chart.mark_bar().encode(
-            color=alt.Color('Sources:N',legend=alt.Legend(
+            color=alt.Color('Sources:N',
+                            scale=alt.Scale(scheme='tableau20'),
+                            legend=alt.Legend(
                                                         title="GHG Sources",
                                                         orient='none',
                                                         legendX=PLOT_WIDTH + 10, legendY=PLOT_HEIGHT*0.25,

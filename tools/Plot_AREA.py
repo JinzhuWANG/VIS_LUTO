@@ -169,6 +169,7 @@ def plot_area_lu(df):
         y = alt.Y('Area (km2):Q',title='Area (km2)',scale=alt.Scale(domain=[0, 4700000])),
         color = alt.Color('Land use:N',
                         title='Land use',
+                        scale=alt.Scale(scheme='category20'),
                         legend=alt.Legend(
                                             title="Land use",
                                             orient='none',
@@ -269,12 +270,14 @@ def plot_area_am_lu(df):
     plot = alt.Chart(df).mark_bar().encode(
         x = alt.X('Year:O',title='Year'),
         y = alt.Y('Area (km2):Q',title='Area (km2)'),
-        color = alt.Color('Land use:N',title='Land use',legend=alt.Legend(
-                                                                        title="Agricultural management",
-                                                                        orient='none',
-                                                                        legendX=710, legendY=90,
-                                                                        direction='vertical',
-                                                                        titleAnchor='start')),
+        color = alt.Color('Land use:N',title='Land use',
+                          scale=alt.Scale(scheme='turbo'),
+                          legend=alt.Legend(
+                                            title="Agricultural management",
+                                            orient='none',
+                                            legendX=710, legendY=90,
+                                            direction='vertical',
+                                            titleAnchor='start')),
         tooltip = ['Year','Land use','Area (km2)']
     ).properties(
         width=700,
