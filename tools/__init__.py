@@ -24,6 +24,8 @@ def extract_dtype_from_path(path):
             'lumap_separate':[r'(Non-)?Agriculture Landuse_\d{2}'],
             'cross_table':['crosstab','switches'],
             'quantity':['quantity'],
+            'revenue':['revenue'],
+            'cost':['cost']
             }
     
     if not 'lucc_separate' in path:
@@ -32,7 +34,13 @@ def extract_dtype_from_path(path):
     else:
         luseperate_suffix = re.compile(r'lucc_separate/(.*)_\d').findall(path)[0]
         f_cat = f'lumap_separate_{luseperate_suffix}'
-    return f_cat
+
+    # Check if this comes from the begin_end_compare folder
+    if 'begin_end_compare' in path:
+        yr_type = 'begin_end_year'
+    else:
+        yr_type = 'single_year'
+    return yr_type,f_cat
 
 
 def get_all_files(data_root):
@@ -53,9 +61,13 @@ def get_all_files(data_root):
     # Get the year and the run number from the file name
     file_paths = pd.DataFrame({'path':file_paths})
     file_paths.insert(0, 'year', [re.compile(r'out_(\d{4})').findall(i)[0] for i in file_paths['path']])
-    file_paths.insert(1, 'catetory', file_paths['path'].apply(extract_dtype_from_path))
+
+    yr_types, f_cats = zip(*[extract_dtype_from_path(i) for i in file_paths['path']])
+    file_paths.insert(1, 'year_types', yr_types)
+    file_paths.insert(2, 'catetory', f_cats)
+
     file_paths[['base_name','base_ext']] = [os.path.splitext(os.path.basename(i)) for i in file_paths['path']]
-    file_paths = file_paths.reindex(columns=['year','catetory','base_name','base_ext','path'])
+    file_paths = file_paths.reindex(columns=['year','year_types','catetory','base_name','base_ext','path'])
 
     file_paths['year'] = file_paths['year'].astype(int)
 
@@ -64,7 +76,7 @@ def get_all_files(data_root):
 
 def get_GHG_file_df(all_files_df):
     # Get only GHG_seperate files
-    GHG_files = all_files_df.query('catetory == "GHG" and base_name != "GHG_emissions" ').reset_index(drop=True)
+    GHG_files = all_files_df.query('catetory == "GHG" and base_name != "GHG_emissions" and year_types == "single_year"').reset_index(drop=True)
     GHG_files['GHG_sum_t'] = GHG_files['path'].apply(lambda x: pd.read_csv(x,index_col=0).loc['SUM','SUM'])
     GHG_files = GHG_files.replace({'base_name': GHG_FNAME2TYPE})
 

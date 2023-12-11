@@ -51,7 +51,9 @@ def plot_GHG_total(GHG_files, Net_emission):
                                         titleAnchor='middle')),
         x=alt.X('year:O'),
         y=alt.Y('Net_emission_cum:Q',title='Emissions (Mt CO2e)'), 
-    )
+    ).properties(
+        width=PLOT_WIDTH,
+        height=PLOT_HEIGHT)
 
 
     # Create a line chart for net emissions
@@ -77,7 +79,6 @@ def plot_GHG_total(GHG_files, Net_emission):
 
     # Combine the layers into a final chart
     final_chart = alt.layer(
-        column_chart_cumsum,
         column_chart_individual,
         line_chart_net,
     ).properties(
@@ -88,7 +89,7 @@ def plot_GHG_total(GHG_files, Net_emission):
     )
 
 
-    return final_chart
+    return column_chart_cumsum,final_chart
 
 
 
