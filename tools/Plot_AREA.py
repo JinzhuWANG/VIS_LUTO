@@ -271,7 +271,7 @@ def plot_area_am_lu(df):
         x = alt.X('Year:O',title='Year'),
         y = alt.Y('Area (km2):Q',title='Area (km2)'),
         color = alt.Color('Land use:N',title='Land use',
-                          scale=alt.Scale(scheme='turbo'),
+                          scale=alt.Scale(scheme='tableau20'),
                           legend=alt.Legend(
                                             title="Agricultural management",
                                             orient='none',

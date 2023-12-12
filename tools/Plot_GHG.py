@@ -27,7 +27,7 @@ def plot_GHG_total(GHG_files, Net_emission):
                                                 orient='none',
                                                 legendX=PLOT_WIDTH+10, legendY=PLOT_HEIGHT*0.3,
                                                 direction='vertical',
-                                                titleAnchor='middle')), 
+                                                titleAnchor='start')), 
         
     )
 
@@ -48,7 +48,7 @@ def plot_GHG_total(GHG_files, Net_emission):
                                         orient='none',
                                         legendX=PLOT_WIDTH+10, legendY=PLOT_HEIGHT*0.45,
                                         direction='vertical',
-                                        titleAnchor='middle')),
+                                        titleAnchor='start')),
         x=alt.X('year:O'),
         y=alt.Y('Net_emission_cum:Q',title='Emissions (Mt CO2e)'), 
     ).properties(
@@ -72,7 +72,7 @@ def plot_GHG_total(GHG_files, Net_emission):
                                         orient='none',
                                         legendX=PLOT_WIDTH+10, legendY=PLOT_HEIGHT*0.48,
                                         direction='vertical',
-                                        titleAnchor='middle')),
+                                        titleAnchor='start')),
         x=alt.X('year:O'),
         y=alt.Y('Net_emission:Q',title='Emissions (Mt CO2e)'))
 
@@ -248,7 +248,7 @@ class get_GHG_plots():
         base_chart = alt.Chart(GHG_crop_lvstk_total).encode(
             x=alt.X('Year:O',axis=alt.Axis(title="Year", labelAngle=-90)),  # Treat year as an ordinal data type
             tooltip=[alt.Tooltip('Landuse_land_cat:O', title='Landuse type'),
-                     alt.Tooltip('Quantity (Mt CO2e):Q', title=f'{self.GHG_value_name}',format=",.2f")]
+                     alt.Tooltip('Quantity (Mt CO2e):Q', title=f'{self.GHG_value_name}',)]
         )
 
 
@@ -342,7 +342,7 @@ class get_GHG_plots():
                                                             orient='none',
                                                             legendX=PLOT_WIDTH+10, legendY=PLOT_HEIGHT*0.5,
                                                             direction='vertical',
-                                                            titleAnchor='middle')),  
+                                                            titleAnchor='start')),  
             y=alt.Y('Quantity (Mt CO2e):Q',
                     title=f'{self.GHG_value_name}',
                     scale=alt.Scale(reverse=self.reverse_scale))
@@ -384,7 +384,7 @@ class get_GHG_plots():
                                                         orient='none',
                                                         legendX=PLOT_WIDTH + 10, legendY=PLOT_HEIGHT*0.25,
                                                         direction='vertical',
-                                                        titleAnchor='middle')),  
+                                                        titleAnchor='start')),  
             y=alt.Y('Quantity (Mt CO2e):Q',
                     title=f'{self.GHG_value_name}',
                     scale=alt.Scale(reverse=self.reverse_scale))
@@ -425,7 +425,7 @@ class get_GHG_plots():
                                                         orient='none',
                                                         legendX=PLOT_WIDTH*0.4, legendY=-40,
                                                         direction='horizontal',
-                                                        titleAnchor='middle'))
+                                                        titleAnchor='start'))
         ).properties(
             width=PLOT_WIDTH,
             height=PLOT_HEIGHT)
