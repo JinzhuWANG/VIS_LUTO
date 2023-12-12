@@ -19,6 +19,7 @@ Traceback (most recent call last):
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
 # HIDDEN
+import folium
 from folium import Map, TileLayer
 from tools import get_range_tif_request
 import leafmap
@@ -28,12 +29,12 @@ import pandas as pd
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Cell [0;32mIn[1], line 3[0m
-[1;32m      1[0m [38;5;66;03m# HIDDEN[39;00m
-[1;32m      2[0m [38;5;28;01mfrom[39;00m [38;5;21;01mfolium[39;00m [38;5;28;01mimport[39;00m Map, TileLayer
-[0;32m----> 3[0m [38;5;28;01mfrom[39;00m [38;5;21;01mtools[39;00m [38;5;28;01mimport[39;00m get_range_tif_request
-[1;32m      4[0m [38;5;28;01mimport[39;00m [38;5;21;01mleafmap[39;00m
-[1;32m      5[0m [38;5;28;01mimport[39;00m [38;5;21;01mpandas[39;00m [38;5;28;01mas[39;00m [38;5;21;01mpd[39;00m
+Cell [0;32mIn[1], line 4[0m
+[1;32m      2[0m [38;5;28;01mimport[39;00m [38;5;21;01mfolium[39;00m
+[1;32m      3[0m [38;5;28;01mfrom[39;00m [38;5;21;01mfolium[39;00m [38;5;28;01mimport[39;00m Map, TileLayer
+[0;32m----> 4[0m [38;5;28;01mfrom[39;00m [38;5;21;01mtools[39;00m [38;5;28;01mimport[39;00m get_range_tif_request
+[1;32m      5[0m [38;5;28;01mimport[39;00m [38;5;21;01mleafmap[39;00m
+[1;32m      6[0m [38;5;28;01mimport[39;00m [38;5;21;01mpandas[39;00m [38;5;28;01mas[39;00m [38;5;21;01mpd[39;00m
 
 [0;31mModuleNotFoundError[0m: No module named 'tools'
 
