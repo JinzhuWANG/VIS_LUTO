@@ -70,6 +70,9 @@ def get_all_files(data_root):
     file_paths = file_paths.reindex(columns=['year','year_types','catetory','base_name','base_ext','path'])
 
     file_paths['year'] = file_paths['year'].astype(int)
+    
+    # remove the datatime stamp from the base_name
+    file_paths['base_name'] = file_paths['base_name'].apply(lambda x: re.sub(r'_\d{4}.*\d{2}','',x))
 
     return file_paths
 
