@@ -6,3 +6,6 @@ root: intro
 chapters:
 - file: VIS_01_GHG
 - file: VIS_02_Area
+- file: VIS_03_Quantity_Economics
+- file: VIS_04_Water
+- file: Map_01_Landuse_map

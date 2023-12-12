@@ -45,9 +45,14 @@ create_qml_from_csv(color_csvs['lu_code'],
 #             Add meta data to the notebooks             #
 ##########################################################
 
-# get the notebook paths
-nb_paths = glob('*.ipynb')
+# remove the notebooks in the ebook folder
+ebook_paths = glob('ebook/*.ipynb')
+for nb_path in ebook_paths:
+    os.remove(nb_path)
+
 
 # add the meta data to the notebooks
+nb_paths = glob('*.ipynb')
 for nb_path in nb_paths:
     add_meta_to_nb(nb_path)
+    os.system(f'cp {nb_path} ebook/')

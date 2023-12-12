@@ -285,3 +285,62 @@ def plot_cost_water(cost_df):
     )
 
     return plot
+
+
+
+def get_profit_plot(revenue_df,cost_df):
+    
+    rev_source = revenue_df.groupby(['year', 'Source']).sum(numeric_only=True).reset_index()
+    cost_source = cost_df.groupby(['year', 'Source']).sum(numeric_only=True).reset_index()
+
+    rev_cost_source = rev_source.merge(cost_source, on=['year', 'Source'], suffixes=('_rev', '_cost'))
+
+    # rename columns
+    rev_cost_source = rev_cost_source.rename(columns={'value (billion)_rev': 'Revenue (billion)',
+                                                    'value (billion)_cost': 'Cost (billion)'})
+    # calculate profit
+    rev_cost_source['Cost (billion)'] = -rev_cost_source['Cost (billion)']
+    rev_cost_source['Profit (billion)'] = rev_cost_source['Revenue (billion)'] + rev_cost_source['Cost (billion)']
+
+    rev_cost_all = rev_cost_source.groupby('year').sum(numeric_only=True).reset_index()
+
+    # add two dummy columns for plotting the color of rev and cost
+    rev_cost_all['rev_color'] = 'Revenue'
+    rev_cost_all['cost_color'] = 'Cost'
+
+    base = alt.Chart(rev_cost_all).encode(
+        x=alt.X('year:O', title='Year'),
+    )
+
+    revenue_plot = base.mark_bar(size=6,xOffset=-3).encode(
+        y=alt.Y('Revenue (billion):Q', title='Value (billion)'),
+        color=alt.Color('rev_color:N',
+                        scale=alt.Scale(range=['#1f77b4']),
+                        legend=alt.Legend(
+                                        title=None,
+                                        orient='none',
+                                        legendX=PLOT_WIDTH+10, legendY=PLOT_HEIGHT*0.48,
+                                        direction='vertical',
+                                        titleAnchor='start')),
+    ) 
+
+    cost_plot = base.mark_bar(size=6,xOffset=3,color='#ff7f0e').encode(
+        y=alt.Y('Revenue (billion):Q'),
+        y2=alt.Y2('Profit (billion):Q'),
+        color=alt.Color('cost_color:N',
+                        scale=alt.Scale(range=['#ff7f0e']),
+                        legend=alt.Legend(
+                                        title=None,
+                                        orient='none',
+                                        legendX=PLOT_WIDTH+10, legendY=PLOT_HEIGHT*0.45,
+                                        direction='vertical',
+                                        titleAnchor='start')),
+    )
+
+    plot = alt.layer(revenue_plot, cost_plot).properties(
+                width=PLOT_WIDTH,
+                height=PLOT_HEIGHT).resolve_scale(
+        color='independent'
+    )
+    
+    return plot

@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Welcome to your Jupyter Book &#8212; My sample book</title>
+    <title>About LUTO &#8212; My sample book</title>
   
   
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,9 +38,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -138,6 +138,7 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="#">
@@ -162,13 +163,16 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1 current active">
                 <a class="reference internal" href="#">
-                    Welcome to your Jupyter Book
+                    About LUTO
                 </a>
             </li>
         </ul>
         <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="VIS_01_GHG.html">The Greenhouse Gas (GHS) emissions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="VIS_02_Area.html">The Area changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VIS_03_Quantity_Economics.html">Agricultural Comodities and economic indicators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VIS_04_Water.html">Water usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Map_01_Landuse_map.html">Geospatial maps</a></li>
 </ul>
 
     </div>
@@ -322,6 +326,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -332,6 +337,7 @@ document.write(`
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -339,7 +345,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -350,11 +358,21 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Welcome to your Jupyter Book</h1>
+    <h1>About LUTO</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-it-works">How it works?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-detailes">Running detailes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-parameters">Input Parameters</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -364,19 +382,67 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="welcome-to-your-jupyter-book">
-<h1>Welcome to your Jupyter Book<a class="headerlink" href="#welcome-to-your-jupyter-book" title="Permalink to this heading">#</a></h1>
-<p>This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out <a class="reference external" href="https://jupyterbook.org">the Jupyter Book documentation</a> for more information.</p>
-<p>Check out the content pages bundled with this sample book to see more.</p>
+  <section id="about-luto">
+<h1>About LUTO<a class="headerlink" href="#about-luto" title="Permalink to this heading">#</a></h1>
+<ul class="simple">
+<li><p>LUTO  estimates Australian land use futures (2010-2100).</p></li>
+<li><p>Integrating environmental and economic drivers.</p></li>
+<li><p>Considering Global change and policy scenarios.</p></li>
+</ul>
+<section id="how-it-works">
+<h2>How it works?<a class="headerlink" href="#how-it-works" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>The LUTO model takes an agricultural land use map as the baseline.</p></li>
+<li><p>Combining environmental and economic data to identify potential land use change:</p>
+<ul>
+<li><p>agriculture, carbon plantings, environmental plantings</p></li>
+<li><p>biodiversity services , biofuel production <em>(in LUTO v.1)</em></p></li>
+</ul>
+</li>
+<li><p>Corresponding supply of ecosystem services</p>
+<ul>
+<li><p>agriculture, emissions abatement, water resources</p></li>
+<li><p>biodiversity services , biofuel production <em>(in LUTO v.1)</em></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="running-detailes">
+<h2>Running detailes<a class="headerlink" href="#running-detailes" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>The model works at a grid cell resolution of 0.01 degrees (~1.1 km)</p></li>
+<li><p>At a annual time-step from 2010 – 2100.</p></li>
+<li><p>A Bottom-up model that identifies</p>
+<ul>
+<li><p>location, type, and timing of potential land use change</p></li>
+</ul>
+</li>
+<li><p>Given changes in the relative profitability of land use options determined by</p>
+<ul>
+<li><p>productivity, prices, costs, and adoption behaviour.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="input-parameters">
+<h2>Input Parameters<a class="headerlink" href="#input-parameters" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Carbon price, Energy price, Eood demand, Global outlooks,</p></li>
+<li><p>Biofuel and biodiversity (<em>in development</em>)</p></li>
+<li><p>Cost of land use transitions and impacts on ecosystem services.</p></li>
+</ul>
+<p>The 1.0 version of the model is provided here as used to run the 648 scenarios in Bryan et. al. 2015.</p>
+<p>Input data is available in the CSIRO DAP collection Land Use Trade-Offs (LUTO) Model Input Data from <a class="reference external" href="https://doi.org/10.25919/591f-8m60">https://doi.org/10.25919/591f-8m60</a></p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="VIS_01_GHG.html">The Greenhouse Gas (GHS) emissions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="VIS_02_Area.html">The Area changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VIS_03_Quantity_Economics.html">Agricultural Comodities and economic indicators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VIS_04_Water.html">Water usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Map_01_Landuse_map.html">Geospatial maps</a></li>
 </ul>
 </div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -407,7 +473,7 @@ It does not go in-depth into any particular topic - check out <a class="referenc
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="right-next"
        href="VIS_01_GHG.html"
@@ -425,6 +491,22 @@ It does not go in-depth into any particular topic - check out <a class="referenc
             
             
               
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-it-works">How it works?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-detailes">Running detailes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-parameters">Input Parameters</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
             
           </div>
           <footer class="bd-footer-content">
@@ -441,6 +523,7 @@ By The Jupyter Book Community
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -467,8 +550,8 @@ By The Jupyter Book Community
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>
