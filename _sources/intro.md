@@ -1,5 +1,3 @@
-# A visulization on LUTO products
-
 ## About LUTO
 
  - LUTO  estimates Australian land use futures (2010-2100). 
@@ -33,6 +31,7 @@
 The 1.0 version of the model is provided here as used to run the 648 scenarios in Bryan et. al. 2015. 
 
 Input data is available in the CSIRO DAP collection Land Use Trade-Offs (LUTO) Model Input Data from https://doi.org/10.25919/591f-8m60     
+
 
 
 

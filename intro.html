@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>A visulization on LUTO products &#8212; My sample book</title>
+    <title>About LUTO &#8212; My sample book</title>
   
   
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,9 +38,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -138,6 +138,7 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="#">
@@ -162,14 +163,15 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1 current active">
                 <a class="reference internal" href="#">
-                    A visulization on LUTO products
+                    About LUTO
                 </a>
             </li>
         </ul>
         <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="VIS_01_GHG.html">The Greenhouse Gas (GHS) emissions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="VIS_02_Area.html">The Area changes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Map_01_Landuse_map.html">The map of LUTO outputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VIS_03_Quantity_Economics.html">Agricultural Comodities and economic indicators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Map_01_Landuse_map.html">Geospatial maps</a></li>
 </ul>
 
     </div>
@@ -323,6 +325,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -332,6 +335,7 @@ document.write(`
   </button>
 `);
 </script>
+
 
 <script>
 document.write(`
@@ -353,7 +357,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>A visulization on LUTO products</h1>
+    <h1>About LUTO</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -363,12 +367,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-luto">About LUTO</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-it-works">How it works?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-detailes">Running detailes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-parameters">Input Parameters</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-it-works">How it works?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-detailes">Running detailes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-parameters">Input Parameters</a></li>
 </ul>
             </nav>
         </div>
@@ -380,17 +381,15 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="a-visulization-on-luto-products">
-<h1>A visulization on LUTO products<a class="headerlink" href="#a-visulization-on-luto-products" title="Permalink to this heading">#</a></h1>
-<section id="about-luto">
-<h2>About LUTO<a class="headerlink" href="#about-luto" title="Permalink to this heading">#</a></h2>
+  <section id="about-luto">
+<h1>About LUTO<a class="headerlink" href="#about-luto" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
 <li><p>LUTO  estimates Australian land use futures (2010-2100).</p></li>
 <li><p>Integrating environmental and economic drivers.</p></li>
 <li><p>Considering Global change and policy scenarios.</p></li>
 </ul>
 <section id="how-it-works">
-<h3>How it works?<a class="headerlink" href="#how-it-works" title="Permalink to this heading">#</a></h3>
+<h2>How it works?<a class="headerlink" href="#how-it-works" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>The LUTO model takes an agricultural land use map as the baseline.</p></li>
 <li><p>Combining environmental and economic data to identify potential land use change:</p>
@@ -408,7 +407,7 @@ document.write(`
 </ul>
 </section>
 <section id="running-detailes">
-<h3>Running detailes<a class="headerlink" href="#running-detailes" title="Permalink to this heading">#</a></h3>
+<h2>Running detailes<a class="headerlink" href="#running-detailes" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>The model works at a grid cell resolution of 0.01 degrees (~1.1 km)</p></li>
 <li><p>At a annual time-step from 2010 – 2100.</p></li>
@@ -425,7 +424,7 @@ document.write(`
 </ul>
 </section>
 <section id="input-parameters">
-<h3>Input Parameters<a class="headerlink" href="#input-parameters" title="Permalink to this heading">#</a></h3>
+<h2>Input Parameters<a class="headerlink" href="#input-parameters" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Carbon price, Energy price, Eood demand, Global outlooks,</p></li>
 <li><p>Biofuel and biodiversity (<em>in development</em>)</p></li>
@@ -437,10 +436,10 @@ document.write(`
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="VIS_01_GHG.html">The Greenhouse Gas (GHS) emissions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="VIS_02_Area.html">The Area changes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Map_01_Landuse_map.html">The map of LUTO outputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VIS_03_Quantity_Economics.html">Agricultural Comodities and economic indicators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Map_01_Landuse_map.html">Geospatial maps</a></li>
 </ul>
 </div>
-</section>
 </section>
 </section>
 
@@ -472,7 +471,7 @@ document.write(`
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="right-next"
        href="VIS_01_GHG.html"
@@ -498,12 +497,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-luto">About LUTO</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-it-works">How it works?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-detailes">Running detailes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-parameters">Input Parameters</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-it-works">How it works?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-detailes">Running detailes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-parameters">Input Parameters</a></li>
 </ul>
   </nav></div>
 
@@ -525,6 +521,7 @@ By The Jupyter Book Community
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -551,8 +548,8 @@ By The Jupyter Book Community
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>
