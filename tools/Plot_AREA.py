@@ -6,7 +6,7 @@ import altair as alt
 if __name__ == '__main__':
     os.chdir('..')
 
-from PARAMETERS import LU_CROPS,LU_LVSTKS,LU_UNALLOW,NON_AG_LANDUSE  
+from PARAMETERS import LU_CROPS,LU_LVSTKS,LU_UNALLOW,NON_AG_LANDUSE, PLOT_HEIGHT, PLOT_WIDTH  
 
 def merge_LVSTK_UAALLOW(df):
     """
@@ -172,14 +172,12 @@ def plot_area_lu(df):
                         scale=alt.Scale(scheme='category20'),
                         legend=alt.Legend(
                                             title="Land use",
-                                            orient='none',
-                                            legendX=720, legendY=90,
-                                            direction='vertical',
-                                            titleAnchor='start')),
+                                            )
+                        ),
         tooltip = ['Year','Land use','Area (km2)']
     ).properties(
-        width=700,
-        height=500
+        width=PLOT_WIDTH,
+        height=PLOT_HEIGHT + 100
     )
 
     return plot
@@ -214,8 +212,8 @@ def plot_area_lm(df):
                                             titleAnchor='middle')),
         tooltip = ['Year','Irrigation','Area (km2)']
     ).properties(
-        width=700,
-        height=500
+        width=PLOT_WIDTH,
+        height=PLOT_HEIGHT
     )
 
     return plot
@@ -240,13 +238,13 @@ def plot_area_am_total(df):
         color = alt.Color('Agricultural management:N',title='Agricultural management',legend=alt.Legend(
                                                                         title="Agricultural management",
                                                                         orient='none',
-                                                                        legendX=150, legendY=-40,
+                                                                        legendX=110, legendY=-40,
                                                                         direction='horizontal',
                                                                         titleAnchor='middle')),
         tooltip = ['Year','Agricultural management','Area (km2)']
     ).properties(
-        width=700,
-        height=500
+        width=PLOT_WIDTH,
+        height=PLOT_HEIGHT
     )
 
     return plot
@@ -274,14 +272,11 @@ def plot_area_am_lu(df):
                           scale=alt.Scale(scheme='tableau20'),
                           legend=alt.Legend(
                                             title="Agricultural management",
-                                            orient='none',
-                                            legendX=710, legendY=90,
-                                            direction='vertical',
-                                            titleAnchor='start')),
+                                            ),),
         tooltip = ['Year','Land use','Area (km2)']
     ).properties(
-        width=700,
-        height=500
+        width=PLOT_WIDTH,
+        height=PLOT_HEIGHT + 50
     )
 
     return plot

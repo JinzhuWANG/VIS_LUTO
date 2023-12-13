@@ -5,14 +5,14 @@ warnings.filterwarnings('ignore')
 # Set up working directory
 import os
 if __name__ == '__main__':
-    os.chdir('/'.join(__file__.split('/')[:-2]))
+    os.chdir('/'.join(__file__.split('/')[:-3]))
 from tools import get_all_files, get_GHG_file_df
 from tools.Plot_GHG import get_GHG_plots,plot_GHG_total
 from PARAMETERS import DATA_ROOT
 
 
 
-
+ 
 ################################################
 #     Set up stremlit environment              #
 ################################################
@@ -51,7 +51,7 @@ Net_emission['Net_emission_cum'] = Net_emission['Net_emission'].cumsum()
 
 # Show the total GHG emissions
 st.sidebar.markdown('#### Check to show total GHG emissions')
-Show_TOTAL_GHG = st.sidebar.checkbox('Total GHG emissions',value=False)
+Show_TOTAL_GHG = st.sidebar.checkbox('Total GHG emissions',value=True)
 
 
 # Get the GHG types from one of 
@@ -209,6 +209,34 @@ GHG_ag_man_df,GHG_ag_man_plot = ag_man_GHG.plot_GHG_category()
 Ag_man_GHG_types = {'Crop and Livestock':(GHG_ag_man_GHG_crop_lvstk_plot,GHG_ag_man_GHG_crop_lvstk_df),
                     'Dry and Irrigation land':(GHG_ag_man_dry_irr_plot,GHG_ag_man_dry_irr_df),
                     'GHG Category':(GHG_ag_man_plot,GHG_ag_man_df)}
+
+if ghg_type_selection == 'Agricultural Management':
+    st.sidebar.subheader('#')   
+    GHG_type = st.sidebar.selectbox('Select GHG reductions from ...', Ag_man_GHG_types)
+    
+    st.header('#')
+    st.markdown(f'### GHG reductions from Agricultural Management')
+    st.altair_chart(Ag_man_GHG_types[GHG_type][0], use_container_width=True)
+    
+    # Download the data
+    st.download_button(
+        label="Download data",
+        data=Ag_man_GHG_types[GHG_type][1].to_csv(index=False).encode('utf-8'),
+        file_name='GHG_redunctions_Ag_Management.csv',
+        mime='text/csv',
+        help='Download the GHG reductions from Agricultural Management'
+    )
+    
+    
+    
+################################################
+#           Transition Penalty                 #
+################################################
+
+if ghg_type_selection == 'Transition Penalty':
+    st.header('#')
+    st.markdown(f'### Transition Penalty is ALL ZERO in current scenario')
+
 
 
 

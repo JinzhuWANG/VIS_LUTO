@@ -43,7 +43,7 @@ def plot_GHG_total(GHG_files, Net_emission):
         color=alt.Color('base_name:N',legend=alt.Legend(
                                                 title=None,
                                                 orient='none',
-                                                legendX=50, legendY=219,
+                                                legendX=50, legendY=119,
                                                 direction='vertical',
                                                 titleAnchor='start')), 
         
@@ -64,7 +64,7 @@ def plot_GHG_total(GHG_files, Net_emission):
                         legend=alt.Legend(
                                         title=None,
                                         orient='none',
-                                        legendX=50, legendY=200,
+                                        legendX=50, legendY=100,
                                         direction='vertical',
                                         titleAnchor='start')),
         x=alt.X('year:O'),
@@ -249,7 +249,7 @@ class get_GHG_plots():
 
         chart = base_chart.mark_bar().encode(
         color=alt.Color('Landuse_land_cat:N', 
-                        legend=None),
+                        legend=alt.Legend(title='Landuse Type'),),
         y=alt.Y('Quantity (Mt CO2e):Q',
                 title=f'{self.GHG_value_name}',
                 scale=alt.Scale(reverse=self.reverse_scale,zero=False)),  
@@ -286,10 +286,7 @@ class get_GHG_plots():
         column_chart = base_chart.mark_bar().encode(
             color=alt.Color('Irrigation:N',legend=alt.Legend(
                                                             title="Irrigation",
-                                                            orient='none',
-                                                            legendX=250, legendY=-8,
-                                                            direction='horizontal',
-                                                            titleAnchor='start')),  
+                                                            )),  
             y=alt.Y('Quantity (Mt CO2e):Q',
                     title=f'{self.GHG_value_name}',
                     scale=alt.Scale(reverse=self.reverse_scale))
@@ -328,10 +325,7 @@ class get_GHG_plots():
         column_chart = base_chart.mark_bar().encode(
             color=alt.Color('GHG Category:N',legend=alt.Legend(
                                                             title="GHG Category",
-                                                            orient='none',
-                                                            legendX=300, legendY=-7,
-                                                            direction='horizontal',
-                                                            titleAnchor='start')),  
+                                                            )),  
             y=alt.Y('Quantity (Mt CO2e):Q',
                     title=f'{self.GHG_value_name}',
                     scale=alt.Scale(reverse=self.reverse_scale))
@@ -361,20 +355,16 @@ class get_GHG_plots():
                         alt.Tooltip('Quantity (Mt CO2e):Q', title=f'{self.GHG_value_name}',format=",.2f")]
         ).properties(
             width=PLOT_WIDTH,
-            height=PLOT_HEIGHT
+            height=PLOT_HEIGHT + 50
         )
 
 
         column_chart = base_chart.mark_bar().encode(
             color=alt.Color('Sources:N',
                             scale=alt.Scale(scheme='tableau20'),
-                            legend=None,
-                            # legend=alt.Legend(
-                            #                 title="GHG Sources",
-                            #                 orient='none',
-                            #                 legendX=PLOT_WIDTH + 10, legendY=PLOT_HEIGHT*0.25,
-                            #                 direction='vertical',
-                            #                 titleAnchor='start')
+                            legend=alt.Legend(
+                                            title="GHG Sources",
+                                            )
                             ),  
             y=alt.Y('Quantity (Mt CO2e):Q',
                     title=f'{self.GHG_value_name}',
@@ -387,7 +377,7 @@ class get_GHG_plots():
             column_chart,
         ).properties(
             width=PLOT_WIDTH,
-            height=PLOT_HEIGHT
+            height=PLOT_HEIGHT + 50
         ).configure_legend(
             labelLimit = 0
         ) 
@@ -413,10 +403,7 @@ class get_GHG_plots():
             y="Land use:O",
             color=alt.Color("Irrigation:N",legend=alt.Legend(
                                                         title="Irrigation",
-                                                        orient='none',
-                                                        legendX=PLOT_WIDTH*0.4, legendY=-40,
-                                                        direction='horizontal',
-                                                        titleAnchor='start'))
+                                                        ))
         ).properties(
             width=PLOT_WIDTH,
             height=PLOT_HEIGHT)
@@ -438,21 +425,15 @@ class get_GHG_plots():
         plot = alt.Chart(df_this_yr).mark_circle().encode(
             alt.X('Land use:O'),
             alt.Y('Sources:O',axis=alt.Axis(labelLimit=400)),
-            alt.Color('Irrigation:O',legend=None,
-                    #   legend=alt.Legend(
-                    #                                     title="Irrigation",
-                    #                                     orient='none',
-                    #                                     legendX=PLOT_WIDTH+10, legendY=PLOT_HEIGHT*0.3,
-                    #                                     direction='vertical',
-                    #                                     titleAnchor='start')
+            alt.Color('Irrigation:O',
+                      legend=alt.Legend(
+                                        title="Irrigation",
+                                        )
                       ),
-            alt.Size('Quantity (Mt CO2e):Q',legend=None,
-                    #  legend=alt.Legend(
-                    #                                     title='Qantity (Mt CO2e)',
-                    #                                     orient='none',
-                    #                                     legendX=PLOT_WIDTH+10, legendY=PLOT_HEIGHT*0.5,
-                    #                                     direction='vertical',
-                    #                                     titleAnchor='start')
+            alt.Size('Quantity (Mt CO2e):Q',
+                     legend=alt.Legend(
+                                        title='Qantity (Mt CO2e)',
+                                        )
                      ),
             tooltip=[alt.Tooltip('Land use:O', title='Landuse'),
                      alt.Tooltip('Sources:O', title=f'GHG source'),
@@ -460,7 +441,7 @@ class get_GHG_plots():
                      alt.Tooltip('Irrigation:O', title=f'Irrigation')],
         ).properties(
             width=PLOT_WIDTH,
-            height=PLOT_HEIGHT)
+            height=600)
 
         return df_this_yr,plot
 

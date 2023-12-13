@@ -5,8 +5,8 @@
 DATA_ROOT = "/home/jinzhu/docker_data/LUTO_DATA/2023_12_12__09_28_38_hard_mincost_RF5_P1e5_2010-2050_timeseries_-265Mt/"
 
 # Define the plot settings
-PLOT_WIDTH = 600
-PLOT_HEIGHT = 450
+PLOT_WIDTH = 500
+PLOT_HEIGHT = 300
 
 
 
