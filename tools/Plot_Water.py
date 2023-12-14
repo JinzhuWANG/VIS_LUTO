@@ -24,20 +24,19 @@ def get_water_df(water_dfs):
 
 
 # plot the PROPORTION_% change overtime using line plot
-def plot_water_percent(water_df):
+def plot_water_percent(water_df, env='jupyter'):
+    
+    # get the plot height according to env
+    height = PLOT_HEIGHT if env == 'jupyter' else PLOT_HEIGHT*2
 
     plot = alt.Chart(water_df).mark_line(size=5).encode(
         x='year:N',
         y=alt.Y('PROPORTION_%:Q', title='Proportion to limit (%)'),
         color=alt.Color('REGION_NAME:N',
-                        legend=alt.Legend(
-                                        title='Region',
-                                        orient='none',
-                                        legendX=PLOT_WIDTH+10, legendY=PLOT_HEIGHT*0.4,
-                                        direction='vertical',
-                                        titleAnchor='start')),
+                        legend=alt.Legend(title='Region')),
     )
 
+    # empty plot for easy tooltip snap
     plot_pts = alt.Chart(water_df).mark_point(opacity=0,size=300).encode(
         x='year:O',
         y=alt.Y('PROPORTION_%:Q', title='Proportion (%)'),
@@ -47,26 +46,28 @@ def plot_water_percent(water_df):
                                     alt.Tooltip('year:O', title='Year')]
     )
 
-    finale_plot = (plot_pts + plot).resolve_scale(
-        color='independent').properties(
-                width=PLOT_WIDTH,
-                height=PLOT_HEIGHT)
+    finale_plot = (plot_pts + plot
+        ).resolve_scale(
+            color='independent'
+        ).properties(
+            width=PLOT_WIDTH,
+            height=height)
     
     return finale_plot
 
 
 
-def plot_water_use_volum(water_df):
+def plot_water_use_volum(water_df, env='jupyter'):
+    
+    # get the plot height according to env
+    height = PLOT_HEIGHT if env == 'jupyter' else PLOT_HEIGHT*2
+    
+    
     plot = alt.Chart(water_df).mark_line(size=5).encode(
         x='year:N',
         y=alt.Y('TOT_WATER_REQ_ML:Q', title='Water Requirement (ML)'),
         color=alt.Color('REGION_NAME:N',
-                        legend=alt.Legend(
-                                        title='Region',
-                                        orient='none',
-                                        legendX=PLOT_WIDTH+10, legendY=PLOT_HEIGHT*0.4,
-                                        direction='vertical',
-                                        titleAnchor='start')),
+                        legend=alt.Legend(title='Region')),
     )
 
     plot_pts = alt.Chart(water_df).mark_point(opacity=0,size=300).encode(
@@ -81,6 +82,6 @@ def plot_water_use_volum(water_df):
     finale_plot = (plot_pts + plot).resolve_scale(
         color='independent').properties(
                 width=PLOT_WIDTH,
-                height=PLOT_HEIGHT)
+                height=height)
         
     return finale_plot

@@ -184,18 +184,15 @@ def plot_area_lu(df):
 
 def plot_area_lm(df):
     """
-    Plots the area change over time.
-
-    Parameters:
-    -----------
-    df : pandas.DataFrame
-        The DataFrame containing the data to be plotted.
-
+    Plots the area change over time for different land management types.
+        - df (pandas.DataFrame): The input DataFrame containing the data to be plotted.
+        - env (str, optional): The environment in which the plot is being generated. Defaults to 'jupyter'.
+    
     Returns:
-    --------
-    altair.vegalite.v4.api.Chart
-        The Altair chart object representing the plot.
+    alt.Chart: The Altair chart object representing the plot.
+    
     """
+    
     # plot the area change over time
     plot = alt.Chart(df).mark_bar().encode(
         x = alt.X('Year:O',title=None),

@@ -6,6 +6,8 @@ warnings.filterwarnings('ignore')
 import os
 if __name__ == '__main__':
     os.chdir('/'.join(__file__.split('/')[:-3]))
+
+# Import custom functions    
 from tools import get_all_files, get_GHG_file_df
 from tools.Plot_GHG import get_GHG_plots,plot_GHG_total
 from PARAMETERS import DATA_ROOT
@@ -63,8 +65,8 @@ Show_TOTAL_GHG = st.sidebar.checkbox('Total GHG emissions',value=True)
 #        'Non-Agricultural Landuse', 
 #        'Transition Penalty']
 st.sidebar.header("#")
-ghg_type = sorted(GHG_files['base_name'].unique()) 
-ghg_type_selection = st.sidebar.radio('Which GHG category do you want to look into?',ghg_type)
+ghg_type = sorted(GHG_files['base_name'].unique())
+ghg_type_selection = st.sidebar.selectbox('Which GHG category do you want to look into?',ghg_type)
 
 
 
@@ -116,7 +118,7 @@ st.write('#')
 ################################################
 
 # Initialize the class
-ag_lucc_GHG = get_GHG_plots(GHG_files,'Agricultural Landuse','GHG emissions (Mt CO2e)')
+ag_lucc_GHG = get_GHG_plots(GHG_files,'Agricultural Landuse','GHG emissions (Mt CO2e)','st')
 
 
 # get the df and plot
@@ -152,25 +154,31 @@ if ghg_type_selection == 'Agricultural Landuse':
     
     
     
-    # Get the landuse-irrigate-GHG plot
-    st.sidebar.write('#')
-    year = st.sidebar.select_slider('Select year to show detailed GHG emissions', GHG_files['year'].unique())
-    GHG_lu_source_df,GHG_lu_source_plot = ag_lucc_GHG.plot_GHG_lu_source(year)
-
-
+    # white space lines
     st.write('#')
     st.write('#')
     
-    st.write(f'### GHG emissions from Agricultural Landuse in {year}')
-    st.altair_chart(GHG_lu_source_plot, use_container_width=True)
-    # Download the data
-    st.download_button(
-        label="Download data",
-        data=GHG_lu_source_df.to_csv(index=False).encode('utf-8'),
-        file_name=f'GHG_emissions_Ag_Landuse_{year}.csv',
-        mime='text/csv',
-        help=f'Download the GHG emissions from Agricultural Landuse in {year}'
-    )
+    # Check box to determine whether to show the plot
+    st.sidebar.write('#')
+
+    Show_GHG_lu_source = st.sidebar.checkbox(f'Show detail GHG emissions in selected year',value=False)
+   
+    if Show_GHG_lu_source:
+        # Get the year selection
+        year = st.sidebar.select_slider(' ', GHG_files['year'].unique())
+        # Get the plot and df
+        GHG_lu_source_df,GHG_lu_source_plot = ag_lucc_GHG.plot_GHG_lu_source(year) 
+    
+        st.write(f'### GHG emissions from Agricultural Landuse in {year}')
+        st.altair_chart(GHG_lu_source_plot, use_container_width=True)
+        # Download the data
+        st.download_button(
+            label="Download data",
+            data=GHG_lu_source_df.to_csv(index=False).encode('utf-8'),
+            file_name=f'GHG_emissions_Ag_Landuse_{year}.csv',
+            mime='text/csv',
+            help=f'Download the GHG emissions from Agricultural Landuse in {year}'
+        )
 
 
     
@@ -208,7 +216,7 @@ if ghg_type_selection == 'Non-Agricultural Landuse':
 #     Agricultural management reductions       #
 ################################################
 
-ag_man_GHG = get_GHG_plots(GHG_files,'Agricultural Management','GHG reductions (Mt CO2e)')
+ag_man_GHG = get_GHG_plots(GHG_files,'Agricultural Management','GHG reductions (Mt CO2e)','st')
 
 GHG_ag_man_GHG_crop_lvstk_df,GHG_ag_man_GHG_crop_lvstk_plot = ag_man_GHG.plot_GHG_crop_lvstk()
 GHG_ag_man_dry_irr_df,GHG_ag_man_dry_irr_plot = ag_man_GHG.plot_GHG_dry_irr()

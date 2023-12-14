@@ -33,7 +33,7 @@ files = get_all_files(DATA_ROOT)
 
 
 ##############################################################
-#               Total Comodity proeuction                    #
+#               Total Commodity proeuction                    #
 ##############################################################
 
 st.sidebar.markdown('#### Click to show total commodity production')
@@ -46,7 +46,7 @@ if show_quantity:
     # White space and title
     st.write('#')
     st.write('#')
-    st.markdown('## Total Comodity Production')
+    st.markdown('## Total Commodity Production')
 
     # Plot the total production
     st.altair_chart(plot_quantity(quantity_df,'st'), use_container_width=True)

@@ -94,7 +94,8 @@ class get_GHG_plots():
     def __init__(self, 
                  GHG_files:pd.DataFrame,
                  GHG_type:str,
-                 GHG_value_name:str = 'GHG emissions (Mt CO2e)'):
+                 GHG_value_name:str = 'GHG emissions (Mt CO2e)',
+                 env:str = 'jupyter'):
         
         # Check if the GHG type is valid
         if GHG_type not in ['Agricultural Landuse','Agricultural Management', 
@@ -115,6 +116,9 @@ class get_GHG_plots():
 
         # Check if the total GHG is negative
         self.reverse_scale = True if self.GHG_df_long['Quantity (Mt CO2e)'].to_numpy(na_value=0).sum() < 0 else False
+        
+        # Get the plot height according to env
+        self.height = PLOT_HEIGHT if env == 'jupyter' else PLOT_HEIGHT * 2
         
 
     ################################################################
@@ -260,7 +264,7 @@ class get_GHG_plots():
             chart,
         ).properties(
             width=PLOT_WIDTH,
-            height=PLOT_HEIGHT
+            height=self.height
         )
 
         return GHG_crop_lvstk_total, final_chart
@@ -279,7 +283,7 @@ class get_GHG_plots():
                 alt.Tooltip('Quantity (Mt CO2e):Q', title=f'{self.GHG_value_name}',format=",.2f")]
         ).properties(
             width=PLOT_WIDTH,
-            height=PLOT_HEIGHT
+            height=self.height
         )
 
 
@@ -298,7 +302,7 @@ class get_GHG_plots():
             column_chart,
         ).properties(
             width=PLOT_WIDTH,
-            height=PLOT_HEIGHT
+            height=self.height
         )
 
         return GHG_lm_total, final_chart
@@ -316,11 +320,7 @@ class get_GHG_plots():
                 x=alt.X('Year:O',axis=alt.Axis(title=None, labelAngle=-90)),  # Treat year as an ordinal data type
                 tooltip=[alt.Tooltip('GHG Category', title='GHG Category'),
                          alt.Tooltip('Quantity (Mt CO2e):Q', title=f'{self.GHG_value_name}',format=",.2f")]
-        ).properties(
-            width=PLOT_WIDTH,
-            height=PLOT_HEIGHT
         )
-
 
         column_chart = base_chart.mark_bar().encode(
             color=alt.Color('GHG Category:N',legend=alt.Legend(
@@ -337,7 +337,7 @@ class get_GHG_plots():
             column_chart,
         ).properties(
             width=PLOT_WIDTH,
-            height=PLOT_HEIGHT
+            height=self.height
         )
 
         return GHG_category_total, final_chart
@@ -353,9 +353,6 @@ class get_GHG_plots():
                 x=alt.X('Year:O',axis=alt.Axis(title=None, labelAngle=-90)),  # Treat year as an ordinal data type
                 tooltip=[alt.Tooltip('Sources', title='GHG Sources'),
                         alt.Tooltip('Quantity (Mt CO2e):Q', title=f'{self.GHG_value_name}',format=",.2f")]
-        ).properties(
-            width=PLOT_WIDTH,
-            height=PLOT_HEIGHT + 50
         )
 
 
@@ -377,9 +374,12 @@ class get_GHG_plots():
             column_chart,
         ).properties(
             width=PLOT_WIDTH,
-            height=PLOT_HEIGHT + 50
+            height=self.height
         ).configure_legend(
             labelLimit = 0
+        ).properties(
+            width=PLOT_WIDTH,
+            height=self.height
         ) 
 
         return GHG_sources_total, final_chart
@@ -414,7 +414,10 @@ class get_GHG_plots():
 
 
 
-    def plot_GHG_lu_source(self,year):
+    def plot_GHG_lu_source(self, year):
+        
+        # get plot height according to env
+        
         '''Input: year: int'''
         GHG_lu_source = self.GHG_df_long\
                                 .groupby(['Year','Land use','Irrigation','Sources'])\
@@ -441,7 +444,7 @@ class get_GHG_plots():
                      alt.Tooltip('Irrigation:O', title=f'Irrigation')],
         ).properties(
             width=PLOT_WIDTH,
-            height=600)
+            height=self.height)
 
         return df_this_yr,plot
 
