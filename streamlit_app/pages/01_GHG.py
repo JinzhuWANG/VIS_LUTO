@@ -23,7 +23,10 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
+st.write('#')
 st.title('GHG emissions')
+st.write('#')
+
 st.markdown('<style>div.block-container{padding-top:1rem;}</style>', unsafe_allow_html=True)
 
 
@@ -68,6 +71,7 @@ ghg_type_selection = st.sidebar.radio('Which GHG category do you want to look in
 ################################################
 #       Total GHG emissions across years       #
 ################################################
+st.write('#')
 
 if Show_TOTAL_GHG:
 
@@ -101,7 +105,9 @@ if Show_TOTAL_GHG:
             mime='text/csv',
             help='Download the cumulative GHG emissions across years'
         )
-
+        
+# white space lines
+st.write('#')
 
 
 
@@ -153,6 +159,8 @@ if ghg_type_selection == 'Agricultural Landuse':
 
 
     st.write('#')
+    st.write('#')
+    
     st.write(f'### GHG emissions from Agricultural Landuse in {year}')
     st.altair_chart(GHG_lu_source_plot, use_container_width=True)
     # Download the data

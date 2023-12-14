@@ -166,18 +166,16 @@ def plot_area_lu(df):
     """
     plot = alt.Chart(df).mark_bar().encode(
         x = alt.X('Year:O',title='Year'),
-        y = alt.Y('Area (km2):Q',title='Area (km2)',scale=alt.Scale(domain=[0, 4700000])),
+        y = alt.Y('Area (km2):Q',title='Area (km2)',scale=alt.Scale(domain=[0, 4700000]), axis=alt.Axis(labelLimit=200)),
         color = alt.Color('Land use:N',
                         title='Land use',
                         scale=alt.Scale(scheme='category20'),
-                        legend=alt.Legend(
-                                            title="Land use",
-                                            )
+                        legend=alt.Legend(title="Land use",labelLimit=200)
                         ),
         tooltip = ['Year','Land use','Area (km2)']
     ).properties(
         width=PLOT_WIDTH,
-        height=PLOT_HEIGHT + 100
+        height=PLOT_HEIGHT + 250
     )
 
     return plot
@@ -200,16 +198,11 @@ def plot_area_lm(df):
     """
     # plot the area change over time
     plot = alt.Chart(df).mark_bar().encode(
-        x = alt.X('Year:O',title='Year'),
+        x = alt.X('Year:O',title=None),
         y = alt.Y('Area (km2):Q',title='Area (km2)',scale=alt.Scale(domain=[0, 4700000])),
         color = alt.Color('Irrigation:N',
                           title='Irrigation',
-                          legend=alt.Legend(
-                                            title="Irrigation",
-                                            orient='none',
-                                            legendX=280, legendY=-40,
-                                            direction='horizontal',
-                                            titleAnchor='middle')),
+                          legend=alt.Legend(title="Irrigation",)),
         tooltip = ['Year','Irrigation','Area (km2)']
     ).properties(
         width=PLOT_WIDTH,
@@ -233,18 +226,13 @@ def plot_area_am_total(df):
     
     # plot the area change over time
     plot = alt.Chart(df).mark_bar().encode(
-        x = alt.X('Year:O',title='Year'),
+        x = alt.X('Year:O',title=None),
         y = alt.Y('Area (km2):Q',title='Area (km2)'),
-        color = alt.Color('Agricultural management:N',title='Agricultural management',legend=alt.Legend(
-                                                                        title="Agricultural management",
-                                                                        orient='none',
-                                                                        legendX=110, legendY=-40,
-                                                                        direction='horizontal',
-                                                                        titleAnchor='middle')),
+        color = alt.Color('Agricultural management:N',title='Agricultural management'),
         tooltip = ['Year','Agricultural management','Area (km2)']
     ).properties(
         width=PLOT_WIDTH,
-        height=PLOT_HEIGHT
+        height=PLOT_HEIGHT + 250
     )
 
     return plot
@@ -276,7 +264,56 @@ def plot_area_am_lu(df):
         tooltip = ['Year','Land use','Area (km2)']
     ).properties(
         width=PLOT_WIDTH,
-        height=PLOT_HEIGHT + 50
+        height=PLOT_HEIGHT + 250
     )
 
+    return plot
+
+
+
+def get_begin_end_df(files):
+    # read the cross table between start and end year
+    begin_end_df = files.query('''year_types == "begin_end_year" and base_name.str.contains("crosstab-lumap")''').reset_index(drop=True)
+    begin_end_df = pd.read_csv(begin_end_df['path'][0], index_col=0)
+
+    # get the total area in the begin year
+    area_begin = begin_end_df['Total [km2]']
+
+    # remove the last row and column
+    begin_end_df_area = begin_end_df.iloc[:-1,:-1]
+
+    # divide the begain area so we get the percentage change
+    begin_end_df_pct = begin_end_df_area.divide(area_begin, axis=0) * 100
+
+    # fill nan with 0
+    begin_end_df_pct = begin_end_df_pct.fillna(0)
+    
+    return begin_end_df_area, begin_end_df_pct
+
+
+def plot_begin_end_area_change(df,env='jupyter'):
+    
+    # get the width for different env
+    width = 400 if env == 'jupyter' else 850
+    
+    
+    # convert the dataframe to long format
+    df_long = df.reset_index(names='Land-use from')\
+        .melt(id_vars='Land-use from', 
+            value_vars=df.columns, 
+            var_name='Land-use to', 
+            value_name='Area change (%)')
+        
+    plot = alt.Chart(df_long).mark_rect().encode(
+            x=alt.X('Land-use to:N',axis=alt.Axis(labelLimit=200)),
+            y=alt.Y('Land-use from:N', axis=alt.Axis(labelLimit=200)),
+            color=alt.Color('Area change (%):Q',
+                            scale=alt.Scale(scheme='lightmulti'),
+                            legend=alt.Legend(title="Area change (%)")),
+            tooltip=['Land-use from','Land-use to','Area change (%)']
+            ).properties(
+                width=400,
+                height=width
+            )
+            
     return plot

@@ -48,22 +48,22 @@ def get_quantity_df(in_dfs):
 
 
 # function to plot the quantity change over time using column chart
-def plot_quantity(df):
+def plot_quantity(df,env='jupyter'):
+    # height of the plot according to env
+    height = PLOT_HEIGHT if env == 'jupyter' else PLOT_HEIGHT + 250
+    
+    
     plot =  alt.Chart(df).mark_bar().encode(
-            x=alt.X('year:O', title='Year'),
+            x=alt.X('year:O', title=None),
             y=alt.Y('Prod_targ_year (tonnes, ML):Q', title='Production (tonnes, ML)'),
             color=alt.Color('Commodity:N', title='Commodity',
                             scale=alt.Scale(scheme='tableau20'),
-                            legend=alt.Legend(title="Commodity",
-                                              orient='none',
-                                              legendX=PLOT_WIDTH+20, legendY=+80,
-                                              direction='vertical',
-                                              titleAnchor='start')),
+                            legend=alt.Legend(title="Commodity")),
             tooltip=[alt.Tooltip('Commodity:N',title='Commodity'),
                      alt.Tooltip('Prod_targ_year (tonnes, ML):Q',title='Quantity (tonnes, ML)', format='.2f')],
         ).properties(
             width=PLOT_WIDTH,
-            height=PLOT_HEIGHT)
+            height=height)
     
     return plot
 
@@ -152,53 +152,56 @@ def get_rev_cost_df(files_df:pd.DataFrame,in_type:str):
 
 
 
-def plot_rev_source(revenue_df):
+def plot_rev_source(revenue_df, env='jupyter'):
+    
+    # get the height according to env
+    height = PLOT_HEIGHT if env == 'jupyter' else PLOT_HEIGHT + 250
     
     revenue_df_source = revenue_df.groupby(['year', 'Source_type']).sum(numeric_only=True).reset_index()
 
     plot = alt.Chart(revenue_df_source).mark_bar().encode(
-        x='year:O',
+        x=alt.X('year:O',title=None),
         y=alt.Y('value (billion):Q',title='Revenue (billion AU$)'),
         tooltip=[alt.Tooltip('value (billion):Q', format='.2f', title='Revenue (billion AU$)'), 
                 'Source_type'],
         color= alt.Color('Source_type:N', 
                         scale=alt.Scale(scheme='tableau20')
-                        ,legend=alt.Legend(title="Commodity",
-                                            orient='none',
-                                            legendX=PLOT_WIDTH+10, legendY=80,
-                                            direction='vertical',
-                                            titleAnchor='start')),
+                        ,legend=alt.Legend(title="Commodity")),
     ).properties(
         width=PLOT_WIDTH,
-        height=PLOT_HEIGHT
+        height=height
     )
 
     return plot
 
 
-def plot_rev_crop_lvstk(revenue_df):
+def plot_rev_crop_lvstk(revenue_df, env='jupyter'):
+    
+    # get the height according to env
+    height = PLOT_HEIGHT if env == 'jupyter' else PLOT_HEIGHT + 250
+    
     revenue_df_crop_lvstk = revenue_df.groupby(['year', 'crop_lvstk']).sum(numeric_only=True).reset_index()
 
     plot = alt.Chart(revenue_df_crop_lvstk).mark_bar().encode(
-        x='year:O',
+        x=alt.X('year:O',title=None),
         y=alt.Y('value (billion):Q',title='Revenue (billion AU$)'),
         tooltip=[alt.Tooltip('value (billion):Q', format='.2f', title='Revenue (billion AU$)'), 
                 alt.Tooltip('crop_lvstk:N', title='Type')],
         color= alt.Color('crop_lvstk:N', 
-                        legend=alt.Legend(title="Type",
-                                            orient='none',
-                                            legendX=PLOT_WIDTH+10, legendY=PLOT_HEIGHT/2,
-                                            direction='vertical',
-                                            titleAnchor='start')),
+                        legend=alt.Legend(title="Type")),
     ).properties(
         width=PLOT_WIDTH,
-        height=PLOT_HEIGHT
+        height=height
     )
 
     return plot
 
 
-def plot_rev_irrigation(revenue_df):
+def plot_rev_irrigation(revenue_df, env='jupyter'):
+    
+    # get the height according to env
+    height = PLOT_HEIGHT if env == 'jupyter' else PLOT_HEIGHT + 250
+    
     revenue_df_irrigation = revenue_df.groupby(['year', 'Irrigation']).sum(numeric_only=True).reset_index()
 
     plot = alt.Chart(revenue_df_irrigation).mark_bar().encode(
@@ -207,59 +210,55 @@ def plot_rev_irrigation(revenue_df):
         tooltip=[alt.Tooltip('value (billion):Q', format='.2f', title='Revenue (billion AU$)'), 
                 alt.Tooltip('Irrigation:N', title='Irrigation')],
         color= alt.Color('Irrigation:N', 
-                        legend=alt.Legend(title="Irrigation",
-                                            orient='none',
-                                            legendX=PLOT_WIDTH+10, legendY=PLOT_HEIGHT/2,
-                                            direction='vertical',
-                                            titleAnchor='start')),
+                        legend=alt.Legend(title="Irrigation")),
     ).properties(
         width=PLOT_WIDTH,
-        height=PLOT_HEIGHT
+        height=height
     )
 
     return plot
 
 
-def plot_cost_source(cost_df):
+def plot_cost_source(cost_df,env='jupyter'):
+    
+    # get the height according to env
+    height = PLOT_HEIGHT if env == 'jupyter' else PLOT_HEIGHT + 170
+    
     cost_df_source = cost_df.groupby(['year', 'Source']).sum(numeric_only=True).reset_index()
 
     plot = alt.Chart(cost_df_source).mark_bar().encode(
-        x='year:O',
+        x=alt.X('year:O',title=None),
         y=alt.Y('value (billion):Q',title='Cost (billion AU$)'),
         tooltip=[alt.Tooltip('value (billion):Q', format='.2f', title='Cost (billion AU$)'), 
                 'Source'],
         color= alt.Color('Source:N', 
                         scale=alt.Scale(scheme='tableau20')
-                        ,legend=alt.Legend(title="Land Use",
-                                            orient='none',
-                                            legendX=PLOT_WIDTH+10, legendY=80,
-                                            direction='vertical',
-                                            titleAnchor='start')),
+                        ,legend=alt.Legend(title="Land Use")),
     ).properties(
         width=PLOT_WIDTH,
-        height=PLOT_HEIGHT
+        height=height
     )
     
     return plot
 
 
-def plot_cost_type(cost_df):
+def plot_cost_type(cost_df,env='jupyter'):
+    
+    # get the height according to env
+    height = PLOT_HEIGHT if env == 'jupyter' else PLOT_HEIGHT + 250
+    
     cost_df_type = cost_df.groupby(['year', 'Type']).sum(numeric_only=True).reset_index()
 
     plot = alt.Chart(cost_df_type).mark_bar().encode(
-        x='year:O',
+        x=alt.X('year:O',title='Cost type'),
         y=alt.Y('value (billion):Q',title='Cost (billion AU$)'),
         tooltip=[alt.Tooltip('value (billion):Q', format='.2f', title='Cost (billion AU$)'), 
                 'Type'],
         color= alt.Color('Type:N', 
-                        legend=alt.Legend(title="",
-                                            orient='none',
-                                            legendX=PLOT_WIDTH+10, legendY=PLOT_HEIGHT/2,
-                                            direction='vertical',
-                                            titleAnchor='start')),
+                        legend=alt.Legend(title="")),
     ).properties(
         width=PLOT_WIDTH,
-        height=PLOT_HEIGHT
+        height=height
     )
 
     return plot
@@ -288,7 +287,10 @@ def plot_cost_water(cost_df):
 
 
 
-def get_profit_plot(revenue_df,cost_df):
+def get_profit_plot(revenue_df,cost_df, env='jupyter'):
+    
+    # get the height according to env
+    height = PLOT_HEIGHT if env == 'jupyter' else PLOT_HEIGHT + 250
     
     rev_source = revenue_df.groupby(['year', 'Source']).sum(numeric_only=True).reset_index()
     cost_source = cost_df.groupby(['year', 'Source']).sum(numeric_only=True).reset_index()
@@ -309,19 +311,14 @@ def get_profit_plot(revenue_df,cost_df):
     rev_cost_all['cost_color'] = 'Cost'
 
     base = alt.Chart(rev_cost_all).encode(
-        x=alt.X('year:O', title='Year'),
+        x=alt.X('year:O', title=None),
     )
 
     revenue_plot = base.mark_bar(size=6,xOffset=-3).encode(
         y=alt.Y('Revenue (billion):Q', title='Value (billion)'),
         color=alt.Color('rev_color:N',
                         scale=alt.Scale(range=['#1f77b4']),
-                        legend=alt.Legend(
-                                        title=None,
-                                        orient='none',
-                                        legendX=PLOT_WIDTH+10, legendY=PLOT_HEIGHT*0.48,
-                                        direction='vertical',
-                                        titleAnchor='start')),
+                        legend=alt.Legend(title=None)),
     ) 
 
     cost_plot = base.mark_bar(size=6,xOffset=3,color='#ff7f0e').encode(
@@ -329,17 +326,12 @@ def get_profit_plot(revenue_df,cost_df):
         y2=alt.Y2('Profit (billion):Q'),
         color=alt.Color('cost_color:N',
                         scale=alt.Scale(range=['#ff7f0e']),
-                        legend=alt.Legend(
-                                        title=None,
-                                        orient='none',
-                                        legendX=PLOT_WIDTH+10, legendY=PLOT_HEIGHT*0.45,
-                                        direction='vertical',
-                                        titleAnchor='start')),
+                        legend=alt.Legend(title=None)),
     )
 
     plot = alt.layer(revenue_plot, cost_plot).properties(
                 width=PLOT_WIDTH,
-                height=PLOT_HEIGHT).resolve_scale(
+                height=height).resolve_scale(
         color='independent'
     )
     
