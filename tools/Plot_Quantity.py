@@ -264,23 +264,23 @@ def plot_cost_type(cost_df,env='jupyter'):
     return plot
 
 
-def plot_cost_water(cost_df):
+def plot_cost_water(cost_df, env='jupyter'):
+    
+    # get the height according to env
+    height = PLOT_HEIGHT if env == 'jupyter' else PLOT_HEIGHT + 250
+    
     cost_df_water = cost_df.groupby(['year', 'Irrigation']).sum(numeric_only=True).reset_index()
 
     plot = alt.Chart(cost_df_water).mark_bar().encode(
-        x='year:O',
+        x=alt.X('year:O',title=None),
         y=alt.Y('value (billion):Q',title='Cost (billion AU$)'),
         tooltip=[alt.Tooltip('value (billion):Q', format='.2f', title='Cost (billion AU$)'), 
                 'Irrigation'],
         color= alt.Color('Irrigation:N', 
-                        legend=alt.Legend(title="Commodity",
-                                            orient='none',
-                                            legendX=PLOT_WIDTH+10, legendY=80,
-                                            direction='vertical',
-                                            titleAnchor='start')),
+                        legend=alt.Legend(title="Commodity")),
     ).properties(
         width=PLOT_WIDTH,
-        height=PLOT_HEIGHT
+        height=height
     )
 
     return plot
@@ -291,6 +291,7 @@ def get_profit_plot(revenue_df,cost_df, env='jupyter'):
     
     # get the height according to env
     height = PLOT_HEIGHT if env == 'jupyter' else PLOT_HEIGHT + 250
+    bar_width = 3 if env == 'jupyter' else 4.5
     
     rev_source = revenue_df.groupby(['year', 'Source']).sum(numeric_only=True).reset_index()
     cost_source = cost_df.groupby(['year', 'Source']).sum(numeric_only=True).reset_index()
@@ -314,14 +315,14 @@ def get_profit_plot(revenue_df,cost_df, env='jupyter'):
         x=alt.X('year:O', title=None),
     )
 
-    revenue_plot = base.mark_bar(size=6,xOffset=-3).encode(
+    revenue_plot = base.mark_bar(size=bar_width*2,xOffset=-bar_width).encode(
         y=alt.Y('Revenue (billion):Q', title='Value (billion)'),
         color=alt.Color('rev_color:N',
                         scale=alt.Scale(range=['#1f77b4']),
                         legend=alt.Legend(title=None)),
     ) 
 
-    cost_plot = base.mark_bar(size=6,xOffset=3,color='#ff7f0e').encode(
+    cost_plot = base.mark_bar(size=bar_width*2,xOffset=bar_width,color='#ff7f0e').encode(
         y=alt.Y('Revenue (billion):Q'),
         y2=alt.Y2('Profit (billion):Q'),
         color=alt.Color('cost_color:N',
