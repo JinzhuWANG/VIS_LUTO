@@ -6,7 +6,7 @@ import altair as alt
 if __name__ == '__main__':
     os.chdir('..')
 
-from PARAMETERS import LU_CROPS,LU_LVSTKS,LU_UNALLOW,NON_AG_LANDUSE, PLOT_HEIGHT, PLOT_WIDTH  
+from PARAMETERS import LU_CROPS,LU_LVSTKS,LU_UNALLOW,NON_AG_LANDUSE, PLOT_HEIGHT, PLOT_WIDTH, YR_BASE 
 
 def merge_LVSTK_UAALLOW(df):
     """
@@ -55,7 +55,7 @@ def process_row(df, idx, year, column_names, processing_function=None):
         data_row.columns = column_names
         if processing_function:
             data_row = processing_function(data_row)
-        data_row.insert(0, 'Year', year - 1)
+        data_row.insert(0, 'Year', YR_BASE)
     else:
         # Process the last row for the year
         data_row = df.iloc[-1, :].reset_index().query('(index != "Total") & (index != "All")')
@@ -140,7 +140,7 @@ def get_AREA_am(df):
         if idx == 0:
             first_year = df[['Area prior [ km2 ]']].reset_index(names='Land use').query('`Land use` != "Total"')
             first_year.columns = ['Land use','Area (km2)']
-            first_year.insert(0,'Year',year - 1)
+            first_year.insert(0,'Year',YR_BASE)
             switches.append(first_year)
         
         # get the last row, which is the area in the year

@@ -11,3 +11,4 @@ leafmap
 uvicorn 
 titiler.application
 rangehttpserver
+streamlit_folium

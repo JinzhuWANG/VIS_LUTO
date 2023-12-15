@@ -10,7 +10,8 @@ if __name__ == '__main__':
 # Set the page title and icon
 st.set_page_config(page_title='Land Use Trade-Offs (LUTO) Model Insights', 
                    page_icon=':bar_chart:',
-                   layout='wide')
+                   layout='wide',
+                   initial_sidebar_state = 'expanded')
 
 
 # q: make the title close to the top of page

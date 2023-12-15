@@ -7,7 +7,7 @@ import pandas as pd
 if __name__ == '__main__': 
     os.chdir('..')
 
-from PARAMETERS import  LU_CROPS, LU_LVSTKS, PLOT_HEIGHT, PLOT_WIDTH
+from PARAMETERS import  LU_CROPS, LU_LVSTKS, PLOT_HEIGHT, PLOT_WIDTH, YR_BASE
 
 
 #####################################################################
@@ -31,7 +31,12 @@ def get_quantity_df(in_dfs):
             df_base_yr = df[['Commodity','Prod_base_year (tonnes, KL)']].copy()         ## TODO: change the columns name to actual year 
                                                                                         #        f'Prod_{base_year} (tonnes, KL)' at the next LUTO update
             # add the year to the df
-            df_base_yr['year'] = row['year']
+            df_base_yr['year'] = YR_BASE
+            
+            # reanme the columns so it can be concatenated with df_this_yr
+            df_base_yr.columns = df_this_yr.columns
+            
+            all_dfs.append(df_base_yr)
 
         # append df
         all_dfs.append(df_this_yr)

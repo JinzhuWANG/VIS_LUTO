@@ -29,6 +29,10 @@ parallel_decorator = ParallelConvertDecorator(max_workers=num_workers, input_fil
 convert_tif_to_4band_parallel = parallel_decorator(convert_1band_to_4band)
 convert_tif_to_4band_parallel()
 
+# strip white spaces for each tif file
+tif_files = files.query('base_ext.str.contains("tiff")')['path'].tolist()
+for tif_file in tif_files:
+    os.rename(tif_file, tif_file.replace(' ',''))
 
 # create color style files
 color_csvs = pd.read_csv('tools/color_map.csv')

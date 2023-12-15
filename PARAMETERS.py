@@ -2,6 +2,7 @@
 
 
 # Get the root directory of the data
+YR_BASE = 2010
 DATA_ROOT = "/home/jinzhu/docker_data/LUTO_DATA/2023_12_12__09_28_38_hard_mincost_RF5_P1e5_2010-2050_timeseries_-265Mt/"
 
 # Define the plot settings
@@ -85,39 +86,45 @@ NOTEBOOK_META_DICT = {
 
 # The category and base corespondences for proper names
 CAT2NAME = {'lumap': 'Agricultural Land-use all category',
-            'lumap_separate_Agricultural Land-use': 'Agricultural Land-use single category',
-            'ammap': 'Agriculture Management',
-            'lumap_separate_Non-Agricultural Land-use': 'Non-Agricultural Land-use ',
+            'lumap_separate_AgriculturalLand-use': 'Agricultural Land-use single category',
+            'ammap': 'Agricultural Management',
+            'lumap_separate_Non-AgriculturalLand-use': 'Non-Agricultural Land-use ',
             'lmmap': 'Dry and Irrigated Land-use'}
 
-BASE2NAME = {'Agricultural Land-use_00_Apples_color4band': 'Apples',
-            'Agricultural Land-use_01_Beef - modified land_color4band': 'Beef - modified land',
-            'Agricultural Land-use_02_Beef - natural land_color4band': 'Beef - natural land',
-            'Agricultural Land-use_03_Citrus_color4band': 'Citrus',
-            'Agricultural Land-use_04_Cotton_color4band': 'Cotton',
-            'Agricultural Land-use_05_Dairy - modified land_color4band': 'Dairy - modified land',
-            'Agricultural Land-use_06_Dairy - natural land_color4band': 'Dairy - natural land',
-            'Agricultural Land-use_07_Grapes_color4band': 'Grapes',
-            'Agricultural Land-use_08_Hay_color4band': 'Hay',
-            'Agricultural Land-use_09_Nuts_color4band': 'Nuts',
-            'Agricultural Land-use_10_Other non-cereal crops_color4band': 'Other non-cereal crops',
-            'Agricultural Land-use_11_Pears_color4band': 'Pears',
-            'Agricultural Land-use_12_Plantation fruit_color4band': 'Plantation fruit',
-            'Agricultural Land-use_13_Rice_color4band': 'Rice',
-            'Agricultural Land-use_14_Sheep - modified land_color4band': 'Sheep - modified land',
-            'Agricultural Land-use_15_Sheep - natural land_color4band': 'Sheep - natural land',
-            'Agricultural Land-use_16_Stone fruit_color4band': 'Stone fruit',
-            'Agricultural Land-use_17_Sugar_color4band': 'Sugar',
-            'Agricultural Land-use_18_Summer cereals_color4band': 'Summer cereals',
-            'Agricultural Land-use_19_Summer legumes_color4band': 'Summer legumes',
-            'Agricultural Land-use_20_Summer oilseeds_color4band': 'Summer oilseeds',
-            'Agricultural Land-use_21_Tropical stone fruit_color4band': 'Tropical stone fruit',
-            'Agricultural Land-use_22_Unallocated - modified land_color4band': 'Unallocated - modified land',
-            'Agricultural Land-use_23_Unallocated - natural land_color4band': 'Unallocated - natural land',
-            'Agricultural Land-use_24_Vegetables_color4band': 'Vegetables',
-            'Agricultural Land-use_25_Winter cereals_color4band': 'Winter cereals',
-            'Agricultural Land-use_26_Winter legumes_color4band': 'Winter legumes',
-            'Agricultural Land-use_27_Winter oilseeds_color4band': 'Winter oilseeds',
-            'Non-Agricultural Land-use_00_Environmental Plantings_color4band': 'Environmental Plantings',
+BASE2NAME = {'AgriculturalLand-use_00_Apples_color4band': 'Apples',
+            'AgriculturalLand-use_01_Beef-modifiedland_color4band': 'Beef - modified land',
+            'AgriculturalLand-use_02_Beef-naturalland_color4band': 'Beef - natural land',
+            'AgriculturalLand-use_03_Citrus_color4band': 'Citrus',
+            'AgriculturalLand-use_04_Cotton_color4band': 'Cotton',
+            'AgriculturalLand-use_05_Dairy-modifiedland_color4band': 'Dairy - modified land',
+            'AgriculturalLand-use_06_Dairy-naturalland_color4band': 'Dairy - natural land',
+            'AgriculturalLand-use_07_Grapes_color4band': 'Grapes',
+            'AgriculturalLand-use_08_Hay_color4band': 'Hay',
+            'AgriculturalLand-use_09_Nuts_color4band': 'Nuts',
+            'AgriculturalLand-use_10_Othernon-cerealcrops_color4band': 'Other non-cereal crops',
+            'AgriculturalLand-use_11_Pears_color4band': 'Pears',
+            'AgriculturalLand-use_12_Plantationfruit_color4band': 'Plantation fruit',
+            'AgriculturalLand-use_13_Rice_color4band': 'Rice',
+            'AgriculturalLand-use_14_Sheep-modifiedland_color4band': 'Sheep - modified land',
+            'AgriculturalLand-use_15_Sheep-naturalland_color4band': 'Sheep - natural land',
+            'AgriculturalLand-use_16_Stonefruit_color4band': 'Stone fruit',
+            'AgriculturalLand-use_17_Sugar_color4band': 'Sugar',
+            'AgriculturalLand-use_18_Summercereals_color4band': 'Summer cereals',
+            'AgriculturalLand-use_19_Summerlegumes_color4band': 'Summer legumes',
+            'AgriculturalLand-use_20_Summeroilseeds_color4band': 'Summer oilseeds',
+            'AgriculturalLand-use_21_Tropicalstonefruit_color4band': 'Tropical stone fruit',
+            'AgriculturalLand-use_22_Unallocated-modifiedland_color4band': 'Unallocated - modified land',
+            'AgriculturalLand-use_23_Unallocated-naturalland_color4band': 'Unallocated - natural land',
+            'AgriculturalLand-use_24_Vegetables_color4band': 'Vegetables',
+            'AgriculturalLand-use_25_Wintercereals_color4band': 'Winter cereals',
+            'AgriculturalLand-use_26_Winterlegumes_color4band': 'Winter legumes',
+            'AgriculturalLand-use_27_Winteroilseeds_color4band': 'Winter oilseeds',
+            
+            'Non-AgriculturalLand-use_00_EnvironmentalPlantings_color4band': 'Environmental Plantings',
+            
+            'ammap_asparagopsis_taxiformis_color4band': 'Asparagopsis taxiformis',
+            'ammap_ecological_grazing_color4band': 'Ecological Grazing',
+            'ammap_precision_agriculture_color4band': 'Precision Agriculture',
+            
             'lumap_color4band': 'Land-use Map',
             'lmmap_color4band': 'Dry Irriagted Land-use Map'}
